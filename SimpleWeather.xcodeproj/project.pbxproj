@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */; };
-		5247DDC5256AFB3000FD1EF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ContentView.swift */; };
+		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
 		5247DDD5256AFB3200FD1EF9 /* SimpleWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDD4256AFB3200FD1EF9 /* SimpleWeatherTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherApp.swift; sourceTree = "<group>"; };
-		5247DDC4256AFB3000FD1EF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5247DDCB256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,10 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */,
-				5247DDC4256AFB3000FD1EF9 /* ContentView.swift */,
-				5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */,
-				5247DDCB256AFB3200FD1EF9 /* Info.plist */,
-				5247DDC8256AFB3200FD1EF9 /* Preview Content */,
+				52EF7DF2256B9E9D00A06613 /* View */,
+				52EF7DEE256B9E7600A06613 /* Resource */,
 			);
 			path = SimpleWeather;
 			sourceTree = "<group>";
@@ -130,6 +128,32 @@
 			path = SimpleWeatherUITests;
 			sourceTree = "<group>";
 		};
+		52EF7DEE256B9E7600A06613 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */,
+				5247DDCB256AFB3200FD1EF9 /* Info.plist */,
+				5247DDC8256AFB3200FD1EF9 /* Preview Content */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		52EF7DF2256B9E9D00A06613 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52EF7DF3256B9EB700A06613 /* Forecast */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52EF7DF3256B9EB700A06613 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +164,7 @@
 				5247DDBB256AFB3000FD1EF9 /* Sources */,
 				5247DDBC256AFB3000FD1EF9 /* Frameworks */,
 				5247DDBD256AFB3000FD1EF9 /* Resources */,
+				52EF7DF7256B9F6A00A06613 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -254,12 +279,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52EF7DF7256B9F6A00A06613 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config .swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5247DDBB256AFB3000FD1EF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5247DDC5256AFB3000FD1EF9 /* ContentView.swift in Sources */,
+				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
 				5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,10 +464,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SimpleWeather/Info.plist;
+				INFOPLIST_FILE = SimpleWeather/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,10 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SimpleWeather/Info.plist;
+				INFOPLIST_FILE = SimpleWeather/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
