@@ -19,21 +19,36 @@ struct CurrentlyWeatherComponent: View {
     
     var body: some View {
         HStack {
-            WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isLarge: true)
+            iconView
             
             VStack(alignment: .leading) {
-                Text("\(temperature)°")
-                    .font(.title)
-                
-                Text("§Feeling \(apparentTemperature)°")
-                    .font(.callout)
-                    .foregroundColor(.secondary)
+                temperatureView
+                apparentTemperatureView
             }
             
             Spacer()
         }
     }
+}
+
+extension CurrentlyWeatherComponent {
+    
+    private var iconView: some View {
+        WeatherIconComponent(iconSystemName: iconSystemName,
+                             isLarge: true)
+    }
+    
+    private var temperatureView: some View {
+        Text("\(temperature)°")
+            .font(.title)
+    }
+    
+    private var apparentTemperatureView: some View {
+        Text("§Feeling \(apparentTemperature)°")
+            .font(.callout)
+            .foregroundColor(.secondary)
+    }
+        
 }
 
 #if DEBUG

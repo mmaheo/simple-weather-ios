@@ -20,26 +20,43 @@ struct HourlyWeatherComponent: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Text(time.format(format: "HH:mm"))
-                .font(.body)
-            
-            WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isLarge: false)
-            
-            Text("\(temperature)°")
-                .font(.body)
-            
-            HStack(spacing: 4) {
-                Image(systemName: "drop.fill")
-                    .font(.body)
-                    .foregroundColor(.blue)
-                
-                Text("\(precipProbability)%")
-                    .font(.body)
-                    .foregroundColor(.blue)
-            }
+            timeView
+            iconView
+            temperatureView
+            dropView
         }
     }
+}
+
+extension HourlyWeatherComponent {
+    
+    private var timeView: some View {
+        Text(time.format(format: "HH:mm"))
+            .font(.body)
+    }
+    
+    private var iconView: some View {
+        WeatherIconComponent(iconSystemName: iconSystemName,
+                             isLarge: false)
+    }
+    
+    private var temperatureView: some View {
+        Text("\(temperature)°")
+            .font(.body)
+    }
+    
+    private var dropView: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "drop.fill")
+                .font(.body)
+                .foregroundColor(.blue)
+            
+            Text("\(precipProbability)%")
+                .font(.body)
+                .foregroundColor(.blue)
+        }
+    }
+    
 }
 
 #if DEBUG
