@@ -13,9 +13,9 @@ class ForecastServiceTests: XCTestCase {
 
     // MARK: - Properties
     
-    private(set) var sut: ForecastService!
+    private var sut: ForecastService!
     
-    private(set) var cancellables: Set<AnyCancellable>!
+    private var cancellables: Set<AnyCancellable>!
     
     // MARK: - Lifecycle
     

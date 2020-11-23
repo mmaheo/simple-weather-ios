@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Forecast {
+struct Forecast: Identifiable {
+    
+    let id = UUID()
+    
     let precipProbability: Float?
     let apparentTemperature: Float?
     let temperature: Float?
@@ -49,12 +52,20 @@ struct Forecast {
 }
 
 extension Forecast {
+    var wrappedPrecipProbability: Int {
+        Int(round((precipProbability ?? 0) * 100))
+    }
+    
     var wrappedApparentTemperature: Int {
         Int(round(apparentTemperature ?? temperature ?? 0))
     }
     
     var wrappedTemperature: Int {
         Int(round(temperature ?? 0))
+    }
+    
+    var wrappedTime: Date {
+        Date(timeIntervalSince1970: time)
     }
     
     var wrappedIconSystemName: String {
@@ -87,6 +98,27 @@ extension Forecast {
         }
         
         return "sun.max.fill"
+    }
+    
+    var wrappedTimeOfTheDay: String {
+        let hours = Int(wrappedTime.format(format: "HH")) ?? 0
+        
+        if hours >= 7 && hours <= 11 {
+            return "§This morning"
+        } else if hours >= 12 && hours <= 18 {
+            return "§This afternoon"
+        } else if hours >= 19 && hours <= 22 {
+            return "§This evening"
+        }
+        
+        return "§Tonight"
+    }
+}
+
+extension Forecast: Equatable {
+    static func == (lhs: Forecast,
+                    rhs: Forecast) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
