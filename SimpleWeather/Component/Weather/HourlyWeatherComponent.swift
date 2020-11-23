@@ -25,6 +25,8 @@ struct HourlyWeatherComponent: View {
             temperatureView
             dropView
         }
+        .fixedSize(horizontal: true,
+                   vertical: false)
     }
 }
 
@@ -37,8 +39,7 @@ extension HourlyWeatherComponent {
     }
     
     private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName,
-                             isLarge: false)
+        WeatherIconComponent(iconSystemName: iconSystemName)
             .accessibility(identifier: "hourly_weather_component_icon")
     }
     

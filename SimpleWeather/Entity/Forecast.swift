@@ -138,32 +138,26 @@ extension Forecast {
                               icon: "partly-cloudy-night",
                               sunsetTime: 1605641600)
     
-    static let list = [
-        Forecast(precipProbability: 0.4,
-                 apparentTemperature: 15,
-                 temperature: 17.09,
-                 temperatureMin: nil,
-                 temperatureMax: nil,
-                 time: 1605621600,
-                 summary: "Clear",
-                 humidity: 0.6,
-                 uvIndex: 5,
-                 windSpeed: 2,
-                 icon: "clear-day",
-                 sunsetTime: 1605641600),
-        Forecast(precipProbability: 0.4,
-                 apparentTemperature: 15,
-                 temperature: 17.09,
-                 temperatureMin: nil,
-                 temperatureMax: nil,
-                 time: 1605718800,
-                 summary: "Clear",
-                 humidity: 0.6,
-                 uvIndex: 5,
-                 windSpeed: 2,
-                 icon: "partly-cloudy-night",
-                 sunsetTime: 1605641600)
-    ]
+    static let list = Forecast.generateForecasts(number: 15)
+    
+    // MARK: - Methods
+    
+    private static func generateForecasts(number: Int) -> [Forecast] {
+        (0...number).map { (_) in
+            Forecast(precipProbability: Float.random(in: 0..<1),
+                     apparentTemperature: Float.random(in: 0..<30),
+                     temperature: Float.random(in: 0..<30),
+                     temperatureMin: Float.random(in: 0..<10),
+                     temperatureMax: Float.random(in: 20..<30),
+                     time: Double.random(in: 0..<100_000),
+                     summary: "",
+                     humidity: Float.random(in: 0..<1),
+                     uvIndex: Int.random(in: 0..<10),
+                     windSpeed: Float.random(in: 0..<30),
+                     icon: nil,
+                     sunsetTime: Double.random(in: 0..<100_000))
+        }
+    }
 }
 
 #endif

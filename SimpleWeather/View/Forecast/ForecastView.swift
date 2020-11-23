@@ -18,7 +18,7 @@ struct ForecastView: View {
     var body: some View {
         ScrollView(.vertical,
                    showsIndicators: true) {
-            VStack {
+            VStack(spacing: 16) {
                 currentlyWeatherView
                 hourlyWeatherView
                 poweredByDarkSkyView
@@ -85,8 +85,7 @@ extension ForecastView {
             
             ScrollView(.horizontal,
                        showsIndicators: false) {
-                HStack(alignment: .bottom,
-                       spacing: 16) {
+                HStack(spacing: 8) {
                     content()
                 }
             }

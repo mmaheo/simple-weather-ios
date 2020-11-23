@@ -40,8 +40,7 @@ extension DailyWeatherComponent {
     }
     
     private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName,
-                             isLarge: false)
+        WeatherIconComponent(iconSystemName: iconSystemName)
     }
     
     private var summaryView: some View {

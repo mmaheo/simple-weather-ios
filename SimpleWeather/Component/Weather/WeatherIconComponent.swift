@@ -12,16 +12,11 @@ struct WeatherIconComponent: View {
     // MARK: - Properties
     
     let iconSystemName: String
-    let isLarge: Bool
     
     @Environment(\.colorScheme) private var colorScheme
     
     private var hasBackground: Bool {
         colorScheme == .light
-    }
-    
-    private var width: CGFloat {
-        isLarge ? 60 : 30
     }
     
     // MARK: - Body
@@ -31,8 +26,12 @@ struct WeatherIconComponent: View {
             .renderingMode(.original)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: width,
-                   height: width)
+            .frame(minWidth: 20,
+                   idealWidth: 24,
+                   maxWidth: 60,
+                   minHeight: 20,
+                   idealHeight: 24,
+                   maxHeight: 60)
             .padding(8)
             .background(
                 Circle()
@@ -41,20 +40,21 @@ struct WeatherIconComponent: View {
     }
 }
 
+extension WeatherIconComponent {
+    
+}
+
 #if DEBUG
 
 struct WeatherIconComponent_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherIconComponent(iconSystemName: "sun.max.fill",
-                                 isLarge: true)
+            WeatherIconComponent(iconSystemName: "sun.max.fill")
             
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
-                                 isLarge: false)
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
                 .preferredColorScheme(.dark)
             
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
-                                 isLarge: false)
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }

@@ -34,8 +34,7 @@ struct CurrentlyWeatherComponent: View {
 extension CurrentlyWeatherComponent {
     
     private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName,
-                             isLarge: true)
+        WeatherIconComponent(iconSystemName: iconSystemName)
             .accessibility(identifier: "currently_weather_component_icon")
     }
     
