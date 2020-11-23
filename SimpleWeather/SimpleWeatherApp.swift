@@ -12,11 +12,16 @@ struct SimpleWeatherApp: App {
     
     // MARK: - Properties
     
+    @StateObject private var forecastStore = ForecastStore()
+    
+    private let appDependency = AppDependency()
+    
     // MARK: - Body
     
     var body: some Scene {
         WindowGroup {
             ForecastView()
+                .environmentObject(forecastStore)
         }
     }
 }

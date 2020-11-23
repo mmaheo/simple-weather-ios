@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Injectable",
+        "repositoryURL": "https://github.com/mmaheo/Injectable.git",
+        "state": {
+          "branch": null,
+          "revision": "2a46831546c74e9f7edf1bc9f36ae7c9691ebc84",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
