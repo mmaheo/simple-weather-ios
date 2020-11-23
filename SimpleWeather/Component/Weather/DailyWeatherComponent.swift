@@ -64,7 +64,15 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
                                   iconSystemName: "cloud.rain.fill",
                                   summary: "Mostly cloudy.")
                 .preferredColorScheme(.dark)
+            
+            DailyWeatherComponent(time: Date(),
+                                  iconSystemName: "cloud.rain.fill",
+                                  summary: "Mostly cloudy.")
+                .environment(\.sizeCategory,
+                             .accessibilityExtraExtraExtraLarge)
         }
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }
 

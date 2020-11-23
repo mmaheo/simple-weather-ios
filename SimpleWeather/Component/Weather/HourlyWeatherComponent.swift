@@ -74,7 +74,16 @@ struct HourlyWeatherComponent_Previews: PreviewProvider {
                                    iconSystemName: "cloud.rain.fill",
                                    precipProbability: 3)
                 .preferredColorScheme(.dark)
+            
+            HourlyWeatherComponent(time: Date(),
+                                   temperature: 12,
+                                   iconSystemName: "cloud.rain.fill",
+                                   precipProbability: 3)
+                .environment(\.sizeCategory,
+                             .accessibilityExtraExtraExtraLarge)
         }
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }
 

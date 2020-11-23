@@ -67,7 +67,15 @@ struct CurrentlyWeatherComponent_Previews: PreviewProvider {
                                       temperature: 17,
                                       apparentTemperature: 17)
                 .preferredColorScheme(.dark)
+            
+            CurrentlyWeatherComponent(iconSystemName: "cloud.rain.fill",
+                                      temperature: 17,
+                                      apparentTemperature: 17)
+                .environment(\.sizeCategory,
+                             .accessibilityExtraExtraExtraLarge)
         }
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }
 

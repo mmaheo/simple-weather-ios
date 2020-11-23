@@ -58,7 +58,14 @@ struct WeatherIconComponent_Previews: PreviewProvider {
             WeatherIconComponent(iconSystemName: "cloud.rain.fill",
                                  isLarge: false)
                 .preferredColorScheme(.dark)
+                
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
+                                 isLarge: false)
+                .environment(\.sizeCategory,
+                             .accessibilityExtraExtraExtraLarge)
         }
+        .previewLayout(.sizeThatFits)
+        .padding()
     }
 }
 
