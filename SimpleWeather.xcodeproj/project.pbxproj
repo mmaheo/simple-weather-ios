@@ -19,6 +19,9 @@
 		52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E1E256BA72F00A06613 /* ForecastService.swift */; };
 		52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E23256BA75B00A06613 /* AppDependency.swift */; };
 		52EF7E2D256BAFC000A06613 /* ForecastServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E2C256BAFC000A06613 /* ForecastServiceTests.swift */; };
+		52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E36256BBDA800A06613 /* CurrentlyWeatherComponent.swift */; };
+		52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */; };
+		52EF7E45256BC02600A06613 /* ForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E44256BC02600A06613 /* ForecastTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		52EF7E1E256BA72F00A06613 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		52EF7E23256BA75B00A06613 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		52EF7E2C256BAFC000A06613 /* ForecastServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServiceTests.swift; sourceTree = "<group>"; };
+		52EF7E36256BBDA800A06613 /* CurrentlyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyWeatherComponent.swift; sourceTree = "<group>"; };
+		52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconComponent.swift; sourceTree = "<group>"; };
+		52EF7E44256BC02600A06613 /* ForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				52EF7E17256BA6F100A06613 /* Service */,
 				52EF7DFB256BA03400A06613 /* Store */,
 				52EF7E01256BA22300A06613 /* Entity */,
+				52EF7E34256BBD6800A06613 /* Component */,
 				52EF7DF2256B9E9D00A06613 /* View */,
 				52EF7DEE256B9E7600A06613 /* Resource */,
 			);
@@ -131,6 +138,7 @@
 			children = (
 				52EF7E2B256BAFB100A06613 /* Service */,
 				52EF7E07256BA42F00A06613 /* Store */,
+				52EF7E43256BC01A00A06613 /* Entity */,
 				5247DDD6256AFB3200FD1EF9 /* Info.plist */,
 			);
 			path = SimpleWeatherTests;
@@ -209,6 +217,31 @@
 				52EF7E2C256BAFC000A06613 /* ForecastServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		52EF7E34256BBD6800A06613 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				52EF7E35256BBD7000A06613 /* Weather */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		52EF7E35256BBD7000A06613 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				52EF7E36256BBDA800A06613 /* CurrentlyWeatherComponent.swift */,
+				52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		52EF7E43256BC01A00A06613 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				52EF7E44256BC02600A06613 /* ForecastTests.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +402,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
+				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
+				52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
 				5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */,
 				52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */,
@@ -382,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52EF7E2D256BAFC000A06613 /* ForecastServiceTests.swift in Sources */,
+				52EF7E45256BC02600A06613 /* ForecastTests.swift in Sources */,
 				52EF7E09256BA44A00A06613 /* ForecastStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

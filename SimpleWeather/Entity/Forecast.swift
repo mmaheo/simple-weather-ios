@@ -19,8 +19,75 @@ struct Forecast {
     let uvIndex: Int?
     let windSpeed: Float?
     let icon: String?
-    let sunriseTime: TimeInterval?
     let sunsetTime: TimeInterval?
+    
+    init(precipProbability: Float? = nil,
+         apparentTemperature: Float? = nil,
+         temperature: Float? = nil,
+         temperatureMin: Float? = nil,
+         temperatureMax: Float? = nil,
+         time: TimeInterval = 0,
+         summary: String? = nil,
+         humidity: Float? = nil,
+         uvIndex: Int? = nil,
+         windSpeed: Float? = nil,
+         icon: String? = nil,
+         sunsetTime: TimeInterval? = nil) {
+        self.precipProbability = precipProbability
+        self.apparentTemperature = apparentTemperature
+        self.temperature = temperature
+        self.temperatureMin = temperatureMin
+        self.temperatureMax = temperatureMax
+        self.time = time
+        self.summary = summary
+        self.humidity = humidity
+        self.uvIndex = uvIndex
+        self.windSpeed = windSpeed
+        self.icon = icon
+        self.sunsetTime = sunsetTime
+    }
+}
+
+extension Forecast {
+    var wrappedApparentTemperature: Int {
+        Int(round(apparentTemperature ?? temperature ?? 0))
+    }
+    
+    var wrappedTemperature: Int {
+        Int(round(temperature ?? 0))
+    }
+    
+    var wrappedIconSystemName: String {
+        if icon == "clear-day" {
+            return "sun.max.fill"
+        } else if icon == "clear-night" {
+            return "moon.stars.fill"
+        } else if icon == "rain" {
+            return "cloud.rain.fill"
+        } else if icon == "snow" {
+            return "cloud.snow.fill"
+        } else if icon == "sleet" {
+            return "cloud.sleet.fill"
+        } else if icon == "wind" {
+            return "wind"
+        } else if icon == "fog" {
+            return "cloud.fog.fill"
+        } else if icon == "cloudy" {
+            return "cloud.fill"
+        } else if icon == "partly-cloudy-day" {
+            return "cloud.sun.fill"
+        } else if icon == "partly-cloudy-night" {
+            return "cloud.moon.fill"
+        } else if icon == "hail" {
+            return "cloud.hail.fill"
+        } else if icon == "thunderstorm" {
+            return "cloud.bolt.fill"
+        } else if icon == "tornado" {
+            return "tornado"
+        }
+        
+        return "sun.max.fill"
+    }
 }
 
 #if DEBUG
@@ -37,7 +104,6 @@ extension Forecast {
                               uvIndex: 5,
                               windSpeed: 2,
                               icon: "partly-cloudy-night",
-                              sunriseTime: 1605601600,
                               sunsetTime: 1605641600)
     
     static let list = [
@@ -52,7 +118,6 @@ extension Forecast {
                  uvIndex: 5,
                  windSpeed: 2,
                  icon: "clear-day",
-                 sunriseTime: 1605601600,
                  sunsetTime: 1605641600),
         Forecast(precipProbability: 0.4,
                  apparentTemperature: 15,
@@ -65,7 +130,6 @@ extension Forecast {
                  uvIndex: 5,
                  windSpeed: 2,
                  icon: "partly-cloudy-night",
-                 sunriseTime: 1605601600,
                  sunsetTime: 1605641600)
     ]
 }

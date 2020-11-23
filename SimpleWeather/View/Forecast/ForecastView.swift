@@ -16,9 +16,18 @@ struct ForecastView: View {
     // MARK: - Body
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        makeCurrentlyWeatherView()
             .onAppear { forecastStore.dispatch(action: .fetchForecast) }
+    }
+    
+    // MARK: - Methods
+    
+    private func makeCurrentlyWeatherView() -> some View {
+        forecastStore.currently.map { forecast in
+            CurrentlyWeatherComponent(iconSystemName: forecast.wrappedIconSystemName,
+                                      temperature: forecast.wrappedTemperature,
+                                      apparentTemperature: forecast.wrappedApparentTemperature)
+        }
     }
 }
 
