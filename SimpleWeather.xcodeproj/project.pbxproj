@@ -12,6 +12,7 @@
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
 		5247DDE0256AFB3200FD1EF9 /* SimpleWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDDF256AFB3200FD1EF9 /* SimpleWeatherUITests.swift */; };
+		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
 		52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */; };
 		52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4DD256BD5F20088B72B /* Date+Format.swift */; };
 		52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4E5256BD61E0088B72B /* Locale+Language.swift */; };
@@ -82,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52EF7E1A256BA72100A06613 /* Injectable in Frameworks */,
+				52679873256C065600E2132B /* TimelaneCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +299,7 @@
 			name = SimpleWeather;
 			packageProductDependencies = (
 				52EF7E19256BA72100A06613 /* Injectable */,
+				52679872256C065600E2132B /* TimelaneCombine */,
 			);
 			productName = SimpleWeather;
 			productReference = 5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */;
@@ -371,6 +374,7 @@
 			mainGroup = 5247DDB6256AFB3000FD1EF9;
 			packageReferences = (
 				52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */,
+				52679871256C065600E2132B /* XCRemoteSwiftPackageReference "TimelaneCombine" */,
 			);
 			productRefGroup = 5247DDC0256AFB3000FD1EF9 /* Products */;
 			projectDirPath = "";
@@ -772,6 +776,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		52679871256C065600E2132B /* XCRemoteSwiftPackageReference "TimelaneCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/icanzilb/TimelaneCombine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mmaheo/Injectable.git";
@@ -783,6 +795,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		52679872256C065600E2132B /* TimelaneCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52679871256C065600E2132B /* XCRemoteSwiftPackageReference "TimelaneCombine" */;
+			productName = TimelaneCombine;
+		};
 		52EF7E19256BA72100A06613 /* Injectable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */;
