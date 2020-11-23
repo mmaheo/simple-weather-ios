@@ -80,6 +80,7 @@ extension ForecastView {
                 .font(.title)
                 .bold()
                 .padding(.horizontal)
+                .accessibility(identifier: "forecast_view_section_title")
             
             ScrollView(.horizontal,
                        showsIndicators: false) {

@@ -33,16 +33,19 @@ extension HourlyWeatherComponent {
     private var timeView: some View {
         Text(time.format(format: "HH:mm"))
             .font(.body)
+            .accessibility(identifier: "hourly_weather_component_time")
     }
     
     private var iconView: some View {
         WeatherIconComponent(iconSystemName: iconSystemName,
                              isLarge: false)
+            .accessibility(identifier: "hourly_weather_component_icon")
     }
     
     private var temperatureView: some View {
         Text("\(temperature)°")
             .font(.body)
+            .accessibility(identifier: "hourly_weather_component_temperature")
     }
     
     private var dropView: some View {
@@ -54,6 +57,7 @@ extension HourlyWeatherComponent {
             Text("\(precipProbability)%")
                 .font(.body)
                 .foregroundColor(.blue)
+                .accessibility(identifier: "hourly_weather_component_precip_probability")
         }
     }
     

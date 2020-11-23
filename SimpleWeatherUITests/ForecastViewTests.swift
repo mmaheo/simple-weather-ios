@@ -32,5 +32,12 @@ class ForecastViewTests: XCTestCase {
         XCTAssertTrue(app.images["currently_weather_component_icon"].exists)
         XCTAssertTrue(app.staticTexts["currently_weather_component_temperature"].exists)
         XCTAssertTrue(app.staticTexts["currently_weather_component_apparent_temperature"].exists)
+        
+        XCTAssertTrue(app.staticTexts["hourly_weather_component_time"].exists)
+        XCTAssertTrue(app.images["hourly_weather_component_icon"].exists)
+        XCTAssertTrue(app.staticTexts["hourly_weather_component_temperature"].exists)
+        XCTAssertTrue(app.staticTexts["hourly_weather_component_precip_probability"].exists)
+        
+        XCTAssertTrue(app.staticTexts["forecast_view_section_title"].exists)
     }
 }
