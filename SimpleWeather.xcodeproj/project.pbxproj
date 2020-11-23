@@ -11,8 +11,8 @@
 		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
-		5247DDE0256AFB3200FD1EF9 /* SimpleWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDDF256AFB3200FD1EF9 /* SimpleWeatherUITests.swift */; };
 		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
+		52679878256C072100E2132B /* ForecastViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52679877256C072100E2132B /* ForecastViewTests.swift */; };
 		52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */; };
 		52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4DD256BD5F20088B72B /* Date+Format.swift */; };
 		52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4E5256BD61E0088B72B /* Locale+Language.swift */; };
@@ -58,8 +58,8 @@
 		5247DDD0256AFB3200FD1EF9 /* SimpleWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDD6256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5247DDDB256AFB3200FD1EF9 /* SimpleWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5247DDDF256AFB3200FD1EF9 /* SimpleWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherUITests.swift; sourceTree = "<group>"; };
 		5247DDE1256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52679877256C072100E2132B /* ForecastViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewTests.swift; sourceTree = "<group>"; };
 		52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherComponent.swift; sourceTree = "<group>"; };
 		52C5D4DD256BD5F20088B72B /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		52C5D4E5256BD61E0088B72B /* Locale+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Language.swift"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		5247DDDE256AFB3200FD1EF9 /* SimpleWeatherUITests */ = {
 			isa = PBXGroup;
 			children = (
-				5247DDDF256AFB3200FD1EF9 /* SimpleWeatherUITests.swift */,
+				52679877256C072100E2132B /* ForecastViewTests.swift */,
 				5247DDE1256AFB3200FD1EF9 /* Info.plist */,
 			);
 			path = SimpleWeatherUITests;
@@ -470,7 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5247DDE0256AFB3200FD1EF9 /* SimpleWeatherUITests.swift in Sources */,
+				52679878256C072100E2132B /* ForecastViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

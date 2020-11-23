@@ -36,17 +36,20 @@ extension CurrentlyWeatherComponent {
     private var iconView: some View {
         WeatherIconComponent(iconSystemName: iconSystemName,
                              isLarge: true)
+            .accessibility(identifier: "currently_weather_component_icon")
     }
     
     private var temperatureView: some View {
         Text("\(temperature)°")
             .font(.title)
+            .accessibility(identifier: "currently_weather_component_temperature")
     }
     
     private var apparentTemperatureView: some View {
         Text("§Feeling \(apparentTemperature)°")
             .font(.callout)
             .foregroundColor(.secondary)
+            .accessibility(identifier: "currently_weather_component_apparent_temperature")
     }
         
 }
