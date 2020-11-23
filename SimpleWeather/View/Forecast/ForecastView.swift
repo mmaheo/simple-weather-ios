@@ -65,6 +65,7 @@ extension ForecastView {
                         .font(.caption)
                         .italic()
                         .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
                 }
                 Spacer()
             }

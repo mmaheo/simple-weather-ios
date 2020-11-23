@@ -20,30 +20,24 @@ struct WeatherIconComponent: View {
         colorScheme == .light
     }
     
-    private var iconWidth: CGFloat {
-        isLarge ? 50 : 25
-    }
-    
-    private var circleWidth: CGFloat {
-        isLarge ? 80 : 40
+    private var width: CGFloat {
+        isLarge ? 60 : 30
     }
     
     // MARK: - Body
     
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.black.opacity(hasBackground ? 0.8 : 0))
-            
-            Image(systemName: iconSystemName)
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: iconWidth,
-                       height: iconWidth)
-        }
-        .frame(width: circleWidth,
-               height: circleWidth)
+        Image(systemName: iconSystemName)
+            .renderingMode(.original)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: width,
+                   height: width)
+            .padding(8)
+            .background(
+                Circle()
+                    .fill(Color.black.opacity(hasBackground ? 0.8 : 0))
+            )
     }
 }
 
@@ -58,7 +52,7 @@ struct WeatherIconComponent_Previews: PreviewProvider {
             WeatherIconComponent(iconSystemName: "cloud.rain.fill",
                                  isLarge: false)
                 .preferredColorScheme(.dark)
-                
+            
             WeatherIconComponent(iconSystemName: "cloud.rain.fill",
                                  isLarge: false)
                 .environment(\.sizeCategory,
