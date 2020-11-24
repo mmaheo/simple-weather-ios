@@ -14,6 +14,14 @@ struct DailyWeatherComponent: View {
     let time: Date
     let iconSystemName: String
     let summary: String
+    let temperatureMin: Int
+    let temperatureMax: Int
+    let humidity: Int
+    let precipProbability: Int
+    let uvIndex: Int
+    let windSpeed: Int
+    let sunriseTime: Date
+    let sunsetTime: Date
     
     // MARK: - Body
     
@@ -57,16 +65,40 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
         Group {
             DailyWeatherComponent(time: Date(),
                                   iconSystemName: "cloud.rain.fill",
-                                  summary: "Mostly cloudy throughout the day.")
+                                  summary: "Mostly cloudy throughout the day.",
+                                  temperatureMin: 0,
+                                  temperatureMax: 20,
+                                  humidity: 40,
+                                  precipProbability: 32,
+                                  uvIndex: 4,
+                                  windSpeed: 12,
+                                  sunriseTime: Date(),
+                                  sunsetTime: Date())
             
             DailyWeatherComponent(time: Date(),
                                   iconSystemName: "cloud.rain.fill",
-                                  summary: "Mostly cloudy.")
+                                  summary: "Mostly cloudy.",
+                                  temperatureMin: 1,
+                                  temperatureMax: 23,
+                                  humidity: 23,
+                                  precipProbability: 67,
+                                  uvIndex: 7,
+                                  windSpeed: 42,
+                                  sunriseTime: Date(),
+                                  sunsetTime: Date())
                 .preferredColorScheme(.dark)
             
             DailyWeatherComponent(time: Date(),
                                   iconSystemName: "cloud.rain.fill",
-                                  summary: "Mostly cloudy.")
+                                  summary: "Mostly cloudy.",
+                                  temperatureMin: 4,
+                                  temperatureMax: 25,
+                                  humidity: 86,
+                                  precipProbability: 87,
+                                  uvIndex: 1,
+                                  windSpeed: 23,
+                                  sunriseTime: Date(),
+                                  sunsetTime: Date())
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }

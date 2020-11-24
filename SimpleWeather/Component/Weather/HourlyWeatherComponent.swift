@@ -23,7 +23,7 @@ struct HourlyWeatherComponent: View {
             timeView
             iconView
             temperatureView
-            dropView
+            precipProbabilityView
         }
         .fixedSize(horizontal: true,
                    vertical: false)
@@ -49,10 +49,9 @@ extension HourlyWeatherComponent {
             .accessibility(identifier: "hourly_weather_component_temperature")
     }
     
-    private var dropView: some View {
+    private var precipProbabilityView: some View {
         HStack(spacing: 4) {
             Image(systemName: "drop.fill")
-                .font(.body)
                 .foregroundColor(.blue)
             
             Text("\(precipProbability)%")

@@ -24,14 +24,6 @@ struct WeatherIconComponent: View {
     var body: some View {
         Image(systemName: iconSystemName)
             .renderingMode(.original)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(minWidth: 20,
-                   idealWidth: 24,
-                   maxWidth: 60,
-                   minHeight: 20,
-                   idealHeight: 24,
-                   maxHeight: 60)
             .padding(8)
             .background(
                 Circle()

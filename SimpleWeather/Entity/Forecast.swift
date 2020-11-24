@@ -22,6 +22,7 @@ struct Forecast: Identifiable {
     let uvIndex: Int?
     let windSpeed: Float?
     let icon: String?
+    let sunriseTime: TimeInterval?
     let sunsetTime: TimeInterval?
     
     init(precipProbability: Float? = nil,
@@ -35,6 +36,7 @@ struct Forecast: Identifiable {
          uvIndex: Int? = nil,
          windSpeed: Float? = nil,
          icon: String? = nil,
+         sunriseTime: TimeInterval? = nil,
          sunsetTime: TimeInterval? = nil) {
         self.precipProbability = precipProbability
         self.apparentTemperature = apparentTemperature
@@ -47,6 +49,7 @@ struct Forecast: Identifiable {
         self.uvIndex = uvIndex
         self.windSpeed = windSpeed
         self.icon = icon
+        self.sunriseTime = sunriseTime
         self.sunsetTime = sunsetTime
     }
 }
@@ -64,8 +67,32 @@ extension Forecast {
         Int(round(temperature ?? 0))
     }
     
+    var wrappedTemperatureMin: Int {
+        Int(round(temperatureMin ?? 0))
+    }
+    
+    var wrappedTemperatureMax: Int {
+        Int(round(temperatureMax ?? 0))
+    }
+    
     var wrappedTime: Date {
         Date(timeIntervalSince1970: time)
+    }
+    
+    var wrappedSummary: String {
+        summary ?? ""
+    }
+    
+    var wrappedHumidity: Int {
+        Int(round((humidity ?? 0) * 100))
+    }
+    
+    var wrappedUVIndex: Int {
+        uvIndex ?? 0
+    }
+    
+    var wrappedWindSpeed: Int {
+        Int(round(windSpeed ?? 0))
     }
     
     var wrappedIconSystemName: String {
@@ -100,6 +127,14 @@ extension Forecast {
         return "sun.max.fill"
     }
     
+    var wrappedSunriseTime: Date {
+        Date(timeIntervalSince1970: sunriseTime ?? 0)
+    }
+
+    var wrappedSunsetTime: Date {
+        Date(timeIntervalSince1970: sunsetTime ?? 0)
+    }
+    
     var wrappedTimeOfTheDay: String {
         let hours = Int(wrappedTime.format(format: "HH")) ?? 0
         
@@ -113,6 +148,7 @@ extension Forecast {
         
         return "§Tonight"
     }
+    
 }
 
 extension Forecast: Equatable {
@@ -125,38 +161,30 @@ extension Forecast: Equatable {
 #if DEBUG
 
 extension Forecast {
-    static let one = Forecast(precipProbability: 0.4,
-                              apparentTemperature: 15,
-                              temperature: 17.09,
-                              temperatureMin: nil,
-                              temperatureMax: nil,
-                              time: 1605621600,
-                              summary: "Clear",
-                              humidity: 0.6,
-                              uvIndex: 5,
-                              windSpeed: 2,
-                              icon: "partly-cloudy-night",
-                              sunsetTime: 1605641600)
+    static let one = generateForecast()
     
     static let list = Forecast.generateForecasts(number: 15)
     
     // MARK: - Methods
     
     private static func generateForecasts(number: Int) -> [Forecast] {
-        (0...number).map { (_) in
-            Forecast(precipProbability: Float.random(in: 0..<1),
-                     apparentTemperature: Float.random(in: 0..<30),
-                     temperature: Float.random(in: 0..<30),
-                     temperatureMin: Float.random(in: 0..<10),
-                     temperatureMax: Float.random(in: 20..<30),
-                     time: Double.random(in: 0..<100_000),
-                     summary: "",
-                     humidity: Float.random(in: 0..<1),
-                     uvIndex: Int.random(in: 0..<10),
-                     windSpeed: Float.random(in: 0..<30),
-                     icon: nil,
-                     sunsetTime: Double.random(in: 0..<100_000))
-        }
+        (0...number).map { _ in generateForecast() }
+    }
+    
+    private static func generateForecast() -> Forecast {
+        Forecast(precipProbability: Float.random(in: 0..<1),
+                 apparentTemperature: Float.random(in: 0..<30),
+                 temperature: Float.random(in: 0..<30),
+                 temperatureMin: Float.random(in: 0..<10),
+                 temperatureMax: Float.random(in: 20..<30),
+                 time: Double.random(in: 0..<100_000),
+                 summary: "A beautiful summary",
+                 humidity: Float.random(in: 0..<1),
+                 uvIndex: Int.random(in: 0..<10),
+                 windSpeed: Float.random(in: 0..<30),
+                 icon: nil,
+                 sunriseTime: Double.random(in: 0..<100_000),
+                 sunsetTime: Double.random(in: 0..<100_000))
     }
 }
 

@@ -47,8 +47,50 @@ class ForecastTests: XCTestCase {
         XCTAssertEqual(Forecast(temperature: nil).wrappedTemperature, 0)
     }
     
+    func testWrappedTemperatureMin() throws {
+        XCTAssertEqual(Forecast(temperatureMin: 10.2).wrappedTemperatureMin, 10)
+        XCTAssertEqual(Forecast(temperatureMin: 10.7).wrappedTemperatureMin, 11)
+        
+        XCTAssertEqual(Forecast(temperatureMin: 12).wrappedTemperatureMin, 12)
+        XCTAssertEqual(Forecast(temperatureMin: nil).wrappedTemperatureMin, 0)
+    }
+    
+    func testWrappedTemperatureMax() throws {
+        XCTAssertEqual(Forecast(temperatureMax: 10.2).wrappedTemperatureMax, 10)
+        XCTAssertEqual(Forecast(temperatureMax: 10.7).wrappedTemperatureMax, 11)
+        
+        XCTAssertEqual(Forecast(temperatureMax: 12).wrappedTemperatureMax, 12)
+        XCTAssertEqual(Forecast(temperatureMax: nil).wrappedTemperatureMax, 0)
+    }
+    
     func testWrappedTime() throws {
         XCTAssertEqual(Forecast(time: 12345).wrappedTime, Date(timeIntervalSince1970: 12345))
+    }
+    
+    func testWrappedSummary() throws {
+        XCTAssertEqual(Forecast(summary: nil).wrappedSummary, "")
+        XCTAssertEqual(Forecast(summary: "summary").wrappedSummary, "summary")
+    }
+    
+    func testWrappedHumidity() throws {
+        XCTAssertEqual(Forecast(humidity: nil).wrappedHumidity, 0)
+        XCTAssertEqual(Forecast(humidity: 0).wrappedHumidity, 0)
+        XCTAssertEqual(Forecast(humidity: 0.4).wrappedHumidity, 40)
+        XCTAssertEqual(Forecast(humidity: 0.376).wrappedHumidity, 38)
+        XCTAssertEqual(Forecast(humidity: 0.372).wrappedHumidity, 37)
+    }
+    
+    func testWrappedUVIndex() throws {
+        XCTAssertEqual(Forecast(uvIndex: nil).wrappedUVIndex, 0)
+        XCTAssertEqual(Forecast(uvIndex: 2).wrappedUVIndex, 2)
+    }
+    
+    func testWrappedWindSpeed() throws {
+        XCTAssertEqual(Forecast(windSpeed: nil).wrappedWindSpeed, 0)
+        XCTAssertEqual(Forecast(windSpeed: 0).wrappedWindSpeed, 0)
+        XCTAssertEqual(Forecast(windSpeed: 12.0).wrappedWindSpeed, 12)
+        XCTAssertEqual(Forecast(windSpeed: 12.3).wrappedWindSpeed, 12)
+        XCTAssertEqual(Forecast(windSpeed: 12.6).wrappedWindSpeed, 13)
     }
     
     func testWrappedIconSystemName() throws {
@@ -66,6 +108,16 @@ class ForecastTests: XCTestCase {
         XCTAssertEqual(Forecast(icon: "thunderstorm").wrappedIconSystemName, "cloud.bolt.fill")
         XCTAssertEqual(Forecast(icon: "tornado").wrappedIconSystemName, "tornado")
         XCTAssertEqual(Forecast(icon: nil).wrappedIconSystemName, "sun.max.fill")
+    }
+    
+    func testWrappedSunriseTime() throws {
+        XCTAssertEqual(Forecast(sunriseTime: nil).wrappedSunriseTime, Date(timeIntervalSince1970: 0))
+        XCTAssertEqual(Forecast(sunriseTime: 12345).wrappedSunriseTime, Date(timeIntervalSince1970: 12345))
+    }
+    
+    func testWrappedSunsetTime() throws {
+        XCTAssertEqual(Forecast(sunsetTime: nil).wrappedSunsetTime, Date(timeIntervalSince1970: 0))
+        XCTAssertEqual(Forecast(sunsetTime: 12345).wrappedSunsetTime, Date(timeIntervalSince1970: 12345))
     }
     
     func testWrappedTimeOfTheDay() throws {
