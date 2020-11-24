@@ -23,18 +23,19 @@ struct ForecastView: View {
                 hourlyWeatherView
                 poweredByDarkSkyView
             }
+            .padding(.horizontal, 16)
         }
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
     }
 }
 
 extension ForecastView {
+    
     private var currentlyWeatherView: some View {
         forecastStore.currently.map { forecast in
             CurrentlyWeatherComponent(iconSystemName: forecast.wrappedIconSystemName,
                                       temperature: forecast.wrappedTemperature,
                                       apparentTemperature: forecast.wrappedApparentTemperature)
-                .padding(.horizontal, 16)
         }
     }
     
@@ -42,39 +43,11 @@ extension ForecastView {
         forecastStore.hourly.first.map { firstHourlyForecast in
             makeSectionView(title: firstHourlyForecast.wrappedTimeOfTheDay) {
                 ForEach(forecastStore.hourly) { forecast in
-                    let isInFirstPosition = forecastStore.hourly.first == forecast
-                    let isInLastPosition = forecastStore.hourly.last == forecast
-                    
                     HourlyWeatherComponent(time: forecast.wrappedTime,
                                            temperature: forecast.wrappedTemperature,
                                            iconSystemName: forecast.wrappedIconSystemName,
                                            precipProbability: forecast.wrappedPrecipProbability)
-                        .padding(.leading, isInFirstPosition ? 16 : 0)
-                        .padding(.trailing, isInLastPosition ? 16 : 0)
                 }
-            }
-        }
-    }
-    
-    private var dailyWeatherView: some View {
-        makeSectionView(title: "§This week") {
-            ForEach(forecastStore.daily) { forecast in
-                let isInFirstPosition = forecastStore.daily.first == forecast
-                let isInLastPosition = forecastStore.daily.last == forecast
-
-                DailyWeatherComponent(time: forecast.wrappedTime,
-                                      iconSystemName: forecast.wrappedIconSystemName,
-                                      summary: forecast.wrappedSummary,
-                                      temperatureMin: forecast.wrappedTemperatureMin,
-                                      temperatureMax: forecast.wrappedTemperatureMax,
-                                      humidity: forecast.wrappedHumidity,
-                                      precipProbability: forecast.wrappedPrecipProbability,
-                                      uvIndex: forecast.wrappedUVIndex,
-                                      windSpeed: forecast.wrappedWindSpeed,
-                                      sunriseTime: forecast.wrappedSunriseTime,
-                                      sunsetTime: forecast.wrappedSunsetTime)
-                    .padding(.leading, isInFirstPosition ? 16 : 0)
-                    .padding(.trailing, isInLastPosition ? 16 : 0)
             }
         }
     }
@@ -94,6 +67,7 @@ extension ForecastView {
             }
         }
     }
+    
 }
 
 extension ForecastView {
@@ -103,7 +77,6 @@ extension ForecastView {
             Text(title)
                 .font(.title)
                 .bold()
-                .padding(.horizontal)
                 .accessibility(identifier: "forecast_view_section_title")
             
             ScrollView(.horizontal,

@@ -26,36 +26,8 @@ struct DailyWeatherComponent: View {
     // MARK: - Body
     
     var body: some View {
-        VStack(alignment: .leading) {
-            dayInLettersView
-            
-            HStack {
-                iconView
-                summaryView
-                
-                Spacer()
-            }
-        }
+        Text("todo")
     }
-}
-
-extension DailyWeatherComponent {
-    
-    private var dayInLettersView: some View {
-        Text(time.format(format: "EEEE"))
-            .foregroundColor(.secondary)
-            .font(.headline)
-    }
-    
-    private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName)
-    }
-    
-    private var summaryView: some View {
-        Text(summary)
-            .font(.headline)
-    }
-    
 }
 
 #if DEBUG

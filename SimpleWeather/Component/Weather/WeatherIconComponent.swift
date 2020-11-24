@@ -12,6 +12,7 @@ struct WeatherIconComponent: View {
     // MARK: - Properties
     
     let iconSystemName: String
+    let isLarge: Bool
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -19,12 +20,24 @@ struct WeatherIconComponent: View {
         colorScheme == .light
     }
     
+    private var width: CGFloat {
+        isLarge ? 50 : 25
+    }
+    
+    private var padding: CGFloat {
+        isLarge ? 12 : 8
+    }
+    
     // MARK: - Body
     
     var body: some View {
         Image(systemName: iconSystemName)
+            .resizable()
             .renderingMode(.original)
-            .padding(8)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: width,
+                   height: width)
+            .padding(padding)
             .background(
                 Circle()
                     .fill(Color.black.opacity(hasBackground ? 0.8 : 0))
@@ -41,12 +54,15 @@ extension WeatherIconComponent {
 struct WeatherIconComponent_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WeatherIconComponent(iconSystemName: "sun.max.fill")
+            WeatherIconComponent(iconSystemName: "sun.max.fill",
+                                 isLarge: true)
             
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
+                                 isLarge: false)
                 .preferredColorScheme(.dark)
             
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
+                                 isLarge: false)
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }

@@ -19,38 +19,25 @@ struct CurrentlyWeatherComponent: View {
     
     var body: some View {
         HStack {
-            iconView
+            WeatherIconComponent(iconSystemName: iconSystemName,
+                                 isLarge: true)
+                .accessibility(identifier: "currently_weather_component_icon")
             
             VStack(alignment: .leading) {
-                temperatureView
-                apparentTemperatureView
+                Text("\(temperature)°")
+                    .font(.title)
+                    .bold()
+                    .accessibility(identifier: "currently_weather_component_temperature")
+                
+                Text("§Feeling \(apparentTemperature)°")
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .accessibility(identifier: "currently_weather_component_apparent_temperature")
             }
             
             Spacer()
         }
     }
-}
-
-extension CurrentlyWeatherComponent {
-    
-    private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName)
-            .accessibility(identifier: "currently_weather_component_icon")
-    }
-    
-    private var temperatureView: some View {
-        Text("\(temperature)°")
-            .font(.title)
-            .accessibility(identifier: "currently_weather_component_temperature")
-    }
-    
-    private var apparentTemperatureView: some View {
-        Text("§Feeling \(apparentTemperature)°")
-            .font(.callout)
-            .foregroundColor(.secondary)
-            .accessibility(identifier: "currently_weather_component_apparent_temperature")
-    }
-        
 }
 
 #if DEBUG

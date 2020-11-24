@@ -20,47 +20,25 @@ struct HourlyWeatherComponent: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            timeView
-            iconView
-            temperatureView
-            precipProbabilityView
-        }
-        .fixedSize(horizontal: true,
-                   vertical: false)
-    }
-}
-
-extension HourlyWeatherComponent {
-    
-    private var timeView: some View {
-        Text(time.format(format: "HH:mm"))
-            .font(.body)
-            .accessibility(identifier: "hourly_weather_component_time")
-    }
-    
-    private var iconView: some View {
-        WeatherIconComponent(iconSystemName: iconSystemName)
-            .accessibility(identifier: "hourly_weather_component_icon")
-    }
-    
-    private var temperatureView: some View {
-        Text("\(temperature)°")
-            .font(.body)
-            .accessibility(identifier: "hourly_weather_component_temperature")
-    }
-    
-    private var precipProbabilityView: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "drop.fill")
-                .foregroundColor(.blue)
+            Text(time.format(format: "HH:mm"))
+                .accessibility(identifier: "hourly_weather_component_time")
             
-            Text("\(precipProbability)%")
-                .font(.body)
-                .foregroundColor(.blue)
-                .accessibility(identifier: "hourly_weather_component_precip_probability")
+            WeatherIconComponent(iconSystemName: iconSystemName,
+                                 isLarge: false)
+                .accessibility(identifier: "hourly_weather_component_icon")
+            
+            Text("\(temperature)°")
+                .accessibility(identifier: "hourly_weather_component_temperature")
+            
+            HStack {
+                Image(systemName: "drop.fill")
+                
+                Text("\(precipProbability)%")
+                    .accessibility(identifier: "hourly_weather_component_precip_probability")
+            }
+            .foregroundColor(.blue)
         }
     }
-    
 }
 
 #if DEBUG
