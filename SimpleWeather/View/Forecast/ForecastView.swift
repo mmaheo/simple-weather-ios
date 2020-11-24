@@ -40,7 +40,6 @@ extension ForecastView {
     
     private var hourlyWeatherView: some View {
         forecastStore.hourly.first.map { firstHourlyForecast in
-            makeSectionView(title: LocalizedStringKey(firstHourlyForecast.wrappedTimeOfTheDay)) {
             makeSectionView(title: firstHourlyForecast.wrappedTimeOfTheDay) {
                 ForEach(forecastStore.hourly) { forecast in
                     let isInFirstPosition = forecastStore.hourly.first == forecast
