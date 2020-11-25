@@ -13,6 +13,14 @@ struct ForecastView: View {
     
     @EnvironmentObject private var forecastStore: ForecastStore
     
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
+    private var dailyWeatherLayout: [GridItem] {
+        horizontalSizeClass == .compact ?
+            [GridItem(.flexible())] :
+            [GridItem(.adaptive(minimum: 200))]
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -21,9 +29,9 @@ struct ForecastView: View {
             VStack(spacing: 16) {
                 currentlyWeatherView
                 hourlyWeatherView
+                dailyWeatherView
                 poweredByDarkSkyView
             }
-            .padding(.horizontal, 16)
         }
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
     }
@@ -36,19 +44,53 @@ extension ForecastView {
             CurrentlyWeatherComponent(iconSystemName: forecast.wrappedIconSystemName,
                                       temperature: forecast.wrappedTemperature,
                                       apparentTemperature: forecast.wrappedApparentTemperature)
+                .padding(.horizontal, 16)
         }
     }
     
     private var hourlyWeatherView: some View {
         forecastStore.hourly.first.map { firstHourlyForecast in
             makeSectionView(title: firstHourlyForecast.wrappedTimeOfTheDay) {
-                ForEach(forecastStore.hourly) { forecast in
-                    HourlyWeatherComponent(time: forecast.wrappedTime,
-                                           temperature: forecast.wrappedTemperature,
-                                           iconSystemName: forecast.wrappedIconSystemName,
-                                           precipProbability: forecast.wrappedPrecipProbability)
+                ScrollView(.horizontal,
+                           showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(forecastStore.hourly) { forecast in
+                            let isInFirstPosition = forecastStore.hourly.first == forecast
+                            let isInLastPosition = forecastStore.hourly.last == forecast
+                            
+                            HourlyWeatherComponent(time: forecast.wrappedTime,
+                                                   temperature: forecast.wrappedTemperature,
+                                                   iconSystemName: forecast.wrappedIconSystemName,
+                                                   precipProbability: forecast.wrappedPrecipProbability)
+                                .padding(.leading, isInFirstPosition ? 16 : 0)
+                                .padding(.trailing, isInLastPosition ? 16 : 0)
+                                .fixedSize()
+                        }
+                    }
                 }
             }
+        }
+    }
+    
+    private var dailyWeatherView: some View {
+        makeSectionView(title: "§This week") {
+            LazyVGrid(columns: dailyWeatherLayout,
+                      spacing: 16) {
+                ForEach(forecastStore.daily) { forecast in
+                    DailyWeatherComponent(time: forecast.wrappedTime,
+                                          iconSystemName: forecast.wrappedIconSystemName,
+                                          summary: forecast.wrappedSummary,
+                                          temperatureMin: forecast.wrappedTemperatureMin,
+                                          temperatureMax: forecast.wrappedTemperatureMax,
+                                          humidity: forecast.wrappedHumidity,
+                                          precipProbability: forecast.wrappedPrecipProbability,
+                                          uvIndex: forecast.wrappedUVIndex,
+                                          windSpeed: forecast.wrappedWindSpeed,
+                                          sunriseTime: forecast.wrappedSunriseTime,
+                                          sunsetTime: forecast.wrappedSunsetTime)
+                }
+            }
+            .padding(.horizontal, 16)
         }
     }
     
@@ -66,6 +108,7 @@ extension ForecastView {
                 Spacer()
             }
         }
+        .padding(.horizontal, 16)
     }
     
 }
@@ -77,14 +120,10 @@ extension ForecastView {
             Text(title)
                 .font(.title)
                 .bold()
+                .padding(.horizontal, 16)
                 .accessibility(identifier: "forecast_view_section_title")
             
-            ScrollView(.horizontal,
-                       showsIndicators: false) {
-                HStack(spacing: 8) {
-                    content()
-                }
-            }
+            content()
         }
     }
 }

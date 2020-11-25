@@ -23,10 +23,91 @@ struct DailyWeatherComponent: View {
     let sunriseTime: Date
     let sunsetTime: Date
     
+    private let layout = [
+        GridItem(.flexible(), alignment: .leading),
+        GridItem(.flexible(), alignment: .leading)
+    ]
+    
     // MARK: - Body
     
     var body: some View {
-        Text("todo")
+        VStack(alignment: .leading,
+               spacing: 16) {
+            Text(time.format(format: "EEEE").capitalizingFirstLetter())
+                .font(.headline)
+                .foregroundColor(.secondary)
+            
+            HStack {
+                WeatherIconComponent(iconSystemName: iconSystemName,
+                                     isLarge: false)
+                
+                Text(summary)
+                
+                Spacer()
+            }
+            
+            LazyVGrid(columns: layout,
+                      spacing: 8) {
+                makeFieldView(iconSystemName: "thermometer.snowflake",
+                              iconColor: .blue,
+                              value: "\(temperatureMin)°",
+                              title: "§Min")
+                makeFieldView(iconSystemName: "thermometer.sun.fill",
+                              iconColor: .red,
+                              value: "\(temperatureMax)°",
+                              title: "§Max")
+                makeFieldView(iconSystemName: "drop.fill",
+                              iconColor: .blue,
+                              value: "\(humidity)%",
+                              title: "§Humidity")
+                makeFieldView(iconSystemName: "cloud.rain.fill",
+                              iconColor: .gray,
+                              value: "\(precipProbability)%",
+                              title: "§Pricipitation")
+                makeFieldView(iconSystemName: "eyeglasses",
+                              iconColor: .green,
+                              value: "\(uvIndex)",
+                              title: "§UV Index")
+                makeFieldView(iconSystemName: "wind",
+                              iconColor: .blue,
+                              value: "\(windSpeed) §mph",
+                              title: "§Wind")
+                makeFieldView(iconSystemName: "sunrise.fill",
+                              iconColor: .yellow,
+                              value: sunriseTime.format(format: "HH:mm"),
+                              title: "§Sunrise")
+                makeFieldView(iconSystemName: "sunset.fill",
+                              iconColor: .orange,
+                              value: sunsetTime.format(format: "HH:mm"),
+                              title: "§Sunset")
+            }
+        }
+    }
+}
+
+extension DailyWeatherComponent {
+    private func makeFieldView(iconSystemName: String,
+                               iconColor: Color,
+                               value: String,
+                               title: String) -> some View {
+        HStack {
+            Image(systemName: iconSystemName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 24,
+                       height: 24)
+                .foregroundColor(iconColor)
+            
+            VStack(alignment: .leading) {
+                Text(value)
+                    .font(.subheadline)
+                    .bold()
+                
+                Text(title)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
     }
 }
 

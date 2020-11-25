@@ -13,6 +13,8 @@
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
 		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
 		52679878256C072100E2132B /* ForecastViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52679877256C072100E2132B /* ForecastViewTests.swift */; };
+		52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */; };
+		52B625A1256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B625A0256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift */; };
 		52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */; };
 		52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4DD256BD5F20088B72B /* Date+Format.swift */; };
 		52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4E5256BD61E0088B72B /* Locale+Language.swift */; };
@@ -60,6 +62,8 @@
 		5247DDDB256AFB3200FD1EF9 /* SimpleWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDE1256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52679877256C072100E2132B /* ForecastViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewTests.swift; sourceTree = "<group>"; };
+		52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FirstLetterCapitalized.swift"; sourceTree = "<group>"; };
+		52B625A0256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFirstLetterCapitalized.swift; sourceTree = "<group>"; };
 		52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherComponent.swift; sourceTree = "<group>"; };
 		52C5D4DD256BD5F20088B72B /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 		52C5D4E5256BD61E0088B72B /* Locale+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Language.swift"; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			children = (
 				52C5D4DD256BD5F20088B72B /* Date+Format.swift */,
 				52C5D4E5256BD61E0088B72B /* Locale+Language.swift */,
+				52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			children = (
 				52C5D4F6256BD6B10088B72B /* DateFormatTests.swift */,
 				52C5D4EB256BD6600088B72B /* LocaleLanguageTests.swift */,
+				52B625A0256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,
 				52C5D50E256BE5620088B72B /* DailyWeatherComponent.swift in Sources */,
 				5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */,
+				52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */,
 				52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */,
 				52EF7DFD256BA07C00A06613 /* ForecastStore.swift in Sources */,
 			);
@@ -462,6 +469,7 @@
 				52C5D4F7256BD6B10088B72B /* DateFormatTests.swift in Sources */,
 				52EF7E45256BC02600A06613 /* ForecastTests.swift in Sources */,
 				52EF7E09256BA44A00A06613 /* ForecastStoreTests.swift in Sources */,
+				52B625A1256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift in Sources */,
 				52C5D4EC256BD6600088B72B /* LocaleLanguageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
