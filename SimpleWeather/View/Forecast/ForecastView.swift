@@ -17,8 +17,8 @@ struct ForecastView: View {
     
     private var dailyWeatherLayout: [GridItem] {
         horizontalSizeClass == .compact ?
-            [GridItem(.flexible())] :
-            [GridItem(.adaptive(minimum: 200))]
+            [GridItem(.flexible(), spacing: 16)] :
+            [GridItem(.adaptive(minimum: 250), spacing: 16)]
     }
     
     // MARK: - Body

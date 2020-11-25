@@ -23,8 +23,7 @@ struct HourlyWeatherComponent: View {
             Text(time.format(format: "HH:mm"))
                 .accessibility(identifier: "hourly_weather_component_time")
             
-            WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isLarge: false)
+            WeatherIconComponent(iconSystemName: iconSystemName)
                 .accessibility(identifier: "hourly_weather_component_icon")
             
             Text("\(temperature)°")

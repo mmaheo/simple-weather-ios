@@ -12,7 +12,8 @@ struct WeatherIconComponent: View {
     // MARK: - Properties
     
     let iconSystemName: String
-    let isLarge: Bool
+    private(set) var isLarge: Bool = false
+    private(set) var isCompact: Bool = false
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -21,7 +22,7 @@ struct WeatherIconComponent: View {
     }
     
     private var width: CGFloat {
-        isLarge ? 50 : 25
+        isCompact ? 15 : isLarge ? 50 : 25
     }
     
     private var padding: CGFloat {
@@ -58,11 +59,10 @@ struct WeatherIconComponent_Previews: PreviewProvider {
                                  isLarge: true)
             
             WeatherIconComponent(iconSystemName: "cloud.rain.fill",
-                                 isLarge: false)
+                                 isCompact: true)
                 .preferredColorScheme(.dark)
             
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill",
-                                 isLarge: false)
+            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }
