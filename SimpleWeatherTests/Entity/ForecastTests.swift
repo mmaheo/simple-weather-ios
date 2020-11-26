@@ -10,16 +10,6 @@ import XCTest
 
 class ForecastTests: XCTestCase {
     
-    // MARK: - Lifecycle
-    
-    override func setUpWithError() throws {
-
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-    
     // MARK: - Methods
     
     func testWrappedPrecipProbability() throws {

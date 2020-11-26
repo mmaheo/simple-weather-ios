@@ -9,16 +9,6 @@ import XCTest
 @testable import SimpleWeather
 
 class LocaleLanguageTests: XCTestCase {
-        
-    // MARK: - Lifecycle
-    
-    override func setUpWithError() throws {
-        
-    }
-    
-    override func tearDownWithError() throws {
-        
-    }
     
     // MARK: - Methods
     

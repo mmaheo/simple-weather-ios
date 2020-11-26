@@ -9,17 +9,7 @@ import XCTest
 @testable import SimpleWeather
 
 class StringFirstLetterCapitalized: XCTestCase {
-        
-    // MARK: - Lifecycle
-    
-    override func setUpWithError() throws {
-        
-    }
-    
-    override func tearDownWithError() throws {
-        
-    }
-    
+            
     // MARK: - Methods
     
     func testcapitalizingFirstLetter() throws {

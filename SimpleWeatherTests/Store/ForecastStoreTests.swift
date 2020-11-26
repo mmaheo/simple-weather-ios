@@ -24,10 +24,6 @@ class ForecastStoreTests: XCTestCase {
         cancellables = Set<AnyCancellable>()
     }
     
-    override func tearDownWithError() throws {
-        
-    }
-    
     // MARK: - Methods
     
     func testInitWithNoValues() throws {

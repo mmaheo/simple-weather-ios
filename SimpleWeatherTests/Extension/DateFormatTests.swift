@@ -20,10 +20,6 @@ class DateFormatTests: XCTestCase {
         sut = Date(timeIntervalSince1970: 1605621600)
     }
     
-    override func tearDownWithError() throws {
-        
-    }
-    
     // MARK: - Methods
     
     func testFormatWithNoFormat() throws {

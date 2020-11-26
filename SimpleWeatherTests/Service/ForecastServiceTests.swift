@@ -24,10 +24,6 @@ class ForecastServiceTests: XCTestCase {
         cancellables = Set<AnyCancellable>()
     }
 
-    override func tearDownWithError() throws {
-        
-    }
-    
     // MARK: - Methods
     
     func testFetchForecast() throws {
