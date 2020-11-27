@@ -7,6 +7,7 @@ included:
   - SimpleWeatherUITests
 
 excluded:
+  - SimpleWeather/Core/Network/Reachability.swift
 
 # Disable some of them:
 disabled_rules:

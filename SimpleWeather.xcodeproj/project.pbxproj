@@ -21,6 +21,22 @@
 		52C5D4EC256BD6600088B72B /* LocaleLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4EB256BD6600088B72B /* LocaleLanguageTests.swift */; };
 		52C5D4F7256BD6B10088B72B /* DateFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4F6256BD6B10088B72B /* DateFormatTests.swift */; };
 		52C5D50E256BE5620088B72B /* DailyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D50D256BE5620088B72B /* DailyWeatherComponent.swift */; };
+		52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4694257174D000B82085 /* APIEndpoint.swift */; };
+		52CB469A257174EF00B82085 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4699257174EF00B82085 /* Request.swift */; };
+		52CB469F2571751100B82085 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB469E2571751100B82085 /* BaseRequest.swift */; };
+		52CB46A42571759A00B82085 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46A32571759A00B82085 /* Reachability.swift */; };
+		52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46A8257175D200B82085 /* ApiRequester.swift */; };
+		52CB46AE2571762B00B82085 /* Publisher+RetryAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46AD2571762B00B82085 /* Publisher+RetryAfter.swift */; };
+		52CB46B32571769000B82085 /* DarkSkyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46B22571769000B82085 /* DarkSkyRequest.swift */; };
+		52CB46BB2571771D00B82085 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46BA2571771D00B82085 /* RequestTests.swift */; };
+		52CB46C025717A3900B82085 /* BaseRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46BF25717A3900B82085 /* BaseRequestTests.swift */; };
+		52CB46C525717B8600B82085 /* DarkSkyRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46C425717B8600B82085 /* DarkSkyRequestTests.swift */; };
+		52CB46CD25717C7200B82085 /* ApiRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46CC25717C7200B82085 /* ApiRequesterTests.swift */; };
+		52CB46D325717CB400B82085 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46D225717CB400B82085 /* URLProtocolMock.swift */; };
+		52CB46DB25717D5F00B82085 /* ApiEndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46DA25717D5F00B82085 /* ApiEndpointMock.swift */; };
+		52CB46E025717DCC00B82085 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46DF25717DCC00B82085 /* ResponseMock.swift */; };
+		52CB46E525717E0D00B82085 /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46E425717E0D00B82085 /* RequestMock.swift */; };
+		52CB46EA257180AC00B82085 /* ReachabilityMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46E9257180AC00B82085 /* ReachabilityMock.swift */; };
 		52EF7DFD256BA07C00A06613 /* ForecastStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7DFC256BA07C00A06613 /* ForecastStore.swift */; };
 		52EF7E03256BA32200A06613 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E02256BA32200A06613 /* Forecast.swift */; };
 		52EF7E09256BA44A00A06613 /* ForecastStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E08256BA44A00A06613 /* ForecastStoreTests.swift */; };
@@ -70,6 +86,22 @@
 		52C5D4EB256BD6600088B72B /* LocaleLanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleLanguageTests.swift; sourceTree = "<group>"; };
 		52C5D4F6256BD6B10088B72B /* DateFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatTests.swift; sourceTree = "<group>"; };
 		52C5D50D256BE5620088B72B /* DailyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherComponent.swift; sourceTree = "<group>"; };
+		52CB4694257174D000B82085 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		52CB4699257174EF00B82085 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		52CB469E2571751100B82085 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		52CB46A32571759A00B82085 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		52CB46A8257175D200B82085 /* ApiRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequester.swift; sourceTree = "<group>"; };
+		52CB46AD2571762B00B82085 /* Publisher+RetryAfter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+RetryAfter.swift"; sourceTree = "<group>"; };
+		52CB46B22571769000B82085 /* DarkSkyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyRequest.swift; sourceTree = "<group>"; };
+		52CB46BA2571771D00B82085 /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		52CB46BF25717A3900B82085 /* BaseRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestTests.swift; sourceTree = "<group>"; };
+		52CB46C425717B8600B82085 /* DarkSkyRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyRequestTests.swift; sourceTree = "<group>"; };
+		52CB46CC25717C7200B82085 /* ApiRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequesterTests.swift; sourceTree = "<group>"; };
+		52CB46D225717CB400B82085 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		52CB46DA25717D5F00B82085 /* ApiEndpointMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpointMock.swift; sourceTree = "<group>"; };
+		52CB46DF25717DCC00B82085 /* ResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
+		52CB46E425717E0D00B82085 /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
+		52CB46E9257180AC00B82085 /* ReachabilityMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityMock.swift; sourceTree = "<group>"; };
 		52EF7DFC256BA07C00A06613 /* ForecastStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastStore.swift; sourceTree = "<group>"; };
 		52EF7E02256BA32200A06613 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		52EF7E08256BA44A00A06613 /* ForecastStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastStoreTests.swift; sourceTree = "<group>"; };
@@ -119,6 +151,12 @@
 		52097DC92570557C005EE4EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				52CB4694257174D000B82085 /* APIEndpoint.swift */,
+				52CB4699257174EF00B82085 /* Request.swift */,
+				52CB469E2571751100B82085 /* BaseRequest.swift */,
+				52CB46B22571769000B82085 /* DarkSkyRequest.swift */,
+				52CB46A32571759A00B82085 /* Reachability.swift */,
+				52CB46A8257175D200B82085 /* ApiRequester.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -134,6 +172,11 @@
 		52097DD82570566D005EE4EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				52CB46D125717CAC00B82085 /* Mock */,
+				52CB46BA2571771D00B82085 /* RequestTests.swift */,
+				52CB46BF25717A3900B82085 /* BaseRequestTests.swift */,
+				52CB46C425717B8600B82085 /* DarkSkyRequestTests.swift */,
+				52CB46CC25717C7200B82085 /* ApiRequesterTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -211,6 +254,7 @@
 				52C5D4DD256BD5F20088B72B /* Date+Format.swift */,
 				52C5D4E5256BD61E0088B72B /* Locale+Language.swift */,
 				52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */,
+				52CB46AD2571762B00B82085 /* Publisher+RetryAfter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -223,6 +267,18 @@
 				52B625A0256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		52CB46D125717CAC00B82085 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				52CB46D225717CB400B82085 /* URLProtocolMock.swift */,
+				52CB46DA25717D5F00B82085 /* ApiEndpointMock.swift */,
+				52CB46DF25717DCC00B82085 /* ResponseMock.swift */,
+				52CB46E425717E0D00B82085 /* RequestMock.swift */,
+				52CB46E9257180AC00B82085 /* ReachabilityMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		52EF7DEE256B9E7600A06613 /* Resource */ = {
@@ -477,13 +533,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CB469F2571751100B82085 /* BaseRequest.swift in Sources */,
+				52CB46B32571769000B82085 /* DarkSkyRequest.swift in Sources */,
 				52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
+				52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */,
+				52CB46AE2571762B00B82085 /* Publisher+RetryAfter.swift in Sources */,
 				52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */,
+				52CB46A42571759A00B82085 /* Reachability.swift in Sources */,
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
+				52CB469A257174EF00B82085 /* Request.swift in Sources */,
+				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,
 				52C5D50E256BE5620088B72B /* DailyWeatherComponent.swift in Sources */,
 				5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */,
@@ -497,10 +560,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CB46C525717B8600B82085 /* DarkSkyRequestTests.swift in Sources */,
+				52CB46DB25717D5F00B82085 /* ApiEndpointMock.swift in Sources */,
+				52CB46E025717DCC00B82085 /* ResponseMock.swift in Sources */,
+				52CB46C025717A3900B82085 /* BaseRequestTests.swift in Sources */,
 				52EF7E2D256BAFC000A06613 /* ForecastServiceTests.swift in Sources */,
+				52CB46BB2571771D00B82085 /* RequestTests.swift in Sources */,
 				52C5D4F7256BD6B10088B72B /* DateFormatTests.swift in Sources */,
 				52EF7E45256BC02600A06613 /* ForecastTests.swift in Sources */,
 				52EF7E09256BA44A00A06613 /* ForecastStoreTests.swift in Sources */,
+				52CB46D325717CB400B82085 /* URLProtocolMock.swift in Sources */,
+				52CB46CD25717C7200B82085 /* ApiRequesterTests.swift in Sources */,
+				52CB46E525717E0D00B82085 /* RequestMock.swift in Sources */,
+				52CB46EA257180AC00B82085 /* ReachabilityMock.swift in Sources */,
 				52B625A1256E4D4E00CDBBDA /* StringFirstLetterCapitalized.swift in Sources */,
 				52C5D4EC256BD6600088B72B /* LocaleLanguageTests.swift in Sources */,
 			);
