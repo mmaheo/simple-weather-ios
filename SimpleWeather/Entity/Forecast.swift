@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Forecast: Identifiable {
+struct Forecast: Identifiable, Decodable {
     
     let id = UUID()
     
@@ -51,6 +51,17 @@ struct Forecast: Identifiable {
         self.icon = icon
         self.sunriseTime = sunriseTime
         self.sunsetTime = sunsetTime
+    }
+    
+    private enum CodingKeys: CodingKey {
+        case precipProbability
+        case apparentTemperature, temperature, temperatureMin, temperatureMax
+        case time, sunriseTime, sunsetTime
+        case summary
+        case humidity
+        case uvIndex
+        case windSpeed
+        case icon
     }
 }
 

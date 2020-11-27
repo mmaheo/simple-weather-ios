@@ -37,6 +37,9 @@
 		52CB46E025717DCC00B82085 /* ResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46DF25717DCC00B82085 /* ResponseMock.swift */; };
 		52CB46E525717E0D00B82085 /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46E425717E0D00B82085 /* RequestMock.swift */; };
 		52CB46EA257180AC00B82085 /* ReachabilityMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46E9257180AC00B82085 /* ReachabilityMock.swift */; };
+		52CB46F02571839F00B82085 /* ForecastEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46EF2571839F00B82085 /* ForecastEndpoint.swift */; };
+		52CB46F9257183CD00B82085 /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46F8257183CD00B82085 /* ForecastResponse.swift */; };
+		52CB4701257183ED00B82085 /* DarkSkyApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB4700257183ED00B82085 /* DarkSkyApiKey.swift */; };
 		52EF7DFD256BA07C00A06613 /* ForecastStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7DFC256BA07C00A06613 /* ForecastStore.swift */; };
 		52EF7E03256BA32200A06613 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E02256BA32200A06613 /* Forecast.swift */; };
 		52EF7E09256BA44A00A06613 /* ForecastStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E08256BA44A00A06613 /* ForecastStoreTests.swift */; };
@@ -102,6 +105,9 @@
 		52CB46DF25717DCC00B82085 /* ResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMock.swift; sourceTree = "<group>"; };
 		52CB46E425717E0D00B82085 /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
 		52CB46E9257180AC00B82085 /* ReachabilityMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityMock.swift; sourceTree = "<group>"; };
+		52CB46EF2571839F00B82085 /* ForecastEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastEndpoint.swift; sourceTree = "<group>"; };
+		52CB46F8257183CD00B82085 /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
+		52CB4700257183ED00B82085 /* DarkSkyApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyApiKey.swift; sourceTree = "<group>"; };
 		52EF7DFC256BA07C00A06613 /* ForecastStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastStore.swift; sourceTree = "<group>"; };
 		52EF7E02256BA32200A06613 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		52EF7E08256BA44A00A06613 /* ForecastStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastStoreTests.swift; sourceTree = "<group>"; };
@@ -281,6 +287,22 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		52CB46EE2571838000B82085 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				52CB46EF2571839F00B82085 /* ForecastEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		52CB46F7257183B900B82085 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				52CB46F8257183CD00B82085 /* ForecastResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		52EF7DEE256B9E7600A06613 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,7 +356,10 @@
 		52EF7E17256BA6F100A06613 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				52CB46F7257183B900B82085 /* Response */,
+				52CB46EE2571838000B82085 /* Endpoint */,
 				52EF7E1E256BA72F00A06613 /* ForecastService.swift */,
+				52CB4700257183ED00B82085 /* DarkSkyApiKey.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -540,6 +565,7 @@
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
 				52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */,
+				52CB46F9257183CD00B82085 /* ForecastResponse.swift in Sources */,
 				52CB46AE2571762B00B82085 /* Publisher+RetryAfter.swift in Sources */,
 				52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */,
 				52CB46A42571759A00B82085 /* Reachability.swift in Sources */,
@@ -550,7 +576,9 @@
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,
 				52C5D50E256BE5620088B72B /* DailyWeatherComponent.swift in Sources */,
 				5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */,
+				52CB46F02571839F00B82085 /* ForecastEndpoint.swift in Sources */,
 				52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */,
+				52CB4701257183ED00B82085 /* DarkSkyApiKey.swift in Sources */,
 				52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */,
 				52EF7DFD256BA07C00A06613 /* ForecastStore.swift in Sources */,
 			);

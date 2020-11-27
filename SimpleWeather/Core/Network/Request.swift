@@ -9,6 +9,7 @@ import Foundation
 
 enum RequestError: Error {
     case failedToRequestWithUrl(String)
+    case failedToCreateRequest
 }
 
 protocol Request {

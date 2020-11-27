@@ -10,21 +10,24 @@ import Combine
 
 final class ForecastService: Injectable {
     
-    typealias FetchForecastResponseType = (currently: Forecast,
-                                           hourly: [Forecast],
-                                           daily: [Forecast])
+    // MARK: - Properties
+    
+    private var apiRequester: ApiRequester
+    
+    // MARK: - Lifecycle
+    
+    init(apiRequester: ApiRequester = ApiRequester()) {
+        self.apiRequester = apiRequester
+    }
     
     // MARK: - Methods
     
     func fetchForecast(latitude: Double,
-                       longitude: Double) -> Deferred<Future<FetchForecastResponseType, Error>> {
-        Deferred {
-            Future { promise in
-                promise(.success(FetchForecastResponseType(currently: Forecast.one,
-                                                           hourly: Forecast.list,
-                                                           daily: Forecast.list)))
-            }
-        }
+                       longitude: Double) -> AnyPublisher<ForecastResponse, Error> {
+        apiRequester
+            .fetch(ForecastEndpoint(), with: (latitude: latitude,
+                                              longitude: longitude,
+                                              unit: "si"))
     }
     
 }

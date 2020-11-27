@@ -59,8 +59,8 @@ final class ForecastStore: ObservableObject {
                 guard let self = self else { return }
                 
                 self.currently = response.currently
-                self.hourly = response.hourly
-                self.daily = response.daily
+                self.hourly = response.hourly.data
+                self.daily = response.daily.data
             }
             .store(in: &cancellables)
     }
