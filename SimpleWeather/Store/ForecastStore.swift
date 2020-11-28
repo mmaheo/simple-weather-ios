@@ -23,6 +23,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var isLoading: Bool
     
     @Inject private var forecastService: ForecastService
+    @Inject private var locationService: LocationService
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -35,6 +36,8 @@ final class ForecastStore: ObservableObject {
         self.hourly = hourly
         self.daily = daily
         self.isLoading = false
+        
+        bindLocation()
     }
     
     // MARK: - Methods
@@ -42,30 +45,35 @@ final class ForecastStore: ObservableObject {
     func dispatch(action: ForecastStoreAction) {
         switch action {
         case .fetchForecast:
-            fetchForecast()
+            fetchForecastAction()
         }
     }
     
-    // MARK: - Private Methods
+    // MARK: - Action Methods
     
-    private func fetchForecast() {
+    private func fetchForecastAction() {
         isLoading = true
-        
-        forecastService
-            .fetchForecast(latitude: 0,
-                           longitude: 0)
+        locationService.fetchLocation()
+    }
+    
+    // MARK: - Binding Methods
+    
+    private func bindLocation() {
+        locationService
+            .location
+            .flatMap { self.forecastService.fetchForecast(latitude: $0.coordinate.latitude,
+                                                          longitude: $0.coordinate.longitude)}
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (completion) in
                 guard let self = self else { return }
-                
-                self.isLoading = false
-                
+
                 if case .failure = completion {
-                    
+                    self.isLoading = false
                 }
             } receiveValue: { [weak self] (response) in
                 guard let self = self else { return }
-                
+
+                self.isLoading = false
                 self.currently = response.currently
                 self.hourly = response.hourly.data
                 self.daily = response.daily.data

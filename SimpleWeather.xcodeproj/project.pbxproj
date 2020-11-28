@@ -12,6 +12,8 @@
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
 		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
+		52A21B9125729B3D00A55552 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9025729B3D00A55552 /* LocationService.swift */; };
+		52A21B9625729DFD00A55552 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9525729DFD00A55552 /* UserDefaultsService.swift */; };
 		52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */; };
 		52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */; };
 		52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4DD256BD5F20088B72B /* Date+Format.swift */; };
@@ -43,6 +45,9 @@
 		5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5247DDCB256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A21B9025729B3D00A55552 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		52A21B9525729DFD00A55552 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		52A21B982572A75B00A55552 /* SimpleWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleWeather.entitlements; sourceTree = "<group>"; };
 		52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FirstLetterCapitalized.swift"; sourceTree = "<group>"; };
 		52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherComponent.swift; sourceTree = "<group>"; };
 		52C5D4DD256BD5F20088B72B /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 		5247DDC1256AFB3000FD1EF9 /* SimpleWeather */ = {
 			isa = PBXGroup;
 			children = (
+				52A21B982572A75B00A55552 /* SimpleWeather.entitlements */,
 				5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */,
 				52EF7E23256BA75B00A06613 /* AppDependency.swift */,
 				52097DC825705534005EE4EE /* Core */,
@@ -139,6 +145,33 @@
 				5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52A21B8E25729A5500A55552 /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				52CB46F7257183B900B82085 /* Response */,
+				52CB46EE2571838000B82085 /* Endpoint */,
+				52EF7E1E256BA72F00A06613 /* ForecastService.swift */,
+				52CB4700257183ED00B82085 /* DarkSkyApiKey.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		52A21B8F25729A6200A55552 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				52A21B9025729B3D00A55552 /* LocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		52A21B9425729DDC00A55552 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				52A21B9525729DFD00A55552 /* UserDefaultsService.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		52C5D4DC256BD5BD0088B72B /* Extension */ = {
@@ -213,10 +246,9 @@
 		52EF7E17256BA6F100A06613 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				52CB46F7257183B900B82085 /* Response */,
-				52CB46EE2571838000B82085 /* Endpoint */,
-				52EF7E1E256BA72F00A06613 /* ForecastService.swift */,
-				52CB4700257183ED00B82085 /* DarkSkyApiKey.swift */,
+				52A21B9425729DDC00A55552 /* UserDefaults */,
+				52A21B8F25729A6200A55552 /* Location */,
+				52A21B8E25729A5500A55552 /* Forecast */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -346,9 +378,11 @@
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
 				52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */,
+				52A21B9625729DFD00A55552 /* UserDefaultsService.swift in Sources */,
 				52CB46F9257183CD00B82085 /* ForecastResponse.swift in Sources */,
 				52CB46AE2571762B00B82085 /* Publisher+RetryAfter.swift in Sources */,
 				52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */,
+				52A21B9125729B3D00A55552 /* LocationService.swift in Sources */,
 				52CB46A42571759A00B82085 /* Reachability.swift in Sources */,
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
@@ -489,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleWeather/SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
@@ -511,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimpleWeather/SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;

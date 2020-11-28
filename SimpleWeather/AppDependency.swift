@@ -11,12 +11,16 @@ final class AppDependency {
     
     // MARK: - Properties
     
+    private let userDefaultsService: UserDefaultsService
     private let forecastService: ForecastService
+    private let locationService: LocationService
     
     // MARK: - Lifecycle
     
     init() {
+        self.userDefaultsService = UserDefaultsService()
         self.forecastService = ForecastService()
+        self.locationService = LocationService(userDefaultService: userDefaultsService)
         
         registerDependencies()
     }
@@ -26,6 +30,8 @@ final class AppDependency {
     private func registerDependencies() {
         let resolver = Resolver.shared
         
+        resolver.register(userDefaultsService)
         resolver.register(forecastService)
+        resolver.register(locationService)
     }
 }
