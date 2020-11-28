@@ -32,6 +32,7 @@ struct ForecastView: View {
                 contentView
             }
         }
+        .navigationTitle(forecastStore.locality)
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
     }
 }
@@ -121,6 +122,7 @@ extension ForecastView {
             }
         }
         .padding(.horizontal, 16)
+        .padding(.bottom)
     }
     
 }

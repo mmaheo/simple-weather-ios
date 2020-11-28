@@ -20,6 +20,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var currently: Forecast?
     @Published private(set) var hourly: [Forecast]
     @Published private(set) var daily: [Forecast]
+    @Published private(set) var locality: String
     @Published private(set) var isLoading: Bool
     
     @Inject private var forecastService: ForecastService
@@ -36,8 +37,10 @@ final class ForecastStore: ObservableObject {
         self.hourly = hourly
         self.daily = daily
         self.isLoading = false
+        self.locality = ""
         
         bindLocation()
+        bindLocality()
     }
     
     // MARK: - Methods
@@ -78,6 +81,14 @@ final class ForecastStore: ObservableObject {
                 self.hourly = response.hourly.data
                 self.daily = response.daily.data
             }
+            .store(in: &cancellables)
+    }
+    
+    private func bindLocality() {
+        locationService
+            .locality
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.locality, on: self)
             .store(in: &cancellables)
     }
 }

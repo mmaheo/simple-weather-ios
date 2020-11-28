@@ -20,7 +20,7 @@ struct SimpleWeatherApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ForecastView()
+            MainView()
                 .environmentObject(forecastStore)
         }
     }
