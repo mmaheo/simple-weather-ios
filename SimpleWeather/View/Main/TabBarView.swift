@@ -35,6 +35,7 @@ struct TabBarView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(forecastStorePreview)
+        .environmentObject(locationStorePreview)
     }
 }
 

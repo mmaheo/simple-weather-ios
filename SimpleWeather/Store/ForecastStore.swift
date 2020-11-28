@@ -20,7 +20,6 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var currently: Forecast?
     @Published private(set) var hourly: [Forecast]
     @Published private(set) var daily: [Forecast]
-    @Published private(set) var locality: String
     @Published private(set) var isLoading: Bool
     
     @Inject private var forecastService: ForecastService
@@ -32,15 +31,14 @@ final class ForecastStore: ObservableObject {
     
     init(currently: Forecast? = nil,
          hourly: [Forecast] = [],
-         daily: [Forecast] = []) {
+         daily: [Forecast] = [],
+         isLoading: Bool = false) {
         self.currently = currently
         self.hourly = hourly
         self.daily = daily
-        self.isLoading = false
-        self.locality = ""
+        self.isLoading = isLoading
         
         bindLocation()
-        bindLocality()
     }
     
     // MARK: - Methods
@@ -83,20 +81,13 @@ final class ForecastStore: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
-    private func bindLocality() {
-        locationService
-            .locality
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.locality, on: self)
-            .store(in: &cancellables)
-    }
 }
 
 #if DEBUG
 
 let forecastStorePreview = ForecastStore(currently: Forecast.one,
                                          hourly: Forecast.list,
-                                         daily: Forecast.list)
+                                         daily: Forecast.list,
+                                         isLoading: false)
 
 #endif

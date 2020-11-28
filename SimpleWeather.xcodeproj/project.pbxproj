@@ -11,6 +11,8 @@
 		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
+		524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EDB2572EA9A002A1D6C /* LocationStore.swift */; };
+		524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */; };
 		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
 		52A21B9125729B3D00A55552 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9025729B3D00A55552 /* LocationService.swift */; };
 		52A21B9625729DFD00A55552 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9525729DFD00A55552 /* UserDefaultsService.swift */; };
@@ -48,6 +50,8 @@
 		5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5247DDCB256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524E8EDB2572EA9A002A1D6C /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
+		524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisabledComponent.swift; sourceTree = "<group>"; };
 		52A21B9025729B3D00A55552 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		52A21B9525729DFD00A55552 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		52A21B982572A75B00A55552 /* SimpleWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleWeather.entitlements; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				52EF7DFC256BA07C00A06613 /* ForecastStore.swift */,
+				524E8EDB2572EA9A002A1D6C /* LocationStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				52EF7E35256BBD7000A06613 /* Weather */,
+				524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */,
+				524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */,
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
 				52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */,
@@ -403,6 +410,7 @@
 				52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */,
 				52A21B9125729B3D00A55552 /* LocationService.swift in Sources */,
 				52CB46A42571759A00B82085 /* Reachability.swift in Sources */,
+				524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */,
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
 				52CB469A257174EF00B82085 /* Request.swift in Sources */,

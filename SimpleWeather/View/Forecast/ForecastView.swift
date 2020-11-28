@@ -12,6 +12,7 @@ struct ForecastView: View {
     // MARK: - Properties
     
     @EnvironmentObject private var forecastStore: ForecastStore
+    @EnvironmentObject private var locationStore: LocationStore
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
@@ -26,22 +27,20 @@ struct ForecastView: View {
     var body: some View {
         ScrollView(.vertical,
                    showsIndicators: true) {
-            if forecastStore.isLoading {
-                loadingView
+            if locationStore.isAuthorizationStatusDenied {
+                LocationDisabledComponent()
+            } else if forecastStore.isLoading {
+                ProgressView("§Loading")
             } else {
                 contentView
             }
         }
-        .navigationTitle(forecastStore.locality)
+        .navigationTitle(locationStore.locality)
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
     }
 }
 
 extension ForecastView {
-    
-    private var loadingView: some View {
-        ProgressView("§Loading")
-    }
     
     private var contentView: some View {
         VStack(spacing: 16) {
@@ -155,6 +154,7 @@ struct ForecastView_Previews: PreviewProvider {
                              .accessibilityExtraExtraExtraLarge)
         }
         .environmentObject(forecastStorePreview)
+        .environmentObject(locationStorePreview)
     }
 }
 

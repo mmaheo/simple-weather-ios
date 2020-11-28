@@ -15,6 +15,7 @@ final class LocationService: NSObject, Injectable {
 
     let location = PassthroughSubject<CLLocation, Never>()
     let locality = PassthroughSubject<String, Never>()
+    let isAuthorizationStatusDenied = CurrentValueSubject<Bool, Never>(false)
     
     private let manager = CLLocationManager()
     private var lastLocation: CLLocation?
@@ -112,7 +113,16 @@ extension LocationService: CLLocationManagerDelegate {
         sendLocationIfNeeded(location: location)
     }
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .denied ||
+            manager.authorizationStatus == .restricted {
+            isAuthorizationStatusDenied.send(true)
+        } else {
+            isAuthorizationStatusDenied.send(false)
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager,
                          didFailWithError error: Error) { }
-    
+     
 }
