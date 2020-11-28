@@ -36,6 +36,14 @@ extension SideBarView {
                       systemImage: "thermometer")
             }
             .tag(NavigationItem.forecast)
+            
+            NavigationLink(destination: SettingsView(),
+                           tag: NavigationItem.settings,
+                           selection: $selection) {
+                Label("§Settings",
+                      systemImage: "gearshape")
+            }
+            .tag(NavigationItem.settings)
         }
         .listStyle(SidebarListStyle())
         .navigationTitle("§Simple Weather")
@@ -45,7 +53,7 @@ extension SideBarView {
 
 extension SideBarView {
     enum NavigationItem {
-        case forecast
+        case forecast, settings
     }
 }
 

@@ -25,13 +25,22 @@ struct TabBarView: View {
                       systemImage: "thermometer")
             }
             .tag(Tab.forecast)
+            
+            NavigationView {
+                SettingsView()
+            }
+            .tabItem {
+                Label("§Settings",
+                      systemImage: "gearshape")
+            }
+            .tag(Tab.settings)
         }
     }
 }
 
 extension TabBarView {
     enum Tab {
-        case forecast
+        case forecast, settings
     }
 }
 

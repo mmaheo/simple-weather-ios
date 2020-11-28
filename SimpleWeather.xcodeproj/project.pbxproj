@@ -13,6 +13,8 @@
 		5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC9256AFB3200FD1EF9 /* Preview Assets.xcassets */; };
 		524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EDB2572EA9A002A1D6C /* LocationStore.swift */; };
 		524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */; };
+		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
+		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
 		52679873256C065600E2132B /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 52679872256C065600E2132B /* TimelaneCombine */; };
 		52A21B9125729B3D00A55552 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9025729B3D00A55552 /* LocationService.swift */; };
 		52A21B9625729DFD00A55552 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9525729DFD00A55552 /* UserDefaultsService.swift */; };
@@ -52,6 +54,8 @@
 		5247DDCB256AFB3200FD1EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524E8EDB2572EA9A002A1D6C /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
 		524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisabledComponent.swift; sourceTree = "<group>"; };
+		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
 		52A21B9025729B3D00A55552 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		52A21B9525729DFD00A55552 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		52A21B982572A75B00A55552 /* SimpleWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleWeather.entitlements; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		524E8EE52572F8C2002A1D6C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				524E8EE62572F8D7002A1D6C /* SettingsView.swift */,
+				524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		52A21B8E25729A5500A55552 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 			children = (
 				52A21B9A2572AD0700A55552 /* Main */,
 				52EF7DF3256B9EB700A06613 /* Forecast */,
+				524E8EE52572F8C2002A1D6C /* Settings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +437,8 @@
 				52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */,
 				52CB4701257183ED00B82085 /* DarkSkyApiKey.swift in Sources */,
 				52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */,
+				524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */,
+				524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */,
 				52EF7DFD256BA07C00A06613 /* ForecastStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
