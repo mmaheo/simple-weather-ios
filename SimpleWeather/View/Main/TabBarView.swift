@@ -9,18 +9,29 @@ import SwiftUI
 
 struct TabBarView: View {
     
+    // MARK: - Properties
+    
+    @State private var selection: Tab = .forecast
+
     // MARK: - Body
     
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             NavigationView {
                 ForecastView()
             }
             .tabItem {
-                Image(systemName: "thermometer")
-                Text("§Forecast")
+                Label("§Forecast",
+                      systemImage: "thermometer")
             }
+            .tag(Tab.forecast)
         }
+    }
+}
+
+extension TabBarView {
+    enum Tab {
+        case forecast
     }
 }
 

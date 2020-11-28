@@ -9,21 +9,43 @@ import SwiftUI
 
 struct SideBarView: View {
     
+    // MARK: - Properties
+    
+    @State private var selection: NavigationItem? = .forecast
+
     // MARK: - Body
     
     var body: some View {
         NavigationView {
-            List {
-                NavigationLink(destination: ForecastView()) {
-                    Label("§Forecast",
-                          systemImage: "thermometer")
-                }
-            }
-            .listStyle(SidebarListStyle())
-            .navigationTitle("§Simple Weather")
-            
-            ForecastView()
+            sideBarView
+                
+            Text("§Select a category")
+                .foregroundColor(.secondary)
         }
+    }
+}
+
+extension SideBarView {
+    
+    private var sideBarView: some View {
+        List(selection: $selection) {
+            NavigationLink(destination: ForecastView(),
+                           tag: NavigationItem.forecast,
+                           selection: $selection) {
+                Label("§Forecast",
+                      systemImage: "thermometer")
+            }
+            .tag(NavigationItem.forecast)
+        }
+        .listStyle(SidebarListStyle())
+        .navigationTitle("§Simple Weather")
+    }
+    
+}
+
+extension SideBarView {
+    enum NavigationItem {
+        case forecast
     }
 }
 
