@@ -13,7 +13,7 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section {
+            Section(footer: sectionFooterView) {
                 unitRowView
             }
         }
@@ -22,9 +22,30 @@ struct SettingsView: View {
 }
 
 extension SettingsView {
+    
     private var unitRowView: some View {
         NavigationLink(destination: SettingsUnitView(),
                        label: { Label("§Units", systemImage: "globe") })
+    }
+    
+    private var sectionFooterView: some View {
+        HStack {
+            Spacer()
+            
+            if let url = URL(string: "https://www.linkedin.com/in/maxime-maheo-120907a8/") {
+                Link(destination: url,
+                     label: { madeByView })
+            } else {
+                madeByView
+            }
+            
+            Spacer()
+        }
+    }
+    
+    private var madeByView: some View {
+        Text("§Made with ❤️ by Maxime Maheo")
+            .italic()
     }
 }
 
