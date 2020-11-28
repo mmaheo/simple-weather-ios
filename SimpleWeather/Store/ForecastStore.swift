@@ -20,6 +20,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var currently: Forecast?
     @Published private(set) var hourly: [Forecast]
     @Published private(set) var daily: [Forecast]
+    @Published private(set) var isLoading: Bool
     
     @Inject private var forecastService: ForecastService
     
@@ -33,6 +34,7 @@ final class ForecastStore: ObservableObject {
         self.currently = currently
         self.hourly = hourly
         self.daily = daily
+        self.isLoading = false
     }
     
     // MARK: - Methods
@@ -47,11 +49,17 @@ final class ForecastStore: ObservableObject {
     // MARK: - Private Methods
     
     private func fetchForecast() {
+        isLoading = true
+        
         forecastService
             .fetchForecast(latitude: 0,
                            longitude: 0)
             .receive(on: DispatchQueue.main)
-            .sink { (completion) in
+            .sink { [weak self] (completion) in
+                guard let self = self else { return }
+                
+                self.isLoading = false
+                
                 if case .failure = completion {
                     
                 }

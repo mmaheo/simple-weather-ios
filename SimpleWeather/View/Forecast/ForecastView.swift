@@ -26,11 +26,10 @@ struct ForecastView: View {
     var body: some View {
         ScrollView(.vertical,
                    showsIndicators: true) {
-            VStack(spacing: 16) {
-                currentlyWeatherView
-                hourlyWeatherView
-                dailyWeatherView
-                poweredByDarkSkyView
+            if forecastStore.isLoading {
+                loadingView
+            } else {
+                contentView
             }
         }
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
@@ -38,6 +37,19 @@ struct ForecastView: View {
 }
 
 extension ForecastView {
+    
+    private var loadingView: some View {
+        ProgressView("§Loading")
+    }
+    
+    private var contentView: some View {
+        VStack(spacing: 16) {
+            currentlyWeatherView
+            hourlyWeatherView
+            dailyWeatherView
+            poweredByDarkSkyView
+        }
+    }
     
     private var currentlyWeatherView: some View {
         forecastStore.currently.map { forecast in
