@@ -68,7 +68,7 @@ struct HourlyForecastWidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
         HourlyForecastWidgetMediumView(locality: "Bordeaux",
                                        date: Date(),
-                                       hourlyForecast: Array(Forecast.list.prefix(5)))
+                                       hourlyForecast: Array(Forecast.list.prefix(6)))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

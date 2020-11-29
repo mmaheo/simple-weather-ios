@@ -16,6 +16,8 @@ struct HourlyForecastWidgetView: View {
     
     @Environment(\.widgetFamily) private var family: WidgetFamily
 
+    private let numberOfItems = 6
+    
     // MARK: - Body
     
     @ViewBuilder
@@ -26,12 +28,12 @@ struct HourlyForecastWidgetView: View {
         case .systemMedium:
             if
                 let locality = entry.locality,
-                entry.hourlyForecast.count >= 5
+                entry.hourlyForecast.count >= numberOfItems
             {
             
                 HourlyForecastWidgetMediumView(locality: locality,
                                                date: entry.date,
-                                               hourlyForecast: Array(entry.hourlyForecast.prefix(5)))
+                                               hourlyForecast: Array(entry.hourlyForecast.prefix(numberOfItems)))
             } else {
                 WidgetNotAvailableView()
             }
