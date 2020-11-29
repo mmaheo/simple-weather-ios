@@ -14,6 +14,7 @@ struct WeatherIconComponent: View {
     let iconSystemName: String
     private(set) var isLarge: Bool = false
     private(set) var isCompact: Bool = false
+    private(set) var isWidget: Bool = false
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -22,11 +23,11 @@ struct WeatherIconComponent: View {
     }
     
     private var width: CGFloat {
-        isCompact ? 15 : isLarge ? 50 : 25
+        isWidget ? 14 : isCompact ? 15 : isLarge ? 50 : 25
     }
     
     private var padding: CGFloat {
-        isLarge ? 12 : 8
+        isWidget ? 4 : isCompact ? 8 : 12
     }
     
     // MARK: - Body

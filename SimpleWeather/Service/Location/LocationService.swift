@@ -33,6 +33,7 @@ final class LocationService: NSObject, Injectable {
         manager.delegate = self
         
         bindLocation()
+        bindLocality()
     }
     
     // MARK: - Methods
@@ -95,6 +96,16 @@ final class LocationService: NSObject, Injectable {
                 guard let self = self else { return }
                 
                 self.fetchLocality(location: location)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func bindLocality() {
+        locality
+            .sink { [weak self] (locality) in
+                guard let self = self else { return }
+                
+                self.userDefaultService?.save(locality: locality)
             }
             .store(in: &cancellables)
     }

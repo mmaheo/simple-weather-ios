@@ -17,12 +17,12 @@ final class UserDefaultsService: Injectable {
     private let latitudeKey = "latitude_key"
     private let longitudeKey = "longitude_key"
     private let unitKey = "unit_key"
+    private let localityKey = "locality_key"
     
     // MARK: - Lifecycle
     
     init() {
-        if let bundleIdentifier = Bundle.main.bundleIdentifier,
-           let userDefaults = UserDefaults(suiteName: "group.\(bundleIdentifier)") {
+        if let userDefaults = UserDefaults(suiteName: "group.maxime.maheo.simple-weather") {
             self.userDefaults = userDefaults
         } else {
             self.userDefaults = UserDefaults.standard
@@ -41,6 +41,10 @@ final class UserDefaultsService: Injectable {
     
     func save(unit: Unit) {
         userDefaults.setValue(unit.rawValue, forKey: unitKey)
+    }
+    
+    func save(locality: String) {
+        userDefaults.setValue(locality, forKey: localityKey)
     }
     
     // MARK: - Fetching Methods
@@ -63,6 +67,10 @@ final class UserDefaultsService: Injectable {
         else { return nil }
         
         return Unit(rawValue: stringUnit)
+    }
+    
+    func fetchLocality() -> String? {
+        userDefaults.string(forKey: localityKey)
     }
     
 }
