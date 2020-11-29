@@ -15,6 +15,7 @@ struct SimpleWeatherWidget: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
         CurrentlyForecastWidget()
+        HourlyForecastWidget()
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct SimpleWeatherApp: App {
@@ -23,6 +24,7 @@ struct SimpleWeatherApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .onAppear { WidgetCenter.shared.reloadAllTimelines() }
                 .environmentObject(forecastStore)
                 .environmentObject(locationStore)
                 .environmentObject(settingsStore)

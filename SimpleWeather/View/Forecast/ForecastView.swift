@@ -74,7 +74,7 @@ extension ForecastView {
             makeSectionView(title: firstHourlyForecast.wrappedTimeOfTheDay) {
                 ScrollView(.horizontal,
                            showsIndicators: false) {
-                    HStack(spacing: 8) {
+                    HStack(spacing: 16) {
                         ForEach(forecastStore.hourly) { forecast in
                             let isInFirstPosition = forecastStore.hourly.first == forecast
                             let isInLastPosition = forecastStore.hourly.last == forecast
@@ -144,8 +144,7 @@ extension ForecastView {
                 .font(.title)
                 .bold()
                 .padding(.horizontal, 16)
-                .accessibility(identifier: "forecast_view_section_title")
-            
+
             content()
         }
     }

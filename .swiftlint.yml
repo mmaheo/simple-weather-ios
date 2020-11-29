@@ -3,8 +3,7 @@
 # Paths to include during linting.
 included:
   - SimpleWeather
-  - SimpleWeatherTests
-  - SimpleWeatherUITests
+  - Widget
 
 excluded:
   - SimpleWeather/Core/Network/Reachability.swift

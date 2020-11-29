@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ForecastWidgetEntry.swift
 //  SimpleWeather
 //
 //  Created by Maxime Maheo on 29/11/2020.
@@ -7,7 +7,7 @@
 
 import WidgetKit
 
-struct CurrentlyForecastWidgetEntry: TimelineEntry {
+struct ForecastWidgetEntry: TimelineEntry {
     
     // MARK: - Properties
     
@@ -21,6 +21,7 @@ struct CurrentlyForecastWidgetEntry: TimelineEntry {
     let windSpeed: Int?
     let unit: Unit?
     let sunsetTime: Date?
+    let hourlyForecast: [Forecast]
 
     // MARK: - Lifecycle
         
@@ -33,7 +34,8 @@ struct CurrentlyForecastWidgetEntry: TimelineEntry {
          precipProbability: Int? = nil,
          windSpeed: Int? = nil,
          unit: Unit? = nil,
-         sunsetTime: Date? = nil) {
+         sunsetTime: Date? = nil,
+         hourlyForecast: [Forecast] = []) {
         self.date = date
         self.locality = locality
         self.iconSystemName = iconSystemName
@@ -44,5 +46,6 @@ struct CurrentlyForecastWidgetEntry: TimelineEntry {
         self.windSpeed = windSpeed
         self.unit = unit
         self.sunsetTime = sunsetTime
+        self.hourlyForecast = hourlyForecast
     }
 }

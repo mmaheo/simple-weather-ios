@@ -12,7 +12,7 @@ struct CurrentlyForecastWidgetView: View {
     
     // MARK: - Properties
     
-    let entry: CurrentlyForecastWidgetTimelineProvider.Entry
+    let entry: ForecastWidgetTimelineProvider.Entry
     
     @Environment(\.widgetFamily) private var family: WidgetFamily
 

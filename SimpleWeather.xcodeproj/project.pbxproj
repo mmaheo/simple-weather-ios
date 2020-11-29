@@ -24,10 +24,10 @@
 		529F38E52573C28F00AC2849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 529F38E42573C28F00AC2849 /* Assets.xcassets */; };
 		529F38E92573C28F00AC2849 /* WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 529F38DB2573C28D00AC2849 /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		529F39202573C64200AC2849 /* CurrentlyForecastWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F391C2573C63B00AC2849 /* CurrentlyForecastWidget.swift */; };
-		529F39212573C64200AC2849 /* CurrentlyForecastWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F39052573C44B00AC2849 /* CurrentlyForecastWidgetEntry.swift */; };
+		529F39212573C64200AC2849 /* ForecastWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F39052573C44B00AC2849 /* ForecastWidgetEntry.swift */; };
 		529F39222573C64200AC2849 /* CurrentlyForecastWidgetSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F39122573C4D100AC2849 /* CurrentlyForecastWidgetSmallView.swift */; };
 		529F39232573C64200AC2849 /* CurrentlyForecastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F39182573C5DB00AC2849 /* CurrentlyForecastWidgetView.swift */; };
-		529F39242573C64200AC2849 /* CurrentlyForecastWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F390D2573C48500AC2849 /* CurrentlyForecastWidgetTimelineProvider.swift */; };
+		529F39242573C64200AC2849 /* ForecastWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F390D2573C48500AC2849 /* ForecastWidgetTimelineProvider.swift */; };
 		529F392B2573C64600AC2849 /* WidgetNotAvailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38FB2573C37E00AC2849 /* WidgetNotAvailableView.swift */; };
 		529F39312573C71400AC2849 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9525729DFD00A55552 /* UserDefaultsService.swift */; };
 		529F39372573C71B00AC2849 /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CB46F8257183CD00B82085 /* ForecastResponse.swift */; };
@@ -75,6 +75,10 @@
 		52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E23256BA75B00A06613 /* AppDependency.swift */; };
 		52EF7E37256BBDA800A06613 /* CurrentlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E36256BBDA800A06613 /* CurrentlyWeatherComponent.swift */; };
 		52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */; };
+		52F7DA092573E2C500B8142C /* HourlyForecastWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7DA052573E2BE00B8142C /* HourlyForecastWidget.swift */; };
+		52F7DA132573E33000B8142C /* HourlyForecastWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7DA0F2573E32C00B8142C /* HourlyForecastWidgetMediumView.swift */; };
+		52F7DA182573E3AC00B8142C /* HourlyWeatherComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5D4D4256BD5510088B72B /* HourlyWeatherComponent.swift */; };
+		52F7DA1F2573E7A100B8142C /* HourlyForecastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7DA1B2573E78300B8142C /* HourlyForecastWidgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,8 +127,8 @@
 		529F38E62573C28F00AC2849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529F38F32573C2E200AC2849 /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 		529F38FB2573C37E00AC2849 /* WidgetNotAvailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNotAvailableView.swift; sourceTree = "<group>"; };
-		529F39052573C44B00AC2849 /* CurrentlyForecastWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyForecastWidgetEntry.swift; sourceTree = "<group>"; };
-		529F390D2573C48500AC2849 /* CurrentlyForecastWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyForecastWidgetTimelineProvider.swift; sourceTree = "<group>"; };
+		529F39052573C44B00AC2849 /* ForecastWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWidgetEntry.swift; sourceTree = "<group>"; };
+		529F390D2573C48500AC2849 /* ForecastWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		529F39122573C4D100AC2849 /* CurrentlyForecastWidgetSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyForecastWidgetSmallView.swift; sourceTree = "<group>"; };
 		529F39182573C5DB00AC2849 /* CurrentlyForecastWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyForecastWidgetView.swift; sourceTree = "<group>"; };
 		529F391C2573C63B00AC2849 /* CurrentlyForecastWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyForecastWidget.swift; sourceTree = "<group>"; };
@@ -155,6 +159,9 @@
 		52EF7E23256BA75B00A06613 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		52EF7E36256BBDA800A06613 /* CurrentlyWeatherComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyWeatherComponent.swift; sourceTree = "<group>"; };
 		52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconComponent.swift; sourceTree = "<group>"; };
+		52F7DA052573E2BE00B8142C /* HourlyForecastWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastWidget.swift; sourceTree = "<group>"; };
+		52F7DA0F2573E32C00B8142C /* HourlyForecastWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastWidgetMediumView.swift; sourceTree = "<group>"; };
+		52F7DA1B2573E78300B8142C /* HourlyForecastWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,7 +311,10 @@
 			isa = PBXGroup;
 			children = (
 				529F38E22573C28D00AC2849 /* SimpleWeatherWidget.swift */,
+				529F39052573C44B00AC2849 /* ForecastWidgetEntry.swift */,
+				529F390D2573C48500AC2849 /* ForecastWidgetTimelineProvider.swift */,
 				529F39042573C41C00AC2849 /* CurrentlyForecast */,
+				52F7DA022573E22100B8142C /* HourlyForecast */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -313,8 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				529F39112573C4C100AC2849 /* View */,
-				529F39052573C44B00AC2849 /* CurrentlyForecastWidgetEntry.swift */,
-				529F390D2573C48500AC2849 /* CurrentlyForecastWidgetTimelineProvider.swift */,
 				529F391C2573C63B00AC2849 /* CurrentlyForecastWidget.swift */,
 			);
 			path = CurrentlyForecast;
@@ -468,6 +476,24 @@
 				52EF7E3E256BBDF400A06613 /* WeatherIconComponent.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		52F7DA022573E22100B8142C /* HourlyForecast */ = {
+			isa = PBXGroup;
+			children = (
+				52F7DA0E2573E31400B8142C /* View */,
+				52F7DA052573E2BE00B8142C /* HourlyForecastWidget.swift */,
+			);
+			path = HourlyForecast;
+			sourceTree = "<group>";
+		};
+		52F7DA0E2573E31400B8142C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52F7DA0F2573E32C00B8142C /* HourlyForecastWidgetMediumView.swift */,
+				52F7DA1B2573E78300B8142C /* HourlyForecastWidgetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,10 +673,13 @@
 				529F39442573C72600AC2849 /* DarkSkyRequest.swift in Sources */,
 				529F39422573C72600AC2849 /* APIEndpoint.swift in Sources */,
 				529F392B2573C64600AC2849 /* WidgetNotAvailableView.swift in Sources */,
+				52F7DA1F2573E7A100B8142C /* HourlyForecastWidgetView.swift in Sources */,
 				529F38E32573C28D00AC2849 /* SimpleWeatherWidget.swift in Sources */,
-				529F39212573C64200AC2849 /* CurrentlyForecastWidgetEntry.swift in Sources */,
+				529F39212573C64200AC2849 /* ForecastWidgetEntry.swift in Sources */,
 				529F393F2573C72600AC2849 /* BaseRequest.swift in Sources */,
+				52F7DA092573E2C500B8142C /* HourlyForecastWidget.swift in Sources */,
 				529F39412573C72600AC2849 /* Reachability.swift in Sources */,
+				52F7DA182573E3AC00B8142C /* HourlyWeatherComponent.swift in Sources */,
 				529F393B2573C71E00AC2849 /* ForecastEndpoint.swift in Sources */,
 				529F39402573C72600AC2849 /* ApiRequester.swift in Sources */,
 				529F39202573C64200AC2849 /* CurrentlyForecastWidget.swift in Sources */,
@@ -659,6 +688,7 @@
 				529F39432573C72600AC2849 /* Request.swift in Sources */,
 				529F39662573CFD000AC2849 /* CurrentlyWeatherComponent.swift in Sources */,
 				529F394E2573C73E00AC2849 /* Publisher+RetryAfter.swift in Sources */,
+				52F7DA132573E33000B8142C /* HourlyForecastWidgetMediumView.swift in Sources */,
 				529F394B2573C73B00AC2849 /* Locale+Language.swift in Sources */,
 				529F39372573C71B00AC2849 /* ForecastResponse.swift in Sources */,
 				529F39312573C71400AC2849 /* UserDefaultsService.swift in Sources */,
@@ -667,7 +697,7 @@
 				529F39512573C74900AC2849 /* Date+Format.swift in Sources */,
 				529F393A2573C71E00AC2849 /* DarkSkyApiKey.swift in Sources */,
 				529F393C2573C71E00AC2849 /* ForecastService.swift in Sources */,
-				529F39242573C64200AC2849 /* CurrentlyForecastWidgetTimelineProvider.swift in Sources */,
+				529F39242573C64200AC2849 /* ForecastWidgetTimelineProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

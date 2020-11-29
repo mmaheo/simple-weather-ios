@@ -1,5 +1,5 @@
 //
-//  CurrentlyForecastWidgetTimelineProvider.swift
+//  ForecastWidgetTimelineProvider.swift
 //  SimpleWeather
 //
 //  Created by Maxime Maheo on 29/11/2020.
@@ -8,9 +8,9 @@
 import WidgetKit
 import Combine
 
-final class CurrentlyForecastWidgetTimelineProvider: TimelineProvider {
+final class ForecastWidgetTimelineProvider: TimelineProvider {
     
-    typealias Entry = CurrentlyForecastWidgetEntry
+    typealias Entry = ForecastWidgetEntry
     
     // MARK: - Properties
     
@@ -19,7 +19,6 @@ final class CurrentlyForecastWidgetTimelineProvider: TimelineProvider {
     
     private var cancellables = Set<AnyCancellable>()
 
-        
     // MARK: - Methods
     func placeholder(in context: Context) -> Entry {
         placeholderEntry()
@@ -73,7 +72,7 @@ final class CurrentlyForecastWidgetTimelineProvider: TimelineProvider {
                 completion(self.entry(forecast: response.currently,
                                       locality: locality,
                                       unit: unit,
-                                      sunsetTime: response.daily.data.first?.wrappedSunsetTime))
+                                      hourlyForecast: response.hourly.data))
             }
             .store(in: &cancellables)
     }
@@ -85,7 +84,7 @@ final class CurrentlyForecastWidgetTimelineProvider: TimelineProvider {
     private func entry(forecast: Forecast,
                        locality: String,
                        unit: Unit,
-                       sunsetTime: Date?) -> Entry {
+                       hourlyForecast: [Forecast]) -> Entry {
         Entry(date: Date(),
               locality: locality,
               iconSystemName: forecast.wrappedIconSystemName,
@@ -95,7 +94,8 @@ final class CurrentlyForecastWidgetTimelineProvider: TimelineProvider {
               precipProbability: forecast.wrappedPrecipProbability,
               windSpeed: forecast.wrappedWindSpeed,
               unit: unit,
-              sunsetTime: sunsetTime)
+              sunsetTime: hourlyForecast.first?.wrappedSunsetTime,
+              hourlyForecast: hourlyForecast)
 
     }
 }

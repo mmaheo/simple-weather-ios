@@ -13,7 +13,7 @@ struct CurrentlyForecastWidget: Widget {
     // MARK: - Body
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "CurrentlyForecastWidget",
-                            provider: CurrentlyForecastWidgetTimelineProvider()) { entry in
+                            provider: ForecastWidgetTimelineProvider()) { entry in
             CurrentlyForecastWidgetView(entry: entry)
         }
         .configurationDisplayName("§Current forecast")
@@ -21,4 +21,3 @@ struct CurrentlyForecastWidget: Widget {
         .supportedFamilies([.systemSmall])
     }
 }
-

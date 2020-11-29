@@ -21,18 +21,15 @@ struct CurrentlyWeatherComponent: View {
         HStack {
             WeatherIconComponent(iconSystemName: iconSystemName,
                                  isLarge: true)
-                .accessibility(identifier: "currently_weather_component_icon")
             
             VStack(alignment: .leading) {
                 Text("\(temperature)°")
                     .font(.title)
                     .bold()
-                    .accessibility(identifier: "currently_weather_component_temperature")
                 
                 Text("§Feeling \(apparentTemperature)°")
                     .font(.body)
                     .foregroundColor(.secondary)
-                    .accessibility(identifier: "currently_weather_component_apparent_temperature")
             }
             
             Spacer()
