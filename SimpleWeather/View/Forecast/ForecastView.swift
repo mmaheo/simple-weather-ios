@@ -13,6 +13,7 @@ struct ForecastView: View {
     
     @EnvironmentObject private var forecastStore: ForecastStore
     @EnvironmentObject private var locationStore: LocationStore
+    @EnvironmentObject private var settingsStore: SettingsStore
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
@@ -41,7 +42,10 @@ struct ForecastView: View {
                   message: Text(error.message),
                   dismissButton: .default(Text(error.dimissActionTitle)))
         }
-        .onAppear { forecastStore.dispatch(action: .fetchForecast) }
+        .onAppear {
+            settingsStore.dispatch(action: .fetchUnit)
+            forecastStore.dispatch(action: .fetchForecast)
+        }
     }
 }
 
@@ -103,6 +107,7 @@ extension ForecastView {
                                           precipProbability: forecast.wrappedPrecipProbability,
                                           uvIndex: forecast.wrappedUVIndex,
                                           windSpeed: forecast.wrappedWindSpeed,
+                                          unit: settingsStore.unit,
                                           sunriseTime: forecast.wrappedSunriseTime,
                                           sunsetTime: forecast.wrappedSunsetTime)
                 }

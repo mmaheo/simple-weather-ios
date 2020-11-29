@@ -9,6 +9,10 @@ import SwiftUI
 
 struct SettingsUnitView: View {
     
+    // MARK: - Properties
+    
+    @EnvironmentObject private var settingsStore: SettingsStore
+    
     // MARK: - Body
     
     var body: some View {
@@ -19,41 +23,42 @@ struct SettingsUnitView: View {
             siUnitView
         }
         .navigationTitle(Text("§Units"))
+        .onAppear { settingsStore.dispatch(action: .fetchUnit) }
     }
 }
 
 extension SettingsUnitView {
     
     private var caUnitView: some View {
-        makeRowView(action: { },
+        makeRowView(action: { settingsStore.dispatch(action: .change(unit: .ca)) },
                     icon: "🇨🇦",
                     title: "§Canada",
                     subtitle: "§Celsius, Kilometers, KM/H",
-                    isSelected: false)
+                    isSelected: settingsStore.unit == .ca)
     }
     
     private var ukUnitView: some View {
-        makeRowView(action: { },
+        makeRowView(action: { settingsStore.dispatch(action: .change(unit: .uk)) },
                     icon: "🇬🇧",
                     title: "§UK",
                     subtitle: "§Celsius, Miles, MPH",
-                    isSelected: false)
+                    isSelected: settingsStore.unit == .uk)
     }
     
     private var usUnitView: some View {
-        makeRowView(action: { },
+        makeRowView(action: { settingsStore.dispatch(action: .change(unit: .us)) },
                     icon: "🇺🇸",
                     title: "§US",
                     subtitle: "§Fahrenheit, Miles, MPH",
-                    isSelected: false)
+                    isSelected: settingsStore.unit == .us)
     }
     
     private var siUnitView: some View {
-        makeRowView(action: { },
+        makeRowView(action: { settingsStore.dispatch(action: .change(unit: .si)) },
                     icon: "🌍",
                     title: "§International",
                     subtitle: "§Celsius, Kilometers, M/S",
-                    isSelected: false)
+                    isSelected: settingsStore.unit == .si)
     }
     
 }
@@ -105,6 +110,7 @@ struct SettingsUnitView_Previews: PreviewProvider {
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }
+        .environmentObject(settingsStorePreview)
     }
 }
 

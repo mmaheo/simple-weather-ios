@@ -25,6 +25,7 @@ final class ForecastStore: ObservableObject {
     
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
+    @Inject private var userDefaultsService: UserDefaultsService
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -64,7 +65,8 @@ final class ForecastStore: ObservableObject {
         locationService
             .location
             .flatMap { self.forecastService.fetchForecast(latitude: $0.coordinate.latitude,
-                                                          longitude: $0.coordinate.longitude)}
+                                                          longitude: $0.coordinate.longitude,
+                                                          unit: (self.userDefaultsService.fetchUnit() ?? .si).rawValue) }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (completion) in
                 guard let self = self else { return }

@@ -16,6 +16,7 @@ final class UserDefaultsService: Injectable {
     
     private let latitudeKey = "latitude_key"
     private let longitudeKey = "longitude_key"
+    private let unitKey = "unit_key"
     
     // MARK: - Lifecycle
     
@@ -38,6 +39,10 @@ final class UserDefaultsService: Injectable {
         userDefaults.setValue(longitude, forKey: longitudeKey)
     }
     
+    func save(unit: Unit) {
+        userDefaults.setValue(unit.rawValue, forKey: unitKey)
+    }
+    
     // MARK: - Fetching Methods
     
     func fetchLatitude() -> Double? {
@@ -50,6 +55,14 @@ final class UserDefaultsService: Injectable {
         let longitude = userDefaults.double(forKey: longitudeKey)
         
         return longitude == 0 ? nil : longitude
+    }
+    
+    func fetchUnit() -> Unit? {
+        guard
+            let stringUnit = userDefaults.string(forKey: unitKey)
+        else { return nil }
+        
+        return Unit(rawValue: stringUnit)
     }
     
 }

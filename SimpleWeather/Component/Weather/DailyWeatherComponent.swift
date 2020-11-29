@@ -20,6 +20,7 @@ struct DailyWeatherComponent: View {
     let precipProbability: Int
     let uvIndex: Int
     let windSpeed: Int
+    let unit: Unit
     let sunriseTime: Date
     let sunsetTime: Date
     
@@ -58,7 +59,7 @@ struct DailyWeatherComponent: View {
                               value: "\(precipProbability)%",
                               title: "§Pricipitation")
                 makeFieldView(iconSystemName: "wind",
-                              value: "\(windSpeed) §mph",
+                              value: "\(windSpeed) \(unit.windSpeedUnit)",
                               title: "§Wind")
                 makeFieldView(iconSystemName: "sunrise.fill",
                               value: sunriseTime.format(format: "HH:mm"),
@@ -109,6 +110,7 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
                                   precipProbability: 32,
                                   uvIndex: 4,
                                   windSpeed: 12,
+                                  unit: .si,
                                   sunriseTime: Date(),
                                   sunsetTime: Date())
             
@@ -121,6 +123,7 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
                                   precipProbability: 67,
                                   uvIndex: 7,
                                   windSpeed: 42,
+                                  unit: .si,
                                   sunriseTime: Date(),
                                   sunsetTime: Date())
                 .preferredColorScheme(.dark)
@@ -134,6 +137,7 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
                                   precipProbability: 87,
                                   uvIndex: 1,
                                   windSpeed: 23,
+                                  unit: .si,
                                   sunriseTime: Date(),
                                   sunsetTime: Date())
                 .environment(\.sizeCategory,
