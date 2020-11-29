@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		523C02002573F4B800632A5A /* UIApplication+CurrentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C01FF2573F4B800632A5A /* UIApplication+CurrentScene.swift */; };
 		523C02042573F4F900632A5A /* RatingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02032573F4F900632A5A /* RatingStore.swift */; };
+		523C02082573F98700632A5A /* SettingsPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */; };
+		523C020C2573FF3F00632A5A /* SettingsTermsAndConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */; };
 		5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */; };
 		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
@@ -111,6 +113,8 @@
 /* Begin PBXFileReference section */
 		523C01FF2573F4B800632A5A /* UIApplication+CurrentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+CurrentScene.swift"; sourceTree = "<group>"; };
 		523C02032573F4F900632A5A /* RatingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStore.swift; sourceTree = "<group>"; };
+		523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyView.swift; sourceTree = "<group>"; };
+		523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsAndConditionView.swift; sourceTree = "<group>"; };
 		5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherApp.swift; sourceTree = "<group>"; };
 		5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			children = (
 				524E8EE62572F8D7002A1D6C /* SettingsView.swift */,
 				524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */,
+				523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */,
+				523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 				524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */,
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
+				523C020C2573FF3F00632A5A /* SettingsTermsAndConditionView.swift in Sources */,
 				52CB469A257174EF00B82085 /* Request.swift in Sources */,
 				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52D6B8022573ED1200C48B2B /* RatingService.swift in Sources */,
@@ -678,6 +685,7 @@
 				52CB46F02571839F00B82085 /* ForecastEndpoint.swift in Sources */,
 				52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */,
 				52CB4701257183ED00B82085 /* DarkSkyApiKey.swift in Sources */,
+				523C02082573F98700632A5A /* SettingsPrivacyPolicyView.swift in Sources */,
 				52EF7E1F256BA72F00A06613 /* ForecastService.swift in Sources */,
 				524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */,
 				524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */,

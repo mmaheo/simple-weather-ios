@@ -23,6 +23,8 @@ struct SettingsView: View {
             
             Section(footer: sectionFooterView) {
                 ratingRowView
+                privacyPolicyView
+                termsAndConditionView
             }
         }
         .navigationTitle(Text("§Settings"))
@@ -38,7 +40,17 @@ extension SettingsView {
     
     private var ratingRowView: some View {
         Button(action: { ratingStore.dispatch(action: .requestReview(force: true)) },
-               label: { Label("§Rate the app", systemImage: "star.fill") })
+               label: { Label("§Rate the app", systemImage: "star") })
+    }
+    
+    private var privacyPolicyView: some View {
+        NavigationLink(destination: SettingsPrivacyPolicyView(),
+                       label: { Label("§Privacy Policy", systemImage: "lock.shield") })
+    }
+    
+    private var termsAndConditionView: some View {
+        NavigationLink(destination: SettingsTermsAndConditionView(),
+                       label: { Label("§Terms & Conditions", systemImage: "doc.text") })
     }
     
     private var sectionFooterView: some View {
