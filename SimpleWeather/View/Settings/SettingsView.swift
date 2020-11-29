@@ -9,12 +9,20 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    // MARK: - Properties
+    
+    @EnvironmentObject private var ratingStore: RatingStore
+    
     // MARK: - Body
     
     var body: some View {
         Form {
-            Section(footer: sectionFooterView) {
+            Section {
                 unitRowView
+            }
+            
+            Section(footer: sectionFooterView) {
+                ratingRowView
             }
         }
         .navigationTitle(Text("§Settings"))
@@ -26,6 +34,11 @@ extension SettingsView {
     private var unitRowView: some View {
         NavigationLink(destination: SettingsUnitView(),
                        label: { Label("§Units", systemImage: "globe") })
+    }
+    
+    private var ratingRowView: some View {
+        Button(action: { ratingStore.dispatch(action: .requestReview(force: true)) },
+               label: { Label("§Rate the app", systemImage: "star.fill") })
     }
     
     private var sectionFooterView: some View {
@@ -61,6 +74,7 @@ struct SettingsView_Previews: PreviewProvider {
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }
+        .environmentObject(ratingStorePreview)
     }
 }
 

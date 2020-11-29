@@ -25,7 +25,7 @@ struct CurrentlyForecastWidgetSmallView: View {
 
     private let layout = [
         GridItem(.flexible()),
-        GridItem(.flexible()),
+        GridItem(.flexible())
     ]
     
     // MARK: - Body

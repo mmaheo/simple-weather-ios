@@ -16,6 +16,7 @@ struct SimpleWeatherApp: App {
     @StateObject private var forecastStore = ForecastStore()
     @StateObject private var locationStore = LocationStore()
     @StateObject private var settingsStore = SettingsStore()
+    @StateObject private var ratingStore = RatingStore()
     
     private let appDependency = AppDependency()
     
@@ -28,6 +29,7 @@ struct SimpleWeatherApp: App {
                 .environmentObject(forecastStore)
                 .environmentObject(locationStore)
                 .environmentObject(settingsStore)
+                .environmentObject(ratingStore)
         }
     }
 }

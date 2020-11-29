@@ -14,6 +14,7 @@ struct ForecastView: View {
     @EnvironmentObject private var forecastStore: ForecastStore
     @EnvironmentObject private var locationStore: LocationStore
     @EnvironmentObject private var settingsStore: SettingsStore
+    @EnvironmentObject private var ratingStore: RatingStore
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
@@ -45,6 +46,7 @@ struct ForecastView: View {
         .onAppear {
             settingsStore.dispatch(action: .fetchUnit)
             forecastStore.dispatch(action: .fetchForecast)
+            ratingStore.dispatch(action: .requestReview(force: false))
         }
     }
 }
@@ -164,6 +166,8 @@ struct ForecastView_Previews: PreviewProvider {
         }
         .environmentObject(forecastStorePreview)
         .environmentObject(locationStorePreview)
+        .environmentObject(settingsStorePreview)
+        .environmentObject(ratingStorePreview)
     }
 }
 

@@ -18,6 +18,7 @@ final class UserDefaultsService: Injectable {
     private let longitudeKey = "longitude_key"
     private let unitKey = "unit_key"
     private let localityKey = "locality_key"
+    private let lastRatingDateKey = "last_rating_date_key"
     
     // MARK: - Lifecycle
     
@@ -47,6 +48,10 @@ final class UserDefaultsService: Injectable {
         userDefaults.setValue(locality, forKey: localityKey)
     }
     
+    func save(lastDateRating: Date) {
+        userDefaults.setValue(lastDateRating.timeIntervalSince1970, forKey: lastRatingDateKey)
+    }
+    
     // MARK: - Fetching Methods
     
     func fetchLatitude() -> Double? {
@@ -71,6 +76,12 @@ final class UserDefaultsService: Injectable {
     
     func fetchLocality() -> String? {
         userDefaults.string(forKey: localityKey)
+    }
+    
+    func fetchLastDateRating() -> Date? {
+        let timeIntervalSince1970 = userDefaults.double(forKey: lastRatingDateKey)
+        
+        return timeIntervalSince1970 == 0 ? nil : Date(timeIntervalSince1970: timeIntervalSince1970)
     }
     
 }
