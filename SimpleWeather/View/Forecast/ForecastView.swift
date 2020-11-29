@@ -36,6 +36,11 @@ struct ForecastView: View {
             }
         }
         .navigationTitle(locationStore.locality)
+        .alert(item: $forecastStore.error) { error in
+            Alert(title: Text(error.title),
+                  message: Text(error.message),
+                  dismissButton: .default(Text(error.dimissActionTitle)))
+        }
         .onAppear { forecastStore.dispatch(action: .fetchForecast) }
     }
 }

@@ -21,6 +21,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var hourly: [Forecast]
     @Published private(set) var daily: [Forecast]
     @Published private(set) var isLoading: Bool
+    @Published var error: AppError?
     
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
@@ -68,8 +69,9 @@ final class ForecastStore: ObservableObject {
             .sink { [weak self] (completion) in
                 guard let self = self else { return }
 
-                if case .failure = completion {
+                if case let .failure(error) = completion {
                     self.isLoading = false
+                    self.error = AppError(error: error)
                 }
             } receiveValue: { [weak self] (response) in
                 guard let self = self else { return }
