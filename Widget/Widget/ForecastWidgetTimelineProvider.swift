@@ -96,7 +96,7 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
               precipProbability: forecast.wrappedPrecipProbability,
               windSpeed: forecast.wrappedWindSpeed,
               unit: unit,
-              sunsetTime: hourlyForecast.first?.wrappedSunsetTime,
+              sunsetTime: sunsetTime,
               hourlyForecast: hourlyForecast)
 
     }
