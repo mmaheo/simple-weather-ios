@@ -72,6 +72,7 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
                 completion(self.entry(forecast: response.currently,
                                       locality: locality,
                                       unit: unit,
+                                      sunsetTime: response.daily.data.first?.wrappedSunsetTime,
                                       hourlyForecast: response.hourly.data))
             }
             .store(in: &cancellables)
@@ -84,6 +85,7 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
     private func entry(forecast: Forecast,
                        locality: String,
                        unit: Unit,
+                       sunsetTime: Date?,
                        hourlyForecast: [Forecast]) -> Entry {
         Entry(date: Date(),
               locality: locality,
