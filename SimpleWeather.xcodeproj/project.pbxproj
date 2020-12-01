@@ -221,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				529F38F32573C2E200AC2849 /* WidgetExtension.entitlements */,
+				52A21B982572A75B00A55552 /* SimpleWeather.entitlements */,
 				5247DDC1256AFB3000FD1EF9 /* SimpleWeather */,
 				529F38E12573C28D00AC2849 /* Widget */,
 				529F38DC2573C28D00AC2849 /* Frameworks */,
@@ -240,7 +241,6 @@
 		5247DDC1256AFB3000FD1EF9 /* SimpleWeather */ = {
 			isa = PBXGroup;
 			children = (
-				52A21B982572A75B00A55552 /* SimpleWeather.entitlements */,
 				5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */,
 				52EF7E23256BA75B00A06613 /* AppDependency.swift */,
 				52097DC825705534005EE4EE /* Core */,
@@ -862,7 +862,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SimpleWeather/SimpleWeather.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
@@ -886,7 +886,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SimpleWeather/SimpleWeather.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
