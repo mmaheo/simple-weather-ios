@@ -44,8 +44,10 @@ extension SettingsView {
     }
     
     private var ratingRowView: some View {
-        Button(action: { ratingStore.dispatch(action: .requestReview(force: true)) },
-               label: { Label("rate_the_app", systemImage: "star") })
+        URL(string: "https://apps.apple.com/app/simple-weather/id1542742219").map {
+            Link(destination: $0,
+                 label: { Label("rate_the_app", systemImage: "star") })
+        }
     }
     
     private var exploreMyProjectView: some View {
@@ -53,7 +55,6 @@ extension SettingsView {
             Link(destination: $0,
                  label: { Label("explore_my_project", systemImage: "safari") })
         }
-        
     }
     
     private var privacyPolicyView: some View {
