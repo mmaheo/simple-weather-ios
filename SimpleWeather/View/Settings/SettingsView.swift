@@ -23,6 +23,7 @@ struct SettingsView: View {
             
             Section(footer: sectionFooterView) {
                 ratingRowView
+                exploreMyProjectView
                 privacyPolicyView
                 termsAndConditionView
             }
@@ -41,6 +42,14 @@ extension SettingsView {
     private var ratingRowView: some View {
         Button(action: { ratingStore.dispatch(action: .requestReview(force: true)) },
                label: { Label("§Rate the app", systemImage: "star") })
+    }
+    
+    private var exploreMyProjectView: some View {
+        URL(string: "https://github.com/mmaheo/simple-weather-ios").map {
+            Link(destination: $0,
+                 label: { Label("§Explore my project", systemImage: "safari") })
+        }
+        
     }
     
     private var privacyPolicyView: some View {
