@@ -12,6 +12,7 @@ struct SettingsView: View {
     // MARK: - Properties
     
     @EnvironmentObject private var ratingStore: RatingStore
+    @EnvironmentObject private var settingsStore: SettingsStore
     
     // MARK: - Body
     
@@ -27,6 +28,9 @@ struct SettingsView: View {
                 privacyPolicyView
                 termsAndConditionView
             }
+        }
+        .onAppear {
+            settingsStore.dispatch(action: .settingsViewDidAppear(type: .main))
         }
         .navigationTitle(Text("§Settings"))
     }
@@ -58,7 +62,7 @@ extension SettingsView {
     }
     
     private var termsAndConditionView: some View {
-        NavigationLink(destination: SettingsTermsAndConditionView(),
+        NavigationLink(destination: SettingsTermsAndConditionsView(),
                        label: { Label("§Terms & Conditions", systemImage: "doc.text") })
     }
     
@@ -96,6 +100,7 @@ struct SettingsView_Previews: PreviewProvider {
                              .accessibilityExtraExtraExtraLarge)
         }
         .environmentObject(ratingStorePreview)
+        .environmentObject(settingsStorePreview)
     }
 }
 

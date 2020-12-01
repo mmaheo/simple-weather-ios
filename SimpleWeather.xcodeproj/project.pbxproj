@@ -10,7 +10,7 @@
 		523C02002573F4B800632A5A /* UIApplication+CurrentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C01FF2573F4B800632A5A /* UIApplication+CurrentScene.swift */; };
 		523C02042573F4F900632A5A /* RatingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02032573F4F900632A5A /* RatingStore.swift */; };
 		523C02082573F98700632A5A /* SettingsPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */; };
-		523C020C2573FF3F00632A5A /* SettingsTermsAndConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */; };
+		523C020C2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C020B2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift */; };
 		5244EC8C2576324E00B7ED4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */; };
 		5244EC912576334200B7ED4B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5244EC902576334200B7ED4B /* FirebaseAnalytics */; };
 		5244EC932576334200B7ED4B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5244EC922576334200B7ED4B /* FirebaseCrashlytics */; };
@@ -23,6 +23,9 @@
 		524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */; };
 		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
 		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
+		5270B9CB2576858800ADDF74 /* AppAnalyticsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */; };
+		527EF34E257678DC00FD45C1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF34D257678DC00FD45C1 /* AnalyticsService.swift */; };
+		527EF3522576792600FD45C1 /* AppAnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */; };
 		529F38B22573B14200AC2849 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B12573B14200AC2849 /* AppError.swift */; };
 		529F38B82573BA4300AC2849 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B72573BA4300AC2849 /* SettingsStore.swift */; };
 		529F38BB2573BABC00AC2849 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38BA2573BABC00AC2849 /* Unit.swift */; };
@@ -118,7 +121,7 @@
 		523C01FF2573F4B800632A5A /* UIApplication+CurrentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+CurrentScene.swift"; sourceTree = "<group>"; };
 		523C02032573F4F900632A5A /* RatingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStore.swift; sourceTree = "<group>"; };
 		523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyView.swift; sourceTree = "<group>"; };
-		523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsAndConditionView.swift; sourceTree = "<group>"; };
+		523C020B2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsAndConditionsView.swift; sourceTree = "<group>"; };
 		5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateForFirebase.swift; sourceTree = "<group>"; };
 		5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,9 @@
 		524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisabledComponent.swift; sourceTree = "<group>"; };
 		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
+		5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsScreenView.swift; sourceTree = "<group>"; };
+		527EF34D257678DC00FD45C1 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsEvent.swift; sourceTree = "<group>"; };
 		529F38B12573B14200AC2849 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		529F38B72573BA4300AC2849 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		529F38BA2573BABC00AC2849 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -279,9 +285,19 @@
 				524E8EE62572F8D7002A1D6C /* SettingsView.swift */,
 				524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */,
 				523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */,
-				523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */,
+				523C020B2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		527EF34C257678B000FD45C1 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				527EF34D257678DC00FD45C1 /* AnalyticsService.swift */,
+				527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */,
+				5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		529F38B02573B12800AC2849 /* Util */ = {
@@ -483,6 +499,7 @@
 		52EF7E17256BA6F100A06613 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				527EF34C257678B000FD45C1 /* Analytics */,
 				52D6B8002573ED0200C48B2B /* Rating */,
 				52A21B9425729DDC00A55552 /* UserDefaults */,
 				52A21B8F25729A6200A55552 /* Location */,
@@ -692,6 +709,7 @@
 				5244EC99257634A100B7ED4B /* AppDelegateForFirebase.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */,
+				5270B9CB2576858800ADDF74 /* AppAnalyticsScreenView.swift in Sources */,
 				524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */,
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				529F38B82573BA4300AC2849 /* SettingsStore.swift in Sources */,
@@ -709,8 +727,10 @@
 				524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */,
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
-				523C020C2573FF3F00632A5A /* SettingsTermsAndConditionView.swift in Sources */,
+				523C020C2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift in Sources */,
 				52CB469A257174EF00B82085 /* Request.swift in Sources */,
+				527EF34E257678DC00FD45C1 /* AnalyticsService.swift in Sources */,
+				527EF3522576792600FD45C1 /* AppAnalyticsEvent.swift in Sources */,
 				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52D6B8022573ED1200C48B2B /* RatingService.swift in Sources */,
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,

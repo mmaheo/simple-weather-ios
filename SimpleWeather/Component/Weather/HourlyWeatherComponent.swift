@@ -40,7 +40,7 @@ struct HourlyWeatherComponent: View {
 extension HourlyWeatherComponent {
     
     private var timeView: some View {
-        Text(time.format(format: "HH:mm"))
+        Text("\(time.format(format: "HH"))h")
             .lineLimit(1)
             .minimumScaleFactor(0.5)
     }

@@ -45,7 +45,7 @@ struct ForecastView: View {
         }
         .onAppear {
             settingsStore.dispatch(action: .fetchUnit)
-            forecastStore.dispatch(action: .fetchForecast)
+            forecastStore.dispatch(action: .forecastViewDidAppear)
             ratingStore.dispatch(action: .requestReview(force: false))
         }
     }

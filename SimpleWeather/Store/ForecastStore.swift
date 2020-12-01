@@ -10,7 +10,7 @@ import Injectable
 import Foundation
 
 enum ForecastStoreAction {
-    case fetchForecast
+    case forecastViewDidAppear
 }
 
 final class ForecastStore: ObservableObject {
@@ -26,6 +26,7 @@ final class ForecastStore: ObservableObject {
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
     @Inject private var userDefaultsService: UserDefaultsService
+    @Inject private var analyticsService: AnalyticsService
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -47,16 +48,16 @@ final class ForecastStore: ObservableObject {
     
     func dispatch(action: ForecastStoreAction) {
         switch action {
-        case .fetchForecast:
-            fetchForecastAction()
+        case .forecastViewDidAppear:
+            forecastViewDidAppearAction()
         }
     }
     
     // MARK: - Action Methods
     
-    private func fetchForecastAction() {
-        isLoading = true
-        locationService.fetchLocation()
+    private func forecastViewDidAppearAction() {
+        analyticsService.logScreenView(event: AppAnalyticsScreenView.forecastView)
+        fetchForecast()
     }
     
     // MARK: - Binding Methods
@@ -84,6 +85,14 @@ final class ForecastStore: ObservableObject {
                 self.daily = response.daily.data
             }
             .store(in: &cancellables)
+    }
+    
+    // MARK: - Methods
+    
+    private func fetchForecast() {
+        analyticsService.logEvent(event: AppAnalyticsEvent.fetchForecast)
+        isLoading = true
+        locationService.fetchLocation()
     }
 }
 

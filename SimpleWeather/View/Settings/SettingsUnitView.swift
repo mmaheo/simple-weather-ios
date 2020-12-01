@@ -22,8 +22,11 @@ struct SettingsUnitView: View {
             usUnitView
             siUnitView
         }
+        .onAppear {
+            settingsStore.dispatch(action: .fetchUnit)
+            settingsStore.dispatch(action: .settingsViewDidAppear(type: .unit))
+        }
         .navigationTitle(Text("§Units"))
-        .onAppear { settingsStore.dispatch(action: .fetchUnit) }
     }
 }
 
