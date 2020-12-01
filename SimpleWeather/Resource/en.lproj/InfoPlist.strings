@@ -6,4 +6,3 @@
   
 */
 NSLocationWhenInUseUsageDescription = "We need your location to show the weather near to you with accuracy.";
-CFBundleDisplayName = "Simple Weather";
