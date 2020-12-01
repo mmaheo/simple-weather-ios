@@ -12,6 +12,9 @@
 		523C02082573F98700632A5A /* SettingsPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */; };
 		523C020C2573FF3F00632A5A /* SettingsTermsAndConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */; };
 		5244EC8C2576324E00B7ED4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */; };
+		5244EC912576334200B7ED4B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5244EC902576334200B7ED4B /* FirebaseAnalytics */; };
+		5244EC932576334200B7ED4B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5244EC922576334200B7ED4B /* FirebaseCrashlytics */; };
+		5244EC99257634A100B7ED4B /* AppDelegateForFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */; };
 		5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */; };
 		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
@@ -117,6 +120,7 @@
 		523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyView.swift; sourceTree = "<group>"; };
 		523C020B2573FF3F00632A5A /* SettingsTermsAndConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsAndConditionView.swift; sourceTree = "<group>"; };
 		5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateForFirebase.swift; sourceTree = "<group>"; };
 		5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherApp.swift; sourceTree = "<group>"; };
 		5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5244EC932576334200B7ED4B /* FirebaseCrashlytics in Frameworks */,
+				5244EC912576334200B7ED4B /* FirebaseAnalytics in Frameworks */,
 				52EF7E1A256BA72100A06613 /* Injectable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +251,7 @@
 			children = (
 				5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */,
 				52EF7E23256BA75B00A06613 /* AppDependency.swift */,
+				5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */,
 				52097DC825705534005EE4EE /* Core */,
 				529F38B02573B12800AC2849 /* Util */,
 				52C5D4DC256BD5BD0088B72B /* Extension */,
@@ -534,6 +541,7 @@
 				5247DDBD256AFB3000FD1EF9 /* Resources */,
 				52EF7DF7256B9F6A00A06613 /* SwiftLint */,
 				529F38EA2573C28F00AC2849 /* Embed App Extensions */,
+				5244ECA02576394000B7ED4B /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -543,6 +551,8 @@
 			name = SimpleWeather;
 			packageProductDependencies = (
 				52EF7E19256BA72100A06613 /* Injectable */,
+				5244EC902576334200B7ED4B /* FirebaseAnalytics */,
+				5244EC922576334200B7ED4B /* FirebaseCrashlytics */,
 			);
 			productName = SimpleWeather;
 			productReference = 5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */;
@@ -596,6 +606,7 @@
 			mainGroup = 5247DDB6256AFB3000FD1EF9;
 			packageReferences = (
 				52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */,
+				5244EC8F2576334200B7ED4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5247DDC0256AFB3000FD1EF9 /* Products */;
 			projectDirPath = "";
@@ -629,6 +640,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5244ECA02576394000B7ED4B /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Scripts/run\"\n";
+		};
 		52EF7DF7256B9F6A00A06613 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,6 +689,7 @@
 				52CB46B32571769000B82085 /* DarkSkyRequest.swift in Sources */,
 				52A21B9C2572AD2400A55552 /* TabBarView.swift in Sources */,
 				52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */,
+				5244EC99257634A100B7ED4B /* AppDelegateForFirebase.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */,
 				524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */,
@@ -868,6 +900,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
@@ -877,6 +910,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -901,6 +935,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -985,6 +1020,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5244EC8F2576334200B7ED4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
 		52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mmaheo/Injectable.git";
@@ -996,6 +1039,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5244EC902576334200B7ED4B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5244EC8F2576334200B7ED4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5244EC922576334200B7ED4B /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5244EC8F2576334200B7ED4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		529F39622573C8F400AC2849 /* Injectable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 52EF7E18256BA72100A06613 /* XCRemoteSwiftPackageReference "Injectable" */;
