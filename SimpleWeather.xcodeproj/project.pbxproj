@@ -964,6 +964,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -989,6 +990,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
