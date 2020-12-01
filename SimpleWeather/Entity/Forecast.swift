@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Forecast: Identifiable, Decodable {
     
@@ -146,18 +147,18 @@ extension Forecast {
         Date(timeIntervalSince1970: sunsetTime ?? 0)
     }
     
-    var wrappedTimeOfTheDay: String {
+    var wrappedTimeOfTheDay: LocalizedStringKey {
         let hours = Int(wrappedTime.format(format: "HH")) ?? 0
         
         if hours >= 7 && hours <= 11 {
-            return "§This morning"
+            return "this_morning"
         } else if hours >= 12 && hours <= 18 {
-            return "§This afternoon"
+            return "this_afternoon"
         } else if hours >= 19 && hours <= 22 {
-            return "§This evening"
+            return "this_evening"
         }
         
-        return "§Tonight"
+        return "tonight"
     }
     
 }

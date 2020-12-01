@@ -51,22 +51,22 @@ struct DailyWeatherComponent: View {
                       spacing: 8) {
                 makeFieldView(iconSystemName: "thermometer.snowflake",
                               value: "\(temperatureMin)°",
-                              title: "§Min")
+                              title: "min")
                 makeFieldView(iconSystemName: "thermometer.sun.fill",
                               value: "\(temperatureMax)°",
-                              title: "§Max")
+                              title: "max")
                 makeFieldView(iconSystemName: "cloud.rain.fill",
                               value: "\(precipProbability)%",
-                              title: "§Pricipitation")
+                              title: "precipitation")
                 makeFieldView(iconSystemName: "wind",
                               value: "\(windSpeed) \(unit.windSpeedUnit)",
-                              title: "§Wind")
+                              title: "wind")
                 makeFieldView(iconSystemName: "sunrise.fill",
                               value: sunriseTime.format(format: "HH:mm"),
-                              title: "§Sunrise")
+                              title: "sunrise")
                 makeFieldView(iconSystemName: "sunset.fill",
                               value: sunsetTime.format(format: "HH:mm"),
-                              title: "§Sunset")
+                              title: "sunset")
             }
         }
         .padding()
@@ -78,7 +78,7 @@ struct DailyWeatherComponent: View {
 extension DailyWeatherComponent {
     private func makeFieldView(iconSystemName: String,
                                value: String,
-                               title: String) -> some View {
+                               title: LocalizedStringKey) -> some View {
         HStack {
             WeatherIconComponent(iconSystemName: iconSystemName,
                                  isCompact: true)

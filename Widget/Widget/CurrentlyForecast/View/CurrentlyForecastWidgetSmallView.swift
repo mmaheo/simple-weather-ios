@@ -71,7 +71,9 @@ extension CurrentlyForecastWidgetSmallView {
                 Text("\(temperature)°")
                     .bold()
                 
-                Text("§Feeling \(apparentTemperature)°")
+                Text(String(format: NSLocalizedString("feeling_temperature",
+                                                      comment: ""),
+                            apparentTemperature))
                     .font(.caption)
                     .foregroundColor(.gray)
             }

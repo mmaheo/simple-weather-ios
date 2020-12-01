@@ -21,7 +21,7 @@ struct TabBarView: View {
                 ForecastView()
             }
             .tabItem {
-                Label("§Forecast",
+                Label("forecast_view_title",
                       systemImage: "thermometer")
             }
             .tag(Tab.forecast)
@@ -30,7 +30,7 @@ struct TabBarView: View {
                 SettingsView()
             }
             .tabItem {
-                Label("§Settings",
+                Label("settings_view_title",
                       systemImage: "gearshape")
             }
             .tag(Tab.settings)

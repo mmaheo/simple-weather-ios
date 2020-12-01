@@ -1,0 +1,8 @@
+/*
+  InfoPlist.strings
+  SimpleWeather
+
+  Created by Maxime Maheo on 01/12/2020.
+  
+*/
+NSLocationWhenInUseUsageDescription = "Nous avons besoin de votre emplacement pour afficher la météo près de chez vous avec précision.";

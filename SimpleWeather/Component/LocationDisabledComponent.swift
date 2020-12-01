@@ -15,11 +15,11 @@ struct LocationDisabledComponent: View {
         VStack(spacing: 16) {
             Spacer()
             
-            Text("§Whoops")
+            Text("location_disabled_title")
                 .font(.largeTitle)
                 .bold()
             
-            Text("§You have disabled location for this app. This is required, please enable it in settings.")
+            Text("location_disabled_message")
                 .font(.caption)
                 .foregroundColor(.secondary)
             

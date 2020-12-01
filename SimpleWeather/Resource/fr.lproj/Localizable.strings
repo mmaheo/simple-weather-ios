@@ -1,0 +1,52 @@
+/*
+  Localizable.strings
+  SimpleWeather
+
+  Created by Maxime Maheo on 01/12/2020.
+  
+*/
+"error_network_title" = "Erreur réseau";
+"error_network_message" = "On dirait que vous n'êtes pas connecté à Internet. Veuillez activer le WiFi ou vérifier vos paramètres.";
+"error_generic_title" = "Une erreur s'est produite";
+"error_generic_message" = "Un problème est survenu. Veuillez réessayer plus tard.";
+"error_dismiss_action_title" = "J'ai compris !";
+"this_morning" = "Ce matin";
+"this_afternoon" = "Cet après midi";
+"this_evening" = "Ce soir";
+"tonight" = "Cette nuit";
+"this_week" = "Cette semaine";
+"today" = "Aujourd'hui";
+"min" = "Min";
+"max" = "Max";
+"precipitation" = "Précipitation";
+"wind" = "Vent";
+"sunrise" = "Lever du soleil";
+"sunset" = "Coucher du soleil";
+"location_disabled_title" = "Whoops";
+"location_disabled_message" = "Vous avez désactivé la localisation pour cette application. Ceci est obligatoire, veuillez l'activer dans les paramètres.";
+"forecast_view_title" = "Prévision";
+"settings_view_title" = "Réglages";
+"select_a_view" = "Sélectionnez une vue à afficher";
+"sidebar_app_title" = "Simple Weather";
+"loading" = "Chargement ...";
+"powered_by_dark_sky" = "Propulsé par Dark Sky";
+"units" = "Unités";
+"rate_the_app" = "Rate the app";
+"explore_my_project" = "Évaluer l'application";
+"privacy_policy" = "Politique de confidentialité";
+"terms_and_conditions" = "Termes & Conditions";
+"made_by_maxime_maheo" = "Fait avec ❤️ par Maxime Maheo";
+"canada" = "Canada";
+"canada_units" = "Celsius, Kilometers, KM/H";
+"uk" = "UK";
+"uk_units" = "Celsius, Miles, MPH";
+"us" = "US";
+"us_units" = "Fahrenheit, Miles, MPH";
+"si" = "Internationale";
+"si_units" = "Celsius, Kilometers, M/S";
+"currently_forecast_widget_title" = "Prévisions actuelles";
+"currently_forecast_widget_description" = "Voir la météo actuelle.";
+"hourly_forecast_widget_title" = "Prévision horaire";
+"hourly_forecast_widget_description" = "Voir la météo dans les prochaines heures.";
+"widget_not_available" = "Le widget n'est pas disponible.";
+"feeling_temperature" = "Ressenti %d°";

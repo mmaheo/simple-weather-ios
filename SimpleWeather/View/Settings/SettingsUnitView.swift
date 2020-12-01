@@ -26,7 +26,7 @@ struct SettingsUnitView: View {
             settingsStore.dispatch(action: .fetchUnit)
             settingsStore.dispatch(action: .settingsViewDidAppear(type: .unit))
         }
-        .navigationTitle(Text("§Units"))
+        .navigationTitle("units")
     }
 }
 
@@ -35,32 +35,32 @@ extension SettingsUnitView {
     private var caUnitView: some View {
         makeRowView(action: { settingsStore.dispatch(action: .change(unit: .ca)) },
                     icon: "🇨🇦",
-                    title: "§Canada",
-                    subtitle: "§Celsius, Kilometers, KM/H",
+                    title: "canada",
+                    subtitle: "canada_units",
                     isSelected: settingsStore.unit == .ca)
     }
     
     private var ukUnitView: some View {
         makeRowView(action: { settingsStore.dispatch(action: .change(unit: .uk)) },
                     icon: "🇬🇧",
-                    title: "§UK",
-                    subtitle: "§Celsius, Miles, MPH",
+                    title: "uk",
+                    subtitle: "uk_units",
                     isSelected: settingsStore.unit == .uk)
     }
     
     private var usUnitView: some View {
         makeRowView(action: { settingsStore.dispatch(action: .change(unit: .us)) },
                     icon: "🇺🇸",
-                    title: "§US",
-                    subtitle: "§Fahrenheit, Miles, MPH",
+                    title: "us",
+                    subtitle: "us_units",
                     isSelected: settingsStore.unit == .us)
     }
     
     private var siUnitView: some View {
         makeRowView(action: { settingsStore.dispatch(action: .change(unit: .si)) },
                     icon: "🌍",
-                    title: "§International",
-                    subtitle: "§Celsius, Kilometers, M/S",
+                    title: "si",
+                    subtitle: "si_units",
                     isSelected: settingsStore.unit == .si)
     }
     

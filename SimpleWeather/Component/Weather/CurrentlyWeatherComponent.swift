@@ -27,7 +27,9 @@ struct CurrentlyWeatherComponent: View {
                     .font(.title)
                     .bold()
                 
-                Text("§Feeling \(apparentTemperature)°")
+                Text(String(format: NSLocalizedString("feeling_temperature",
+                                                      comment: ""),
+                            apparentTemperature))
                     .font(.body)
                     .foregroundColor(.secondary)
             }

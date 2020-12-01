@@ -32,7 +32,7 @@ struct SettingsView: View {
         .onAppear {
             settingsStore.dispatch(action: .settingsViewDidAppear(type: .main))
         }
-        .navigationTitle(Text("§Settings"))
+        .navigationTitle("settings_view_title")
     }
 }
 
@@ -40,30 +40,30 @@ extension SettingsView {
     
     private var unitRowView: some View {
         NavigationLink(destination: SettingsUnitView(),
-                       label: { Label("§Units", systemImage: "globe") })
+                       label: { Label("units", systemImage: "globe") })
     }
     
     private var ratingRowView: some View {
         Button(action: { ratingStore.dispatch(action: .requestReview(force: true)) },
-               label: { Label("§Rate the app", systemImage: "star") })
+               label: { Label("rate_the_app", systemImage: "star") })
     }
     
     private var exploreMyProjectView: some View {
         URL(string: "https://github.com/mmaheo/simple-weather-ios").map {
             Link(destination: $0,
-                 label: { Label("§Explore my project", systemImage: "safari") })
+                 label: { Label("explore_my_project", systemImage: "safari") })
         }
         
     }
     
     private var privacyPolicyView: some View {
         NavigationLink(destination: SettingsPrivacyPolicyView(),
-                       label: { Label("§Privacy Policy", systemImage: "lock.shield") })
+                       label: { Label("privacy_policy", systemImage: "lock.shield") })
     }
     
     private var termsAndConditionView: some View {
         NavigationLink(destination: SettingsTermsAndConditionsView(),
-                       label: { Label("§Terms & Conditions", systemImage: "doc.text") })
+                       label: { Label("terms_and_conditions", systemImage: "doc.text") })
     }
     
     private var sectionFooterView: some View {
@@ -82,7 +82,7 @@ extension SettingsView {
     }
     
     private var madeByView: some View {
-        Text("§Made with ❤️ by Maxime Maheo")
+        Text("made_by_maxime_maheo")
             .italic()
     }
 }

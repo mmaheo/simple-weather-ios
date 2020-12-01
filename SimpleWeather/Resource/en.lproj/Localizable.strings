@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  SimpleWeather
+
+  Created by Maxime Maheo on 01/12/2020.
+  
+*/
+"error_network_title" = "Network error";
+"error_network_message" = "Looks like you're not connected to the internet. Please enable WiFi or check your settings.";
+"error_generic_title" = "An error occurred";
+"error_generic_message" = "Something went wrong. Please try again later.";
+"error_dismiss_action_title" = "Got it !";
+"this_morning" = "This morning";
+"this_afternoon" = "This afternoon";
+"this_evening" = "This evening";
+"tonight" = "Tonight";
+"this_week" = "This week";
+"today" = "Today";
+"min" = "Min";
+"max" = "Max";
+"precipitation" = "Precipitation";
+"wind" = "Wind";
+"sunrise" = "Sunrise";
+"sunset" = "Sunset";
+"location_disabled_title" = "Whoops";
+"location_disabled_message" = "You have disabled location for this app. This is required, please enable it in settings.";
+"forecast_view_title" = "Forecast";
+"settings_view_title" = "Settings";
+"select_a_view" = "Select a view to show";
+"sidebar_app_title" = "Simple Weather";
+"loading" = "Loading ...";
+"powered_by_dark_sky" = "Powered by Dark Sky";
+"units" = "Units";
+"rate_the_app" = "Rate the app";
+"explore_my_project" = "Explore my project";
+"privacy_policy" = "Privacy Policy";
+"terms_and_conditions" = "Terms & Conditions";
+"made_by_maxime_maheo" = "Made with ❤️ by Maxime Maheo";
+"canada" = "Canada";
+"canada_units" = "Celsius, Kilometers, KM/H";
+"uk" = "UK";
+"uk_units" = "Celsius, Miles, MPH";
+"us" = "US";
+"us_units" = "Fahrenheit, Miles, MPH";
+"si" = "International";
+"si_units" = "Celsius, Kilometers, M/S";
+"currently_forecast_widget_title" = "Current forecast";
+"currently_forecast_widget_description" = "See the current weather.";
+"hourly_forecast_widget_title" = "Hourly forecast";
+"hourly_forecast_widget_description" = "See the weather in the next hours.";
+"widget_not_available" = "Widget is not available.";
+"feeling_temperature" = "Feeling %d°";

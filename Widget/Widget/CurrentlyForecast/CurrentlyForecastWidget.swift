@@ -16,8 +16,8 @@ struct CurrentlyForecastWidget: Widget {
                             provider: ForecastWidgetTimelineProvider()) { entry in
             CurrentlyForecastWidgetView(entry: entry)
         }
-        .configurationDisplayName("§Current forecast")
-        .description("§See the current weather.")
+        .configurationDisplayName("currently_forecast_widget_title")
+        .description("currently_forecast_widget_description")
         .supportedFamilies([.systemSmall])
     }
 }

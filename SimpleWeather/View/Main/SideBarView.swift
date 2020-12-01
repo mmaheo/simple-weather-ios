@@ -19,7 +19,7 @@ struct SideBarView: View {
         NavigationView {
             sideBarView
                 
-            Text("§Select a category")
+            Text("select_a_view")
                 .foregroundColor(.secondary)
         }
     }
@@ -32,7 +32,7 @@ extension SideBarView {
             NavigationLink(destination: ForecastView(),
                            tag: NavigationItem.forecast,
                            selection: $selection) {
-                Label("§Forecast",
+                Label("forecast_view_title",
                       systemImage: "thermometer")
             }
             .tag(NavigationItem.forecast)
@@ -40,13 +40,13 @@ extension SideBarView {
             NavigationLink(destination: SettingsView(),
                            tag: NavigationItem.settings,
                            selection: $selection) {
-                Label("§Settings",
+                Label("settings_view_title",
                       systemImage: "gearshape")
             }
             .tag(NavigationItem.settings)
         }
         .listStyle(SidebarListStyle())
-        .navigationTitle("§Simple Weather")
+        .navigationTitle("sidebar_app_title")
     }
     
 }

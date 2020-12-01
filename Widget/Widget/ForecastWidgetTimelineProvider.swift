@@ -53,7 +53,7 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
     
     private func getCurrentlyForecastWidgetEntry(completion: @escaping (Entry) -> Void) {
         let unit = userDefaultsService.fetchUnit() ?? .si
-        let locality = userDefaultsService.fetchLocality() ?? "§Today"
+        let locality = userDefaultsService.fetchLocality() ?? NSLocalizedString("today", comment: "")
 
         guard
             let latitude = userDefaultsService.fetchLatitude(),

@@ -32,7 +32,7 @@ struct SettingsPrivacyPolicyView: View {
         .onAppear {
             settingsStore.dispatch(action: .settingsViewDidAppear(type: .privacyPolicy))
         }
-        .navigationTitle("§Privacy Policy")
+        .navigationTitle("privacy_policy")
     }
     
 }

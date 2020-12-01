@@ -32,7 +32,7 @@ struct ForecastView: View {
             if locationStore.isAuthorizationStatusDenied {
                 LocationDisabledComponent()
             } else if forecastStore.isLoading {
-                ProgressView("§Loading")
+                ProgressView("loading")
             } else {
                 contentView
             }
@@ -96,7 +96,7 @@ extension ForecastView {
     }
     
     private var dailyWeatherView: some View {
-        makeSectionView(title: "§This week") {
+        makeSectionView(title: "this_week") {
             LazyVGrid(columns: dailyWeatherLayout,
                       spacing: 16) {
                 ForEach(forecastStore.daily) { forecast in
@@ -123,7 +123,7 @@ extension ForecastView {
             HStack {
                 Spacer()
                 Link(destination: url) {
-                    Text("§Powered by Dark Sky")
+                    Text("powered_by_dark_sky")
                         .font(.caption)
                         .italic()
                         .foregroundColor(.gray)
@@ -139,7 +139,7 @@ extension ForecastView {
 }
 
 extension ForecastView {
-    private func makeSectionView<T: View>(title: String,
+    private func makeSectionView<T: View>(title: LocalizedStringKey,
                                           _ content: @escaping () -> T) -> some View {
         VStack(alignment: .leading) {
             Text(title)

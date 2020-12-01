@@ -13,7 +13,7 @@ struct WidgetNotAvailableView: View {
     // MARK: - Body
     
     var body: some View {
-        Text("§Widget is not available.")
+        Text("widget_not_available")
             .multilineTextAlignment(.center)
     }
 }

@@ -28,7 +28,7 @@ struct SettingsTermsAndConditionsView: View {
         .onAppear {
             settingsStore.dispatch(action: .settingsViewDidAppear(type: .termsAndConditions))
         }
-        .navigationTitle("§Terms & Conditions")
+        .navigationTitle("terms_and_conditions")
     }
     
 }

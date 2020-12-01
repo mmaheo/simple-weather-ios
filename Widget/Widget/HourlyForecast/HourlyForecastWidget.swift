@@ -16,8 +16,8 @@ struct HourlyForecastWidget: Widget {
                             provider: ForecastWidgetTimelineProvider()) { entry in
             HourlyForecastWidgetView(entry: entry)
         }
-        .configurationDisplayName("§Hourly forecast")
-        .description("§See the weather in the next hours")
+        .configurationDisplayName("hourly_forecast_widget_title")
+        .description("hourly_forecast_widget_description")
         .supportedFamilies([.systemMedium])
     }
 }
