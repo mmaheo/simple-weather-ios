@@ -16,10 +16,22 @@ struct HourlyForecastWidgetMediumView: View {
     let date: Date
     let hourlyForecast: [Forecast]
     
+    private var hourlyTemperatureMin: Int {
+        hourlyForecast
+            .map { $0.wrappedTemperature }
+            .min() ?? 0
+    }
+    
+    private var hourlyTemperatureMax: Int {
+        hourlyForecast
+            .map { $0.wrappedTemperature }
+            .max() ?? 0
+    }
+    
     // MARK: - Body
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             localityView
             Spacer()
             forecastView
@@ -49,13 +61,21 @@ extension HourlyForecastWidgetMediumView {
     }
     
     private var forecastView: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 0) {
             ForEach(hourlyForecast) { forecast in
+                let isLastForecast = hourlyForecast.last == forecast
+                
                 HourlyWeatherComponent(time: forecast.wrappedTime,
                                        temperature: forecast.wrappedTemperature,
+                                       temperatureMin: hourlyTemperatureMin,
+                                       temperatureMax: hourlyTemperatureMax,
                                        iconSystemName: forecast.wrappedIconSystemName,
                                        precipProbability: forecast.wrappedPrecipProbability,
                                        isWidget: true)
+                
+                if !isLastForecast {
+                    Spacer()
+                }
             }
         }
     }

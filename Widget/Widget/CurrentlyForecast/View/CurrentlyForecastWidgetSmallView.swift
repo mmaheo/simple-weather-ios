@@ -31,7 +31,8 @@ struct CurrentlyForecastWidgetSmallView: View {
     // MARK: - Body
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading,
+               spacing: 0) {
             localityView
             dateView
             Spacer()

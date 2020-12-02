@@ -24,6 +24,20 @@ struct ForecastView: View {
             [GridItem(.adaptive(minimum: 250), spacing: 16)]
     }
     
+    private var hourlyTemperatureMin: Int {
+        forecastStore
+            .hourly
+            .map { $0.wrappedTemperature }
+            .min() ?? 0
+    }
+    
+    private var hourlyTemperatureMax: Int {
+        forecastStore
+            .hourly
+            .map { $0.wrappedTemperature }
+            .max() ?? 0
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -83,6 +97,8 @@ extension ForecastView {
                             
                             HourlyWeatherComponent(time: forecast.wrappedTime,
                                                    temperature: forecast.wrappedTemperature,
+                                                   temperatureMin: hourlyTemperatureMin,
+                                                   temperatureMax: hourlyTemperatureMax,
                                                    iconSystemName: forecast.wrappedIconSystemName,
                                                    precipProbability: forecast.wrappedPrecipProbability)
                                 .padding(.leading, isInFirstPosition ? 16 : 0)
