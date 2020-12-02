@@ -1,1 +1,1 @@
-
+Simple Weather shows the current temperature, amount of precipitation (and much more!), In the hours and days to come, with beautiful widgets and dark mode!

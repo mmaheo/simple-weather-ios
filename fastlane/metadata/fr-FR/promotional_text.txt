@@ -1,1 +1,1 @@
-
+Simple Weather indique la température, la quantité de précipitations (et bien plus encore !) actuel, dans les heures et jours à venir, avec de magnifiques widgets !
