@@ -22,7 +22,7 @@ struct HourlyWeatherComponent: View {
     }
     
     private var precipIconWidth: CGFloat {
-        isWidget ? 14 : 20
+        isWidget ? 10 : 14
     }
     
     // MARK: - Body

@@ -23,7 +23,7 @@ struct WeatherIconComponent: View {
     }
     
     private var width: CGFloat {
-        isWidget ? 14 : isCompact ? 15 : isLarge ? 50 : 25
+        isWidget ? 14 : isCompact ? 20 : isLarge ? 50 : 25
     }
     
     private var padding: CGFloat {
