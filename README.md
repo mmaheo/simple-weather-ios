@@ -2,14 +2,11 @@
 [![Xcode](https://img.shields.io/badge/Xcode-12.0-brightgreen.svg)](https://developer.apple.com/download/more/)
 
 <div align=center>
-	<img src="SimpleWeather/Resource/Assets.xcassets/appIcon.appiconset/180.png" 
-		 style="border-radius: 30px;">
-	<h1>Simple Weather</h1>
-
-	<a href="https://apps.apple.com/app/simple-weather/id1542742219">
-		<img src="Pictures/download-on-the-app-store.png" 
-			width="150"/>
-	</a>
+<img src="https://github.com/mmaheo/simple-weather-ios/blob/main/SimpleWeather/Resource/Assets.xcassets/AppIcon.appiconset/180.png" style="border-radius: 30px;">
+<h1>Simple Weather</h1>
+<a href="https://apps.apple.com/app/simple-weather/id1542742219">
+<img src="Pictures/download-on-the-app-store.png" width="150"/>
+</a>
 </div>
 
 ## 📖 Description
