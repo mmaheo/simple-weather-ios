@@ -11,7 +11,6 @@ struct SettingsView: View {
     
     // MARK: - Properties
     
-    @EnvironmentObject private var ratingStore: RatingStore
     @EnvironmentObject private var settingsStore: SettingsStore
     
     // MARK: - Body
@@ -100,7 +99,6 @@ struct SettingsView_Previews: PreviewProvider {
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }
-        .environmentObject(ratingStorePreview)
         .environmentObject(settingsStorePreview)
     }
 }

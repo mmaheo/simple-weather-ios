@@ -1,13 +1,38 @@
-# Simple Weather
+[![Language](https://img.shields.io/badge/Swift-5.3-brightgreen.svg)](http://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-12.0-brightgreen.svg)](https://developer.apple.com/download/more/)
+
+<div align=center>
+	<img src="SimpleWeather/Resource/Assets.xcassets/appIcon.appiconset/180.png" 
+		 style="border-radius: 30px;">
+	<h1>Simple Weather</h1>
+
+	<a href="https://apps.apple.com/app/simple-weather/id1542742219">
+		<img src="Pictures/download-on-the-app-store.png" 
+			width="150"/>
+	</a>
+</div>
+
+## 📖 Description
 
 A simple weather app created with SwiftUI 2.0 for iOS 14 &amp; iPadOS
 
-<a href="https://apps.apple.com/app/simple-weather/id1542742219">
-	<img src="Pictures/download-on-the-app-store.png" alt="download on the app store" style="width:150px;"/>
-</a>
+## 🛠 Install
 
-<p align="center">
-	<img src="Pictures/screenshot1.png" alt="screenshot1"/>
-	<img src="Pictures/screenshot2.png" alt="screenshot2"/>
-	<img src="Pictures/screenshot3.png" alt="screenshot3"/>
-</p>
+* `git clone https://github.com/mmaheo/simple-weather-ios`
+* Create a new file with the following content 
+
+```swift
+public let darkSkyApiKey = "Your Api Key from dark sky"
+```
+
+* Add the `GoogleService-Info.plist` exported from your firebase project account
+
+## 📦 Dependencies
+
+* [Injectable](https://github.com/mmaheo/Injectable): Lightweight dependency injection framework
+* [Firebase](https://github.com/firebase/firebase-ios-sdk): Firebase iOS SDK
+
+## 👨‍💻 Developer
+
+* Maxime Maheo
+    * [LinkedIn](https://www.linkedin.com/in/maxime-maheo-120907a8/)
