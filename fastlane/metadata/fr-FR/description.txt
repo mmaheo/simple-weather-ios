@@ -1,0 +1,9 @@
+Simple Weather offre des informations météorologiques locales et précis. Grâce à des prévisions à la minute près, vous saurez exactement quand la pluie commencera ou s'arrêtera, exactement là où vous vous trouvez.
+
+VOTRE MÉTÉO SIMPLEMENT
+Simple Weather fournit les données dont vous avez besoin et affiche les prévisions pour votre emplacement précis, vous donnant des prévisions UTILE pour les prochaines heures et pour la semaine prochaine.
+
+WIDGET
+Les widgets Simple Weather vous indiquent en un coup d'œil ce qui se passe dehors et dans les prochaines heures. Vous n'avez donc même pas à déverrouiller votre téléphone pour vérifier rapidement la météo avant de partir.
+
+Contactez-moi si vous avec un souci ou si vous souhaitez de nouvelles fonctionnalités : imaxame@gmail.com

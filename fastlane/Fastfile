@@ -1,0 +1,86 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+
+
+	# You still need to update version & build number (App + Widget) + create new version in app store
+
+	desc "Upload a new version on app store 🥳"
+	lane :deploy do
+
+		devices = ["iPhone 8 Plus", "iPhone 12 Pro Max", "iPad Pro (12.9-inch) (3rd generation)", "iPad Pro (12.9-inch) (3rd generation)", "iPad Pro (12.9-inch) (2nd generation)"]
+		languages = ["en-US", "fr-FR"]
+		scheme = "SimpleWeather"
+
+		# capture_ios_screenshots(
+		# 	scheme: scheme,
+		# 	devices: devices,
+		# 	languages: languages,
+		# 	output_directory: "./fastlane/screenshots",
+		# 	override_status_bar: true,
+		# 	dark_mode: true,
+		# 	clear_previous_screenshots: true,
+		# 	skip_open_summary: true
+		# )
+
+		# build_app(
+		# 	scheme: scheme,
+		# 	include_bitcode: true,
+		# 	output_directory: "./fastlane/build"
+		# )
+
+		# upload_to_app_store(
+		# 	force: true,
+		# 	metadata_path: "./fastlane/metadata",
+		# 	screenshots_path: "./fastlane/screenshots",
+		# 	ipa: "./fastlane/build/SimpleWeather.ipa",
+		# 	overwrite_screenshots: true,
+		# 	submit_for_review: true,
+		# 	automatic_release: true,
+		# 	username: "maxime.maheo@gmail.com",
+		# 	submission_information: {
+		# 		add_id_info_uses_idfa: false
+		# 	}
+		# )
+
+
+		# upload_symbols_to_crashlytics(
+		# 	dsym_path: "./fastlane/build/SimpleWeather.app.dSYM.zip"
+		# )
+
+  		tag_and_push(
+			tag: get_version_number(target: scheme)
+		)
+
+	end
+
+	lane :tag_and_push do |options|
+		# Do a tag, we use a http git remote so we can have push access
+		# as the default remote for circle is read-only
+		tag = options[:tag]
+
+		`git add .`
+		`git commit -m "Version #{tag}"`
+		`git tag -d "#{tag}"`
+	  
+		add_git_tag tag: tag
+		`git remote add http https://github.com/mmaheo/simple-weather-ios`
+		`git push http #{tag} -f`
+	  end
+end

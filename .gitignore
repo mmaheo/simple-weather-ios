@@ -92,3 +92,4 @@ iOSInjectionProject/
 .DS_Store
 /SimpleWeather/Service/DarkSkyApiKey.swift
 /SimpleWeather/Resource/GoogleService-Info.plist
+/fastlane/screenshots/screenshots.html

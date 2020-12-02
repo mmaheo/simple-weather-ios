@@ -105,7 +105,7 @@ extension HourlyWeatherComponent {
                     .fill(Color.blue)
                     
                 Text("\(precipProbability)%")
-                    .foregroundColor(Color.white.opacity(0.8))
+                    .foregroundColor(Color.white)
                     .minimumScaleFactor(0.3)
                     .lineLimit(1)
                     .padding(.horizontal, 4)

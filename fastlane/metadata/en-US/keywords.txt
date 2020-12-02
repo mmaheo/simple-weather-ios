@@ -1,0 +1,1 @@
+météo,ipad,climat,forecast,rain,weather,free,widget,simple,radar,swiftui,ciel,sky,dark,carrot,easy

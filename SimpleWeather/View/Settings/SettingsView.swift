@@ -40,6 +40,7 @@ extension SettingsView {
     private var unitRowView: some View {
         NavigationLink(destination: SettingsUnitView(),
                        label: { Label("units", systemImage: "globe") })
+            .accessibility(identifier: "units_settings_link")
     }
     
     private var ratingRowView: some View {
