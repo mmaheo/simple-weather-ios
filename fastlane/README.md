@@ -16,16 +16,16 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
+### ios screenshots_and_deploy
+```
+fastlane ios screenshots_and_deploy
+```
+Upload a new version on app store (and take screenshots) 🥳
 ### ios deploy
 ```
 fastlane ios deploy
 ```
-Upload a new version on app store 🥳
-### ios tag_and_push
-```
-fastlane ios tag_and_push
-```
-
+Upload a new version on app store (and dont take screenshots) 🥳
 
 ----
 

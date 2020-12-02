@@ -77,7 +77,7 @@ platform :ios do
 		)
 
   		tag_and_push(
-			tag: get_version_number(target: scheme)
+			tag: "#{get_version_number(target: scheme)}-(#{get_build_number})"
 		)
 	end
 
