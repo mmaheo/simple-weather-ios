@@ -18,14 +18,19 @@ default_platform(:ios)
 platform :ios do
 
 	# You still need to update version & build number (App + Widget) + create new version in app store
-	desc "Upload a new version on app store (WITH screenshots) 🥳"
+	desc "Upload a new version on app store (and take screenshots) 🥳"
 	lane :screenshots_and_deploy do
 		take_screenshots
-		deploy
+		private_deploy(skip_screenshots: false)
 	end
-	
+
+	desc "Upload a new version on app store (and dont take screenshots) 🥳"
+	lane :deploy do
+		private_deploy(skip_screenshots: true)
+	end
+
 	desc "Take screenshots 📸"
-	lane :take_screenshots do
+	private_lane :take_screenshots do
 		devices = ["iPhone 8 Plus", "iPhone 12 Pro Max", "iPad Pro (12.9-inch) (3rd generation)", "iPad Pro (12.9-inch) (3rd generation)", "iPad Pro (12.9-inch) (2nd generation)"]
 		languages = ["en-US", "fr-FR"]
 		scheme = "SimpleWeather"
@@ -42,9 +47,9 @@ platform :ios do
 		)
 	end
 
-	desc "Upload a new version on app store (without screenshots) 🥳"
-	lane :deploy do
+	private_lane :private_deploy do |options|
 		scheme = "SimpleWeather"
+		skip_screenshots = options[:skip_screenshots]
 
 		build_app(
 			scheme: scheme,
@@ -63,7 +68,8 @@ platform :ios do
 			username: "maxime.maheo@gmail.com",
 			submission_information: {
 				add_id_info_uses_idfa: false
-			}
+			},
+			skip_screenshots: skip_screenshots
 		)
 
 		upload_symbols_to_crashlytics(
@@ -75,7 +81,7 @@ platform :ios do
 		)
 	end
 
-	lane :tag_and_push do |options|
+	private_lane :tag_and_push do |options|
 		# Do a tag, we use a http git remote so we can have push access
 		# as the default remote for circle is read-only
 		tag = options[:tag]
