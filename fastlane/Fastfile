@@ -75,22 +75,6 @@ platform :ios do
 		upload_symbols_to_crashlytics(
 			dsym_path: "./fastlane/build/SimpleWeather.app.dSYM.zip"
 		)
-
-  		tag_and_push(
-			tag: "#{get_version_number(target: scheme)}-(#{get_build_number})"
-		)
 	end
 
-	private_lane :tag_and_push do |options|
-		# Do a tag, we use a http git remote so we can have push access
-		# as the default remote for circle is read-only
-		tag = options[:tag]
-
-		`git add .`
-		`git commit -m "Version #{tag}"`
-		`git tag -d "#{tag}"`
-	  
-		add_git_tag tag: tag
-		`git push`
-	  end
 end
