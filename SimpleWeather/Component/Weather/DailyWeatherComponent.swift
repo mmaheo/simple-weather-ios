@@ -39,7 +39,8 @@ struct DailyWeatherComponent: View {
                 .foregroundColor(.secondary)
             
             HStack {
-                WeatherIconComponent(iconSystemName: iconSystemName)
+                WeatherIconComponent(iconSystemName: iconSystemName,
+                                     size: .normal)
                 
                 Text(summary)
                     .font(.subheadline)
@@ -81,7 +82,7 @@ extension DailyWeatherComponent {
                                title: LocalizedStringKey) -> some View {
         HStack {
             WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isCompact: true)
+                                 size: .small)
             
             VStack(alignment: .leading) {
                 Text(value)
@@ -144,7 +145,6 @@ struct DailyWeatherComponent_Previews: PreviewProvider {
                              .accessibilityExtraExtraExtraLarge)
         }
         .previewLayout(.sizeThatFits)
-        .padding()
     }
 }
 

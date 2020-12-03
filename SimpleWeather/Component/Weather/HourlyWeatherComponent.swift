@@ -64,7 +64,7 @@ extension HourlyWeatherComponent {
             Spacer()
             
             WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isCompact: true)
+                                 size: .normal)
             
             Text("\(temperature)°")
                 .lineLimit(1)

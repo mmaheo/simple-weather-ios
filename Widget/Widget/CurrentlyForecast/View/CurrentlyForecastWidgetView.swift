@@ -27,11 +27,8 @@ struct CurrentlyForecastWidgetView: View {
                 let iconSystemName = entry.iconSystemName,
                 let temperature = entry.temperature,
                 let temperatureMin = entry.temperatureMin,
-                let apparentTemperature = entry.apparentTemperature,
-                let precipProbability = entry.precipProbability,
-                let windSpeed = entry.windSpeed,
-                let unit = entry.unit,
-                let sunsetTime = entry.sunsetTime
+                let temperatureMax = entry.temperatureMax,
+                let apparentTemperature = entry.apparentTemperature
             {
             
             CurrentlyForecastWidgetSmallView(locality: locality,
@@ -39,11 +36,8 @@ struct CurrentlyForecastWidgetView: View {
                                              iconSystemName: iconSystemName,
                                              temperature: temperature,
                                              temperatureMin: temperatureMin,
-                                             apparentTemperature: apparentTemperature,
-                                             precipProbability: precipProbability,
-                                             windSpeed: windSpeed,
-                                             unit: unit,
-                                             sunsetTime: sunsetTime)
+                                             temperatureMax: temperatureMax,
+                                             apparentTemperature: apparentTemperature)
             } else {
                 WidgetNotAvailableView()
             }

@@ -17,28 +17,19 @@ struct CurrentlyForecastWidgetSmallView: View {
     let iconSystemName: String
     let temperature: Int
     let temperatureMin: Int
+    let temperatureMax: Int
     let apparentTemperature: Int
-    let precipProbability: Int
-    let windSpeed: Int
-    let unit: Unit
-    let sunsetTime: Date
-
-    private let layout = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
     
     // MARK: - Body
     
     var body: some View {
         VStack(alignment: .leading,
                spacing: 0) {
-            localityView
-            dateView
+            headerView
             Spacer()
             currentView
             Spacer()
-            fieldsView
+            temperatureView
         }
         .padding()
     }
@@ -46,27 +37,27 @@ struct CurrentlyForecastWidgetSmallView: View {
 
 extension CurrentlyForecastWidgetSmallView {
     
-    private var localityView: some View {
-        HStack {
-            Text(locality)
-                .font(.headline)
-                .lineLimit(1)
+    private var headerView: some View {
+        VStack(alignment: .leading,
+               spacing: 0) {
+            HStack {
+                Text(locality)
+                    .font(.headline)
+                    .lineLimit(1)
+                
+                Spacer()
+            }
             
-            Spacer()
+            Text(date.format(format: "HH:mm"))
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
         }
-    }
-    
-    private var dateView: some View {
-        Text(date.format(format: "HH:mm"))
-            .font(.system(size: 10))
-            .foregroundColor(.gray)
     }
     
     private var currentView: some View {
         HStack {
             WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isLarge: false,
-                                 isCompact: true)
+                                 size: .small)
             
             VStack(alignment: .leading) {
                 Text("\(temperature)°")
@@ -81,34 +72,15 @@ extension CurrentlyForecastWidgetSmallView {
         }
     }
     
-    private var fieldsView: some View {
-        LazyVGrid(columns: layout,
-                  alignment: .leading,
-                  spacing: 8) {
-            makeFieldView(iconSystemName: "thermometer.snowflake",
-                          value: "\(temperatureMin)°")
-            makeFieldView(iconSystemName: "cloud.rain.fill",
-                          value: "\(precipProbability)%")
-            makeFieldView(iconSystemName: "wind",
-                          value: "\(windSpeed) \(unit.windSpeedUnit)")
-            makeFieldView(iconSystemName: "sunset.fill",
-                          value: sunsetTime.format(format: "HH:mm"))
-        }
-    }
-    
-}
-
-extension CurrentlyForecastWidgetSmallView {
-    private func makeFieldView(iconSystemName: String,
-                               value: String) -> some View {
+    private var temperatureView: some View {
         HStack {
-            WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isWidget: true)
+            Spacer()
+            MinMaxTemperatureComponent(temperature: temperatureMin,
+                                       type: .min)
             
-            Text(value)
-                .font(.caption)
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
+            MinMaxTemperatureComponent(temperature: temperatureMax,
+                                       type: .max)
+            Spacer()
         }
     }
 }
@@ -122,11 +94,8 @@ struct CurrentlyForecastWidgetSmallView_Previews: PreviewProvider {
                                          iconSystemName: "sun.max.fill",
                                          temperature: 10,
                                          temperatureMin: 0,
-                                         apparentTemperature: 8,
-                                         precipProbability: 23,
-                                         windSpeed: 10,
-                                         unit: .si,
-                                         sunsetTime: Date())
+                                         temperatureMax: 12,
+                                         apparentTemperature: 8)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

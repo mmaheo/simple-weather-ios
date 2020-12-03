@@ -25,6 +25,7 @@
 		524E8EE32572F0E0002A1D6C /* LocationDisabledComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */; };
 		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
 		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
+		5264D7E625799C11001B0935 /* MinMaxTemperatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */; };
 		5270B9CB2576858800ADDF74 /* AppAnalyticsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */; };
 		527EF34E257678DC00FD45C1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF34D257678DC00FD45C1 /* AnalyticsService.swift */; };
 		527EF3522576792600FD45C1 /* AppAnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */; };
@@ -159,6 +160,7 @@
 		524E8EE22572F0E0002A1D6C /* LocationDisabledComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisabledComponent.swift; sourceTree = "<group>"; };
 		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
+		5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTemperatureComponent.swift; sourceTree = "<group>"; };
 		5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsScreenView.swift; sourceTree = "<group>"; };
 		527EF34D257678DC00FD45C1 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsEvent.swift; sourceTree = "<group>"; };
@@ -359,6 +361,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		5264D7DD25799B1F001B0935 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		527EF34C257678B000FD45C1 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				529F38FF2573C3FA00AC2849 /* Widget */,
+				5264D7DD25799B1F001B0935 /* Component */,
 				529F38FA2573C36A00AC2849 /* View */,
 				529F38F02573C2CF00AC2849 /* Resource */,
 			);
@@ -882,6 +893,7 @@
 				529F392B2573C64600AC2849 /* WidgetNotAvailableView.swift in Sources */,
 				52F7DA1F2573E7A100B8142C /* HourlyForecastWidgetView.swift in Sources */,
 				529F38E32573C28D00AC2849 /* SimpleWeatherWidget.swift in Sources */,
+				5264D7E625799C11001B0935 /* MinMaxTemperatureComponent.swift in Sources */,
 				529F39212573C64200AC2849 /* ForecastWidgetEntry.swift in Sources */,
 				529F393F2573C72600AC2849 /* BaseRequest.swift in Sources */,
 				52F7DA092573E2C500B8142C /* HourlyForecastWidget.swift in Sources */,

@@ -7,14 +7,19 @@
 
 import SwiftUI
 
+enum WeatherIconSize: CGFloat {
+    case verySmall = 15
+    case small = 20
+    case normal = 25
+    case large = 50
+}
+
 struct WeatherIconComponent: View {
     
     // MARK: - Properties
     
     let iconSystemName: String
-    private(set) var isLarge: Bool = false
-    private(set) var isCompact: Bool = false
-    private(set) var isWidget: Bool = false
+    let size: WeatherIconSize
     
     @Environment(\.colorScheme) private var colorScheme
     
@@ -22,12 +27,13 @@ struct WeatherIconComponent: View {
         colorScheme == .light
     }
     
-    private var width: CGFloat {
-        isWidget ? 14 : isCompact ? 20 : isLarge ? 50 : 25
-    }
-    
     private var padding: CGFloat {
-        isWidget ? 4 : isCompact ? 8 : 12
+        switch size {
+        case .verySmall, .small, .normal:
+            return 8
+        case .large:
+            return 16
+        }
     }
     
     // MARK: - Body
@@ -37,8 +43,8 @@ struct WeatherIconComponent: View {
             .resizable()
             .renderingMode(.original)
             .aspectRatio(contentMode: .fit)
-            .frame(width: width,
-                   height: width)
+            .frame(width: size.rawValue,
+                   height: size.rawValue)
             .padding(padding)
             .background(
                 Circle()
@@ -57,18 +63,21 @@ struct WeatherIconComponent_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             WeatherIconComponent(iconSystemName: "sun.max.fill",
-                                 isLarge: true)
+                                 size: .small)
             
+            WeatherIconComponent(iconSystemName: "sun.max.fill",
+                                 size: .normal)
+                
+            WeatherIconComponent(iconSystemName: "sun.max.fill",
+                                 size: .large)
+                
             WeatherIconComponent(iconSystemName: "cloud.rain.fill",
-                                 isCompact: true)
+                                 size: .normal)
                 .preferredColorScheme(.dark)
-            
-            WeatherIconComponent(iconSystemName: "cloud.rain.fill")
                 .environment(\.sizeCategory,
                              .accessibilityExtraExtraExtraLarge)
         }
         .previewLayout(.sizeThatFits)
-        .padding()
     }
 }
 

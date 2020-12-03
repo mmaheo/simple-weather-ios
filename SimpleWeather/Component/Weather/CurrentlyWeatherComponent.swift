@@ -20,7 +20,7 @@ struct CurrentlyWeatherComponent: View {
     var body: some View {
         HStack {
             WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isLarge: true)
+                                 size: .large)
             
             VStack(alignment: .leading) {
                 Text("\(temperature)°")
@@ -60,7 +60,6 @@ struct CurrentlyWeatherComponent_Previews: PreviewProvider {
                              .accessibilityExtraExtraExtraLarge)
         }
         .previewLayout(.sizeThatFits)
-        .padding()
     }
 }
 

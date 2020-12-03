@@ -14,25 +14,15 @@ struct HourlyForecastWidgetMediumView: View {
     
     let locality: String
     let date: Date
-    let hourlyForecast: [Forecast]
-    
-    private var hourlyTemperatureMin: Int {
-        hourlyForecast
-            .map { $0.wrappedTemperature }
-            .min() ?? 0
-    }
-    
-    private var hourlyTemperatureMax: Int {
-        hourlyForecast
-            .map { $0.wrappedTemperature }
-            .max() ?? 0
-    }
+    let temperatureMin: Int
+    let temperatureMax: Int
+    let hourlyForecasts: [Forecast]
     
     // MARK: - Body
     
     var body: some View {
         VStack(spacing: 0) {
-            localityView
+            headerView
             Spacer()
             forecastView
         }
@@ -42,38 +32,48 @@ struct HourlyForecastWidgetMediumView: View {
 
 extension HourlyForecastWidgetMediumView {
     
-    private var localityView: some View {
+    private var headerView: some View {
         HStack(alignment: .center) {
             Text(locality)
                 .font(.headline)
                 .lineLimit(1)
             
+            MinMaxTemperatureComponent(temperature: temperatureMin,
+                                       type: .min)
+            
+            MinMaxTemperatureComponent(temperature: temperatureMax,
+                                       type: .max)
+            
             Spacer()
             
-            dateView
+            Text(date.format(format: "HH:mm"))
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
         }
-    }
-    
-    private var dateView: some View {
-        Text(date.format(format: "HH:mm"))
-            .font(.system(size: 10))
-            .foregroundColor(.gray)
     }
     
     private var forecastView: some View {
         HStack(spacing: 0) {
-            ForEach(hourlyForecast) { forecast in
-                let isLastForecast = hourlyForecast.last == forecast
+            ForEach(hourlyForecasts) { forecast in
+                let isLastItem = hourlyForecasts.last == forecast
                 
-                HourlyWeatherComponent(time: forecast.wrappedTime,
-                                       temperature: forecast.wrappedTemperature,
-                                       temperatureMin: hourlyTemperatureMin,
-                                       temperatureMax: hourlyTemperatureMax,
-                                       iconSystemName: forecast.wrappedIconSystemName,
-                                       precipProbability: forecast.wrappedPrecipProbability,
-                                       isWidget: true)
+                VStack {
+                    Text("\(forecast.wrappedTime.format(format: "HH"))h")
+                        .font(.caption)
+                    
+                    Spacer()
+                    
+                    WeatherIconComponent(iconSystemName: forecast.wrappedIconSystemName,
+                                         size: .small)
+                    
+                    Spacer()
+                    
+                    Text("\(forecast.wrappedTemperature)°")
+                        .font(.caption)
+                        .bold()
+                }
                 
-                if !isLastForecast {
+                if !isLastItem {
                     Spacer()
                 }
             }
@@ -88,7 +88,9 @@ struct HourlyForecastWidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
         HourlyForecastWidgetMediumView(locality: "Bordeaux",
                                        date: Date(),
-                                       hourlyForecast: Array(Forecast.list.prefix(6)))
+                                       temperatureMin: 0,
+                                       temperatureMax: 17,
+                                       hourlyForecasts: Array(Forecast.list.prefix(6)))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

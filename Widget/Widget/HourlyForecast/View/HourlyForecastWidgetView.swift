@@ -26,14 +26,15 @@ struct HourlyForecastWidgetView: View {
         case .systemSmall, .systemLarge:
             WidgetNotAvailableView()
         case .systemMedium:
-            if
-                let locality = entry.locality,
-                entry.hourlyForecast.count >= numberOfItems
-            {
-            
+            if let locality = entry.locality,
+               let temperatureMin = entry.temperatureMin,
+               let temperatureMax = entry.temperatureMax,
+               entry.hourlyForecast.count >= numberOfItems {
                 HourlyForecastWidgetMediumView(locality: locality,
                                                date: entry.date,
-                                               hourlyForecast: Array(entry.hourlyForecast.prefix(numberOfItems)))
+                                               temperatureMin: temperatureMin,
+                                               temperatureMax: temperatureMax,
+                                               hourlyForecasts: Array(entry.hourlyForecast.prefix(numberOfItems)))
             } else {
                 WidgetNotAvailableView()
             }

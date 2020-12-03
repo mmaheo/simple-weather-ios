@@ -67,12 +67,15 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
             .sink { (_) in
 
             } receiveValue: { [weak self] (response) in
-                guard let self = self else { return }
+                guard
+                    let self = self,
+                    let todayForecast = response.daily.data.first
+                else { return }
                 
                 completion(self.entry(forecast: response.currently,
                                       locality: locality,
-                                      unit: unit,
-                                      sunsetTime: response.daily.data.first?.wrappedSunsetTime,
+                                      temperatureMin: todayForecast.wrappedTemperatureMin,
+                                      temperatureMax: todayForecast.wrappedTemperatureMax,
                                       hourlyForecast: response.hourly.data))
             }
             .store(in: &cancellables)
@@ -84,19 +87,16 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
     
     private func entry(forecast: Forecast,
                        locality: String,
-                       unit: Unit,
-                       sunsetTime: Date?,
+                       temperatureMin: Int,
+                       temperatureMax: Int,
                        hourlyForecast: [Forecast]) -> Entry {
         Entry(date: Date(),
               locality: locality,
               iconSystemName: forecast.wrappedIconSystemName,
               temperature: forecast.wrappedTemperature,
-              temperatureMin: forecast.wrappedTemperatureMin,
+              temperatureMin: temperatureMin,
+              temperatureMax: temperatureMax,
               apparentTemperature: forecast.wrappedApparentTemperature,
-              precipProbability: forecast.wrappedPrecipProbability,
-              windSpeed: forecast.wrappedWindSpeed,
-              unit: unit,
-              sunsetTime: sunsetTime,
               hourlyForecast: hourlyForecast)
 
     }
