@@ -17,36 +17,21 @@ struct HourlyWeatherComponent: View {
     let temperatureMax: Int
     let iconSystemName: String
     let precipProbability: Int
-    private(set) var isWidget: Bool = false
-    
-    private var precipIconWidth: CGFloat {
-        isWidget ? 10 : 14
-    }
-    
-    private var barHeightRatio: CGFloat {
-        isWidget ? 4 : 2
-    }
     
     private var temperatureBarHeight: CGFloat {
-        let temperaturePercentage = CGFloat(temperature) / CGFloat(temperatureMax)
-        let maxHeight: CGFloat = componentHeight / barHeightRatio
-        let height = temperaturePercentage * maxHeight
+        let maxHeight: CGFloat = 100
+        let minHeight: CGFloat = 50
+        let height = CGFloat(temperature) / CGFloat(temperatureMax) * maxHeight
         
-        return min(maxHeight, max(minBarHeight, height))
+        return min(maxHeight, max(minHeight, height))
     }
     
     private var precipitationBarHeight: CGFloat {
-        let height = CGFloat(precipProbability) / 100 * temperatureBarHeight
+        let maxHeight: CGFloat = 40
+        let minHeight: CGFloat = 4
+        let height = CGFloat(precipProbability) / 100 * maxHeight
         
-        return min(temperatureBarHeight, max(minBarHeight, height))
-    }
-    
-    private var componentHeight: CGFloat {
-        isWidget ? 110 : 200
-    }
-    
-    private var minBarHeight: CGFloat {
-        isWidget ? 30 : 40
+        return min(maxHeight, max(minHeight, height))
     }
     
     // MARK: - Body
@@ -54,28 +39,21 @@ struct HourlyWeatherComponent: View {
     var body: some View {
         ZStack {
             temperatureBarView
-            
-            if precipProbability != 0 {
-                precipitationBarView
-            }
-            
-            timeAndIconView
+            precipitationBarView
+            timeView
         }
-        .frame(height: componentHeight)
+        .frame(width: 60,
+               height: 200)
     }
 }
 
 extension HourlyWeatherComponent {
     
-    private var timeAndIconView: some View {
+    private var timeView: some View {
         VStack(spacing: 4) {
             Text("\(time.format(format: "HH"))h")
                 .lineLimit(1)
                 .minimumScaleFactor(0.3)
-            
-            WeatherIconComponent(iconSystemName: iconSystemName,
-                                 isCompact: true,
-                                 isWidget: isWidget)
             
             Spacer()
         }
@@ -85,14 +63,16 @@ extension HourlyWeatherComponent {
         VStack(spacing: 4) {
             Spacer()
             
+            WeatherIconComponent(iconSystemName: iconSystemName,
+                                 isCompact: true)
+            
             Text("\(temperature)°")
                 .lineLimit(1)
                 .minimumScaleFactor(0.3)
             
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.yellow)
-                .frame(width: 40,
-                       height: temperatureBarHeight)
+            Rectangle()
+                .fill(Color.clear)
+                .frame(height: temperatureBarHeight)
         }
     }
     
@@ -100,18 +80,15 @@ extension HourlyWeatherComponent {
         VStack(spacing: 4) {
             Spacer()
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.blue)
-                    
-                Text("\(precipProbability)%")
-                    .foregroundColor(Color.white)
-                    .minimumScaleFactor(0.3)
-                    .lineLimit(1)
-                    .padding(.horizontal, 4)
-            }
-            .frame(width: 40,
-                   height: precipitationBarHeight)
+            Text("\(precipProbability)%")
+                .foregroundColor(Color.blue)
+                .minimumScaleFactor(0.3)
+                .lineLimit(1)
+                .padding(.horizontal, 4)
+            
+            Rectangle()
+                .fill(Color.blue.opacity(0.5))
+                .frame(height: precipitationBarHeight)
         }
     }
 }
@@ -126,15 +103,7 @@ struct HourlyWeatherComponent_Previews: PreviewProvider {
                                    temperatureMin: 0,
                                    temperatureMax: 100,
                                    iconSystemName: "cloud.rain.fill",
-                                   precipProbability: 1)
-            
-            HourlyWeatherComponent(time: Date(),
-                                   temperature: 100,
-                                   temperatureMin: 0,
-                                   temperatureMax: 100,
-                                   iconSystemName: "cloud.rain.fill",
-                                   precipProbability: 1,
-                                   isWidget: true)
+                                   precipProbability: 30)
             
             HourlyWeatherComponent(time: Date(),
                                    temperature: 12,

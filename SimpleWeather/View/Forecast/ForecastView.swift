@@ -90,20 +90,14 @@ extension ForecastView {
             makeSectionView(title: firstHourlyForecast.wrappedTimeOfTheDay) {
                 ScrollView(.horizontal,
                            showsIndicators: false) {
-                    HStack(spacing: 16) {
+                    HStack(spacing: 0) {
                         ForEach(forecastStore.hourly) { forecast in
-                            let isInFirstPosition = forecastStore.hourly.first == forecast
-                            let isInLastPosition = forecastStore.hourly.last == forecast
-                            
                             HourlyWeatherComponent(time: forecast.wrappedTime,
                                                    temperature: forecast.wrappedTemperature,
                                                    temperatureMin: hourlyTemperatureMin,
                                                    temperatureMax: hourlyTemperatureMax,
                                                    iconSystemName: forecast.wrappedIconSystemName,
                                                    precipProbability: forecast.wrappedPrecipProbability)
-                                .padding(.leading, isInFirstPosition ? 16 : 0)
-                                .padding(.trailing, isInLastPosition ? 16 : 0)
-                                .fixedSize()
                         }
                     }
                 }
