@@ -57,7 +57,7 @@ final class ForecastStore: ObservableObject {
     
     private func forecastViewDidAppearAction() {
         analyticsService.logScreenView(event: AppAnalyticsScreenView.forecastView)
-        fetchForecast()
+        fetchLocation()
     }
     
     // MARK: - Binding Methods
@@ -89,7 +89,7 @@ final class ForecastStore: ObservableObject {
     
     // MARK: - Methods
     
-    private func fetchForecast() {
+    private func fetchLocation() {
         analyticsService.logEvent(event: AppAnalyticsEvent.fetchForecast)
         isLoading = true
         locationService.fetchLocation()
