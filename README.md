@@ -7,6 +7,9 @@
 <a href="https://apps.apple.com/app/simple-weather/id1542742219">
 <img src="Pictures/download-on-the-app-store.png" width="150"/>
 </a>
+<br />
+<img src="Pictures/home.png" width="200"/>
+<img src="Pictures/widgets.png" width="200"/>
 </div>
 
 ## 📖 Description
