@@ -24,11 +24,11 @@ final class ForecastService: Injectable {
     
     func fetchForecast(latitude: Double,
                        longitude: Double,
-                       unit: String) -> AnyPublisher<ForecastResponse, Error> {
+                       unit: Unit) -> AnyPublisher<ForecastResponse, Error> {
         apiRequester
             .fetch(ForecastEndpoint(), with: (latitude: latitude,
                                               longitude: longitude,
-                                              unit: unit))
+                                              unit: unit.rawValue))
     }
     
 }

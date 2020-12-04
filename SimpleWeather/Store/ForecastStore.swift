@@ -67,7 +67,7 @@ final class ForecastStore: ObservableObject {
             .location
             .flatMap { self.forecastService.fetchForecast(latitude: $0.coordinate.latitude,
                                                           longitude: $0.coordinate.longitude,
-                                                          unit: (self.userDefaultsService.fetchUnit() ?? .si).rawValue) }
+                                                          unit: self.userDefaultsService.fetchUnit() ?? .si) }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (completion) in
                 guard let self = self else { return }

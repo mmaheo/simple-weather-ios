@@ -63,7 +63,7 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
         forecastService
             .fetchForecast(latitude: latitude,
                            longitude: longitude,
-                           unit: unit.rawValue)
+                           unit: unit)
             .sink { (_) in
 
             } receiveValue: { [weak self] (response) in
