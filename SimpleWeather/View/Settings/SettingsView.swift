@@ -37,7 +37,7 @@ struct SettingsView: View {
                 })
             }
         }
-        .sheet(isPresented: $isShowingPaywall) { PaywallView(isShowingPaywall: $isShowingPaywall) }
+        .sheet(isPresented: $isShowingPaywall) { PaywallView(isShowingPaywall: $isShowingPaywall).environmentObject(PaywallStore()) }
         .onAppear { settingsStore.dispatch(action: .viewDidAppear) }
         .navigationTitle("settings_view_title")
     }

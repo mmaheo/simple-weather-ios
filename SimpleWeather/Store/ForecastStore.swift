@@ -23,6 +23,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var isLoading: Bool
     @Published private(set) var cachedLocality: String = ""
     @Published var error: AppError?
+    @Published var isShowingPaywall: Bool = false
     
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
@@ -56,6 +57,10 @@ final class ForecastStore: ObservableObject {
     
     private func forecastViewDidAppearAction() {
         let now = Date().timeIntervalSince1970
+        
+        if userDefaultsService.fetchNetworkCalls() >= Constant.quota {
+            isShowingPaywall = true
+        }
         
         if now - userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
            let currently = userDefaultsService.fetchCurrentlyForecast(),
