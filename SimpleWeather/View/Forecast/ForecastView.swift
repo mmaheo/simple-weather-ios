@@ -18,6 +18,8 @@ struct ForecastView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
+    @State private var isShowingPaywall = true
+    
     private var dailyWeatherLayout: [GridItem] {
         horizontalSizeClass == .compact ?
             [GridItem(.flexible(), spacing: 16)] :
@@ -61,6 +63,9 @@ struct ForecastView: View {
             settingsStore.dispatch(action: .fetchUnit)
             forecastStore.dispatch(action: .forecastViewDidAppear)
             ratingStore.dispatch(action: .requestReview(force: false))
+        }
+        .sheet(isPresented: $isShowingPaywall) {
+            PaywallView(isShowingPaywall: $isShowingPaywall)
         }
     }
 }

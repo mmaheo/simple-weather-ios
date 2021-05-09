@@ -50,3 +50,11 @@
 "hourly_forecast_widget_description" = "Voir la météo dans les prochaines heures.";
 "widget_not_available" = "Le widget n'est pas disponible.";
 "feeling_temperature" = "Ressenti %d°";
+"paywall_title" = "Accès premium";
+"quota_exceeded" = "Vous avez dépassé votre quota de 3 utilisations par jour.";
+"restore" = "Restaurer";
+"unlock_widgets" = "Déverrouillez les widgets Prévisions actuelles et Prévisions horaires.";
+"unlimited_access" = "Accès illimité";
+"fetch_weather_when_you_want" = "Récupérez la météo quand vous le souhaitez.";
+"start_one_month_free_trial" = "Démarrez un essai gratuit d'un mois";
+"price_after" = "7,99€/an après";

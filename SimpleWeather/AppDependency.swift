@@ -15,6 +15,7 @@ final class AppDependency {
     private let forecastService: ForecastService
     private let locationService: LocationService
     private let ratingService: RatingService
+    private let purchaseService: PurchaseService
     
     // MARK: - Lifecycle
     
@@ -23,6 +24,7 @@ final class AppDependency {
         self.forecastService = ForecastService()
         self.locationService = LocationService(userDefaultService: userDefaultsService)
         self.ratingService = RatingService(userDefaultService: userDefaultsService)
+        self.purchaseService = PurchaseService()
         
         registerDependencies()
     }
@@ -36,5 +38,6 @@ final class AppDependency {
         resolver.register(forecastService)
         resolver.register(locationService)
         resolver.register(ratingService)
+        resolver.register(purchaseService)
     }
 }

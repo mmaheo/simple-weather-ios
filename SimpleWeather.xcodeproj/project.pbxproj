@@ -63,6 +63,11 @@
 		52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21BA12572AD7600A55552 /* SideBarView.swift */; };
 		52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */; };
 		52BC0DA8264813D9002D532D /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = 52BC0DA7264813D9002D532D /* Bugsnag */; };
+		52BC0DAB26481DA6002D532D /* Purchases in Frameworks */ = {isa = PBXBuildFile; productRef = 52BC0DAA26481DA6002D532D /* Purchases */; };
+		52BC0DAD26481DB8002D532D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BC0DAC26481DB8002D532D /* StoreKit.framework */; };
+		52BC0DB026482546002D532D /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC0DAF26482545002D532D /* PaywallView.swift */; };
+		52BC0DB226482A74002D532D /* PaywallStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC0DB126482A74002D532D /* PaywallStore.swift */; };
+		52BC0DB526482B82002D532D /* PurchaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC0DB426482B82002D532D /* PurchaseService.swift */; };
 		52BDEF232576A4F500C28F7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF252576A4F500C28F7B /* Localizable.strings */; };
 		52BDEF2F2576A9BF00C28F7B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF312576A9BF00C28F7B /* InfoPlist.strings */; };
 		52BDEF352576AA4E00C28F7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF252576A4F500C28F7B /* Localizable.strings */; };
@@ -167,6 +172,10 @@
 		52A21B9E2572AD6D00A55552 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		52A21BA12572AD7600A55552 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FirstLetterCapitalized.swift"; sourceTree = "<group>"; };
+		52BC0DAC26481DB8002D532D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		52BC0DAF26482545002D532D /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		52BC0DB126482A74002D532D /* PaywallStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallStore.swift; sourceTree = "<group>"; };
+		52BC0DB426482B82002D532D /* PurchaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseService.swift; sourceTree = "<group>"; };
 		52BDEF242576A4F500C28F7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52BDEF282576A4F800C28F7B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52BDEF302576A9BF00C28F7B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -211,6 +220,8 @@
 			files = (
 				52BC0DA8264813D9002D532D /* Bugsnag in Frameworks */,
 				520125642576C24100064808 /* Injectable in Frameworks */,
+				52BC0DAB26481DA6002D532D /* Purchases in Frameworks */,
+				52BC0DAD26481DB8002D532D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +348,7 @@
 		529F38DC2573C28D00AC2849 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52BC0DAC26481DB8002D532D /* StoreKit.framework */,
 				529F38DD2573C28D00AC2849 /* WidgetKit.framework */,
 				529F38DF2573C28D00AC2849 /* SwiftUI.framework */,
 			);
@@ -438,6 +450,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		52BC0DAE26482532002D532D /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				52BC0DAF26482545002D532D /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		52BC0DB326482B74002D532D /* Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				52BC0DB426482B82002D532D /* PurchaseService.swift */,
+			);
+			path = Purchase;
+			sourceTree = "<group>";
+		};
 		52C5D4DC256BD5BD0088B72B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +520,7 @@
 				52A21B9A2572AD0700A55552 /* Main */,
 				52EF7DF3256B9EB700A06613 /* Forecast */,
 				524E8EE52572F8C2002A1D6C /* Settings */,
+				52BC0DAE26482532002D532D /* Paywall */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,6 +540,7 @@
 				524E8EDB2572EA9A002A1D6C /* LocationStore.swift */,
 				529F38B72573BA4300AC2849 /* SettingsStore.swift */,
 				523C02032573F4F900632A5A /* RatingStore.swift */,
+				52BC0DB126482A74002D532D /* PaywallStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -527,6 +557,7 @@
 		52EF7E17256BA6F100A06613 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				52BC0DB326482B74002D532D /* Purchase */,
 				52D6B8002573ED0200C48B2B /* Rating */,
 				52A21B9425729DDC00A55552 /* UserDefaults */,
 				52A21B8F25729A6200A55552 /* Location */,
@@ -613,6 +644,7 @@
 			packageProductDependencies = (
 				520125632576C24100064808 /* Injectable */,
 				52BC0DA7264813D9002D532D /* Bugsnag */,
+				52BC0DAA26481DA6002D532D /* Purchases */,
 			);
 			productName = SimpleWeather;
 			productReference = 5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */;
@@ -672,6 +704,7 @@
 			packageReferences = (
 				520125622576C24100064808 /* XCRemoteSwiftPackageReference "Injectable" */,
 				52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */,
+				52BC0DA926481DA6002D532D /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 5247DDC0256AFB3000FD1EF9 /* Products */;
 			projectDirPath = "";
@@ -751,7 +784,9 @@
 			files = (
 				52CB469F2571751100B82085 /* BaseRequest.swift in Sources */,
 				52CB46B32571769000B82085 /* DarkSkyRequest.swift in Sources */,
+				52BC0DB026482546002D532D /* PaywallView.swift in Sources */,
 				52A21B9C2572AD2400A55552 /* TabBarView.swift in Sources */,
+				52BC0DB526482B82002D532D /* PurchaseService.swift in Sources */,
 				52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */,
@@ -762,6 +797,7 @@
 				529F38BB2573BABC00AC2849 /* Unit.swift in Sources */,
 				52EF7E03256BA32200A06613 /* Forecast.swift in Sources */,
 				52CB46A9257175D200B82085 /* ApiRequester.swift in Sources */,
+				52BC0DB226482A74002D532D /* PaywallStore.swift in Sources */,
 				52A21B9625729DFD00A55552 /* UserDefaultsService.swift in Sources */,
 				523C02042573F4F900632A5A /* RatingStore.swift in Sources */,
 				52CB46F9257183CD00B82085 /* ForecastResponse.swift in Sources */,
@@ -1030,7 +1066,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
@@ -1042,7 +1078,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1059,7 +1095,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimpleWeather.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
@@ -1070,7 +1106,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1086,7 +1122,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = D27NXEG753;
 				INFOPLIST_FILE = Widget/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1094,7 +1130,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1110,7 +1146,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = D27NXEG753;
 				INFOPLIST_FILE = Widget/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1118,7 +1154,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxime.maheo.simple-weather.Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1185,6 +1221,14 @@
 				minimumVersion = 6.9.1;
 			};
 		};
+		52BC0DA926481DA6002D532D /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1202,6 +1246,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */;
 			productName = Bugsnag;
+		};
+		52BC0DAA26481DA6002D532D /* Purchases */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52BC0DA926481DA6002D532D /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = Purchases;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -50,3 +50,11 @@
 "hourly_forecast_widget_description" = "See the weather in the next hours.";
 "widget_not_available" = "Widget is not available.";
 "feeling_temperature" = "Feeling %d°";
+"paywall_title" = "Premium member";
+"quota_exceeded" = "You have exceeded your quota of 3 uses per day.";
+"restore" = "Restore";
+"unlock_widgets" = "Unlock Current forecast and Hourly forecasts widgets.";
+"unlimited_access" = "Unlimited access";
+"fetch_weather_when_you_want" = "Fetch weather when you want.";
+"start_one_month_free_trial" = "Start a 1-month free trial";
+"price_after" = "$7.99/year after";
