@@ -14,7 +14,7 @@ final class RatingService: Injectable {
     
     // MARK: - Properties
     
-    private let requestReviewEveryDays = 4
+    private let requestReviewEveryDays = 7
     
     private weak var userDefaultService: UserDefaultsService?
 
@@ -35,17 +35,7 @@ final class RatingService: Injectable {
     // MARK: - Private Methods
     
     private func shouldReview() -> Bool {
-        guard
-            let lastRatingDate = userDefaultService?.fetchLastDateRating()
-        else {
-            let now = Date().timeIntervalSince1970
-            let nbDays = Double(requestReviewEveryDays / 2)
-            let timeIntervalSince1970 = now - nbDays * 24 * 60 * 60
-            
-            userDefaultService?.save(lastDateRating: Date(timeIntervalSince1970: timeIntervalSince1970))
-            
-            return false
-        }
+        guard let lastRatingDate = userDefaultService?.fetchLastDateRating() else { return true }
         
         return daysSince(lastRatingDate: lastRatingDate) >= requestReviewEveryDays
     }
