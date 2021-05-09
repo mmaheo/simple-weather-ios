@@ -35,7 +35,11 @@ final class RatingService: Injectable {
     // MARK: - Private Methods
     
     private func shouldReview() -> Bool {
-        guard let lastRatingDate = userDefaultService?.fetchLastDateRating() else { return true }
+        guard let userDefaultService = userDefaultService,
+              userDefaultService.fetchSessions() >= 2
+        else { return false }
+        
+        guard let lastRatingDate = userDefaultService.fetchLastDateRating() else { return true }
         
         return daysSince(lastRatingDate: lastRatingDate) >= requestReviewEveryDays
     }

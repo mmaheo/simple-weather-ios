@@ -19,6 +19,8 @@ final class UserDefaultsService: Injectable {
     private let unitKey = "unit_key"
     private let localityKey = "locality_key"
     private let lastRatingDateKey = "last_rating_date_key"
+    private let networkCallsKey = "network_calls_key"
+    private let sessionsKey = "sessions_key"
     
     // MARK: - Lifecycle
     
@@ -32,25 +34,19 @@ final class UserDefaultsService: Injectable {
     
     // MARK: - Saving Methods
     
-    func save(latitude: Double) {
-        userDefaults.setValue(latitude, forKey: latitudeKey)
-    }
+    func save(latitude: Double) { userDefaults.setValue(latitude, forKey: latitudeKey) }
     
-    func save(longitude: Double) {
-        userDefaults.setValue(longitude, forKey: longitudeKey)
-    }
+    func save(longitude: Double) { userDefaults.setValue(longitude, forKey: longitudeKey) }
     
-    func save(unit: Unit) {
-        userDefaults.setValue(unit.rawValue, forKey: unitKey)
-    }
+    func save(unit: Unit) { userDefaults.setValue(unit.rawValue, forKey: unitKey) }
     
-    func save(locality: String) {
-        userDefaults.setValue(locality, forKey: localityKey)
-    }
+    func save(locality: String) { userDefaults.setValue(locality, forKey: localityKey) }
     
-    func save(lastDateRating: Date) {
-        userDefaults.setValue(lastDateRating.timeIntervalSince1970, forKey: lastRatingDateKey)
-    }
+    func save(lastDateRating: Date) { userDefaults.setValue(lastDateRating.timeIntervalSince1970, forKey: lastRatingDateKey) }
+    
+    func incrementNetworkCalls() { userDefaults.setValue(fetchNetworkCalls() + 1, forKey: networkCallsKey) }
+    
+    func incrementSessions() { userDefaults.setValue(fetchSessions() + 1, forKey: sessionsKey) }
     
     // MARK: - Fetching Methods
     
@@ -67,21 +63,25 @@ final class UserDefaultsService: Injectable {
     }
     
     func fetchUnit() -> Unit? {
-        guard
-            let stringUnit = userDefaults.string(forKey: unitKey)
-        else { return nil }
+        guard let stringUnit = userDefaults.string(forKey: unitKey) else { return nil }
         
         return Unit(rawValue: stringUnit)
     }
     
-    func fetchLocality() -> String? {
-        userDefaults.string(forKey: localityKey)
-    }
+    func fetchLocality() -> String? { userDefaults.string(forKey: localityKey) }
     
     func fetchLastDateRating() -> Date? {
         let timeIntervalSince1970 = userDefaults.double(forKey: lastRatingDateKey)
         
         return timeIntervalSince1970 == 0 ? nil : Date(timeIntervalSince1970: timeIntervalSince1970)
+    }
+    
+    func fetchNetworkCalls() -> Int { userDefaults.integer(forKey: networkCallsKey) }
+    
+    func fetchSessions() -> Int {
+        print("ok: \(userDefaults.integer(forKey: sessionsKey))")
+        
+        return userDefaults.integer(forKey: sessionsKey)
     }
     
 }

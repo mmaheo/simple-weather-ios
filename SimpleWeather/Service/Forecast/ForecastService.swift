@@ -13,11 +13,14 @@ final class ForecastService: Injectable {
     // MARK: - Properties
     
     private var apiRequester: ApiRequester
-    
+    private weak var userDefaultService: UserDefaultsService?
+
     // MARK: - Lifecycle
     
-    init(apiRequester: ApiRequester = ApiRequester()) {
+    init(apiRequester: ApiRequester = ApiRequester(),
+         userDefaultService: UserDefaultsService) {
         self.apiRequester = apiRequester
+        self.userDefaultService = userDefaultService
     }
     
     // MARK: - Methods
@@ -25,7 +28,9 @@ final class ForecastService: Injectable {
     func fetchForecast(latitude: Double,
                        longitude: Double,
                        unit: Unit) -> AnyPublisher<ForecastResponse, Error> {
-        apiRequester
+        userDefaultService?.incrementNetworkCalls()
+        
+        return apiRequester
             .fetch(ForecastEndpoint(), with: (latitude: latitude,
                                               longitude: longitude,
                                               unit: unit.rawValue))

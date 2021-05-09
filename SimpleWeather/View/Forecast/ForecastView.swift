@@ -18,7 +18,7 @@ struct ForecastView: View {
     
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    @State private var isShowingPaywall = true
+    @State private var isShowingPaywall = false
     
     private var dailyWeatherLayout: [GridItem] {
         horizontalSizeClass == .compact ?

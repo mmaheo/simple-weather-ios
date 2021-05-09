@@ -21,12 +21,14 @@ final class AppDependency {
     
     init() {
         self.userDefaultsService = UserDefaultsService()
-        self.forecastService = ForecastService()
+        self.forecastService = ForecastService(userDefaultService: userDefaultsService)
         self.locationService = LocationService(userDefaultService: userDefaultsService)
         self.ratingService = RatingService(userDefaultService: userDefaultsService)
         self.purchaseService = PurchaseService()
         
         registerDependencies()
+        
+        userDefaultsService.incrementSessions()
     }
     
     // MARK: - Methods

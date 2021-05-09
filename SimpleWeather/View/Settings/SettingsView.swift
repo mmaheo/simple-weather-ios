@@ -26,7 +26,13 @@ struct SettingsView: View {
                 privacyPolicyView
                 termsAndConditionView
             }
+            
+            Section(header: Text("subcription"),
+                    footer: Text("Quota \(settingsStore.quota)/\(Constant.quota)")) {
+                Text("ok")
+            }
         }
+        .onAppear { settingsStore.dispatch(action: .viewDidAppear) }
         .navigationTitle("settings_view_title")
     }
 }

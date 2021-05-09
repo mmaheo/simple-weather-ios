@@ -47,14 +47,14 @@ final class ForecastStore: ObservableObject {
     
     func dispatch(action: ForecastStoreAction) {
         switch action {
-        case .forecastViewDidAppear:
-            forecastViewDidAppearAction()
+        case .forecastViewDidAppear: return forecastViewDidAppearAction()
         }
     }
     
     // MARK: - Action Methods
     
     private func forecastViewDidAppearAction() {
+        // TODO: fetch if last call is <= 10 min
         fetchLocation()
     }
     
