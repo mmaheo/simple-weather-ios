@@ -13,7 +13,7 @@ final class PurchaseService: Injectable {
     
     // MARK: - Methods
     
-    func fetchOfferings() -> AnyPublisher<Purchases.Package?, Never> {
+    func fetchAvailablePackage() -> AnyPublisher<Purchases.Package?, Never> {
         Deferred {
             Future { promise in
                 Purchases.shared.offerings { offerings, _ in

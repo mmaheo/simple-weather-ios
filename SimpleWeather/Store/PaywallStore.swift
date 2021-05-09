@@ -30,7 +30,7 @@ final class PaywallStore: ObservableObject {
     
     private func fetchAvailablePackages() {
         purchaseService
-            .fetchOfferings()
+            .fetchAvailablePackage()
             .receive(on: DispatchQueue.main)
             .assign(to: \.availablePackage, on: self)
             .store(in: &cancellables)
