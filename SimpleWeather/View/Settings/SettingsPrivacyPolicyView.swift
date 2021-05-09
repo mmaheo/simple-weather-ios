@@ -29,15 +29,12 @@ struct SettingsPrivacyPolicyView: View {
             }
             .padding()
         }
-        .onAppear {
-            settingsStore.dispatch(action: .settingsViewDidAppear(type: .privacyPolicy))
-        }
         .navigationTitle("privacy_policy")
     }
     
 }
 
-//swiftlint:disable line_length
+// swiftlint:disable line_length
 extension SettingsPrivacyPolicyView {
     
     private var headerSectionView: some View {
@@ -57,14 +54,6 @@ extension SettingsPrivacyPolicyView {
             Text("For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information. The information that I request will be retained on your device and is not collected by me in any way.")
             Text("The app does use third party services that may collect information used to identify you.")
             Text("Link to privacy policy of third party service providers used by the app")
-            URL(string: "https://firebase.google.com/policies/analytics").map {
-                Link(destination: $0,
-                     label: { Text("• Google Analytics for Firebase") })
-            }
-            URL(string: "https://firebase.google.com/support/privacy/").map {
-                Link(destination: $0,
-                     label: { Text("• Firebase Crashlytics") })
-            }
         }
     }
     
@@ -134,7 +123,7 @@ extension SettingsPrivacyPolicyView {
     }
     
 }
-//swiftlint:enable line_length
+// swiftlint:enable line_length
 
 #if DEBUG
 

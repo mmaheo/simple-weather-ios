@@ -28,9 +28,6 @@ struct SettingsView: View {
                 termsAndConditionView
             }
         }
-        .onAppear {
-            settingsStore.dispatch(action: .settingsViewDidAppear(type: .main))
-        }
         .navigationTitle("settings_view_title")
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Maxime Maheo on 29/11/2020.
 //
 
-//swiftlint:disable identifier_name
+// swiftlint:disable identifier_name
 enum Unit: String {
     case ca, us, si
     case uk = "uk2"
@@ -21,4 +21,4 @@ enum Unit: String {
         }
     }
 }
-//swiftlint:enable identifier_name
+// swiftlint:enable identifier_name

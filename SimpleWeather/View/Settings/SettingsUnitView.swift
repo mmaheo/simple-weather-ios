@@ -24,7 +24,6 @@ struct SettingsUnitView: View {
         }
         .onAppear {
             settingsStore.dispatch(action: .fetchUnit)
-            settingsStore.dispatch(action: .settingsViewDidAppear(type: .unit))
         }
         .navigationTitle("units")
     }

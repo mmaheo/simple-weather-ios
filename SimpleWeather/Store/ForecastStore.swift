@@ -26,7 +26,6 @@ final class ForecastStore: ObservableObject {
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
     @Inject private var userDefaultsService: UserDefaultsService
-    @Inject private var analyticsService: AnalyticsService
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -56,7 +55,6 @@ final class ForecastStore: ObservableObject {
     // MARK: - Action Methods
     
     private func forecastViewDidAppearAction() {
-        analyticsService.logScreenView(event: AppAnalyticsScreenView.forecastView)
         fetchLocation()
     }
     
@@ -90,7 +88,6 @@ final class ForecastStore: ObservableObject {
     // MARK: - Methods
     
     private func fetchLocation() {
-        analyticsService.logEvent(event: AppAnalyticsEvent.fetchForecast)
         isLoading = true
         locationService.fetchLocation()
     }

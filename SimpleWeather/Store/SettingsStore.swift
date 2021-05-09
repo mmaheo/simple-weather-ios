@@ -13,7 +13,6 @@ enum SettingsViewType {
 }
 
 enum SettingsStoreAction {
-    case settingsViewDidAppear(type: SettingsViewType)
     case fetchUnit
     case change(unit: Unit)
 }
@@ -25,7 +24,6 @@ final class SettingsStore: ObservableObject {
     @Published private(set) var unit: Unit
     
     @Inject private var userDefaultsService: UserDefaultsService
-    @Inject private var analyticsService: AnalyticsService
     
     // MARK: - Lifecycle
     
@@ -37,8 +35,6 @@ final class SettingsStore: ObservableObject {
     
     func dispatch(action: SettingsStoreAction) {
         switch action {
-        case let .settingsViewDidAppear(type):
-            settingsViewDidAppearAction(type: type)
         case .fetchUnit:
             fetchUnitAction()
         case let .change(unit):
@@ -47,19 +43,6 @@ final class SettingsStore: ObservableObject {
     }
     
     // MARK: - Action Methods
-    
-    private func settingsViewDidAppearAction(type: SettingsViewType) {
-        switch type {
-        case .main:
-            analyticsService.logScreenView(event: AppAnalyticsScreenView.settingsView)
-        case .unit:
-            analyticsService.logScreenView(event: AppAnalyticsScreenView.settingsUnitView)
-        case .privacyPolicy:
-            analyticsService.logScreenView(event: AppAnalyticsScreenView.settingsPrivacyPolicyView)
-        case .termsAndConditions:
-            analyticsService.logScreenView(event: AppAnalyticsScreenView.settingsTermsAndConditionsView)
-        }
-    }
     
     private func fetchUnitAction() {
         guard
@@ -70,7 +53,6 @@ final class SettingsStore: ObservableObject {
     }
     
     private func changeUnitAction(unit: Unit) {
-        analyticsService.logEvent(event: AppAnalyticsEvent.changeUnit(unit: unit))
         save(unit: unit)
     }
     

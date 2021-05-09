@@ -25,15 +25,12 @@ struct SettingsTermsAndConditionsView: View {
             }
             .padding()
         }
-        .onAppear {
-            settingsStore.dispatch(action: .settingsViewDidAppear(type: .termsAndConditions))
-        }
         .navigationTitle("terms_and_conditions")
     }
     
 }
 
-//swiftlint:disable line_length
+// swiftlint:disable line_length
 extension SettingsTermsAndConditionsView {
     
     private var headerSectionView: some View {
@@ -48,14 +45,6 @@ extension SettingsTermsAndConditionsView {
     private var thridPartySectionView: some View {
         Section {
             Text("Link to Terms and Conditions of third party service providers used by the app")
-            URL(string: "https://firebase.google.com/policies/analytics").map {
-                Link(destination: $0,
-                     label: { Text("• Google Analytics for Firebase") })
-            }
-            URL(string: "https://firebase.google.com/support/privacy/").map {
-                Link(destination: $0,
-                     label: { Text("• Firebase Crashlytics") })
-            }
             Text("You should be aware that there are certain things that Maxime Maheo will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi, or provided by your mobile network provider, but Maxime Maheo cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.")
             Text("If you’re using the app outside of an area with Wi-Fi, you should remember that your terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.")
             Text("Along the same lines, Maxime Maheo cannot always take responsibility for the way you use the app i.e. You need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail the Service, Maxime Maheo cannot accept responsibility.")
@@ -89,7 +78,7 @@ extension SettingsTermsAndConditionsView {
     }
     
 }
-//swiftlint:enable line_length
+// swiftlint:enable line_length
 
 #if DEBUG
 

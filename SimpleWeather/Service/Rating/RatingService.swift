@@ -13,17 +13,14 @@ final class RatingService: Injectable {
     
     // MARK: - Properties
     
-    private let requestReviewEveryDays = 30
+    private let requestReviewEveryDays = 4
     
     private weak var userDefaultService: UserDefaultsService?
-    private weak var analyticsService: AnalyticsService?
 
     // MARK: - Lifecycle
     
-    init(userDefaultService: UserDefaultsService,
-         analyticsService: AnalyticsService) {
+    init(userDefaultService: UserDefaultsService) {
         self.userDefaultService = userDefaultService
-        self.analyticsService = analyticsService
     }
     
     // MARK: - Methods
@@ -59,7 +56,6 @@ final class RatingService: Injectable {
             }
         }
         
-        analyticsService?.logEvent(event: AppAnalyticsEvent.rateTheApp)
         userDefaultService?.save(lastDateRating: Date())
     }
     

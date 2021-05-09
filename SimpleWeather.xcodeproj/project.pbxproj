@@ -15,8 +15,6 @@
 		523C02042573F4F900632A5A /* RatingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02032573F4F900632A5A /* RatingStore.swift */; };
 		523C02082573F98700632A5A /* SettingsPrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */; };
 		523C020C2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C020B2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift */; };
-		5244EC8C2576324E00B7ED4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */; };
-		5244EC99257634A100B7ED4B /* AppDelegateForFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */; };
 		5247DDC3256AFB3000FD1EF9 /* SimpleWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */; };
 		5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */; };
 		5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */; };
@@ -26,20 +24,6 @@
 		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
 		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
 		5264D7E625799C11001B0935 /* MinMaxTemperatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */; };
-		5270B9CB2576858800ADDF74 /* AppAnalyticsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */; };
-		527EF34E257678DC00FD45C1 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF34D257678DC00FD45C1 /* AnalyticsService.swift */; };
-		527EF3522576792600FD45C1 /* AppAnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */; };
-		5281F5E02576BF4E00126B00 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D42576BF4E00126B00 /* FIRAnalyticsConnector.framework */; };
-		5281F5E22576BF4E00126B00 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D52576BF4E00126B00 /* FirebaseInstallations.framework */; };
-		5281F5E42576BF4E00126B00 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D62576BF4E00126B00 /* FirebaseCoreDiagnostics.framework */; };
-		5281F5E62576BF4E00126B00 /* FirebaseCrashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D72576BF4E00126B00 /* FirebaseCrashlytics.framework */; };
-		5281F5E82576BF4E00126B00 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D82576BF4E00126B00 /* nanopb.framework */; };
-		5281F5EA2576BF4E00126B00 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5D92576BF4E00126B00 /* FirebaseAnalytics.framework */; };
-		5281F5EC2576BF4E00126B00 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5DA2576BF4E00126B00 /* GoogleUtilities.framework */; };
-		5281F5EE2576BF4E00126B00 /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5DB2576BF4E00126B00 /* PromisesObjC.framework */; };
-		5281F5F02576BF4E00126B00 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5DC2576BF4E00126B00 /* FirebaseCore.framework */; };
-		5281F5F42576BF4F00126B00 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5DE2576BF4E00126B00 /* GoogleAppMeasurement.framework */; };
-		5281F5F62576BF4F00126B00 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5281F5DF2576BF4E00126B00 /* GoogleDataTransport.framework */; };
 		529F38B22573B14200AC2849 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B12573B14200AC2849 /* AppError.swift */; };
 		529F38B82573BA4300AC2849 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B72573BA4300AC2849 /* SettingsStore.swift */; };
 		529F38BB2573BABC00AC2849 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38BA2573BABC00AC2849 /* Unit.swift */; };
@@ -148,8 +132,6 @@
 		523C02032573F4F900632A5A /* RatingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStore.swift; sourceTree = "<group>"; };
 		523C02072573F98700632A5A /* SettingsPrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyView.swift; sourceTree = "<group>"; };
 		523C020B2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTermsAndConditionsView.swift; sourceTree = "<group>"; };
-		5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateForFirebase.swift; sourceTree = "<group>"; };
 		5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWeatherApp.swift; sourceTree = "<group>"; };
 		5247DDC4256AFB3000FD1EF9 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
@@ -161,21 +143,6 @@
 		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
 		5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTemperatureComponent.swift; sourceTree = "<group>"; };
-		5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsScreenView.swift; sourceTree = "<group>"; };
-		527EF34D257678DC00FD45C1 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
-		527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAnalyticsEvent.swift; sourceTree = "<group>"; };
-		5281F5D42576BF4E00126B00 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
-		5281F5D52576BF4E00126B00 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
-		5281F5D62576BF4E00126B00 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		5281F5D72576BF4E00126B00 /* FirebaseCrashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCrashlytics.framework; path = Carthage/Build/iOS/FirebaseCrashlytics.framework; sourceTree = "<group>"; };
-		5281F5D82576BF4E00126B00 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
-		5281F5D92576BF4E00126B00 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		5281F5DA2576BF4E00126B00 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
-		5281F5DB2576BF4E00126B00 /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
-		5281F5DC2576BF4E00126B00 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
-		5281F5DD2576BF4E00126B00 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
-		5281F5DE2576BF4E00126B00 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
-		5281F5DF2576BF4E00126B00 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		529F38B12573B14200AC2849 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		529F38B72573BA4300AC2849 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		529F38BA2573BABC00AC2849 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -241,18 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5281F5E62576BF4E00126B00 /* FirebaseCrashlytics.framework in Frameworks */,
-				5281F5F42576BF4F00126B00 /* GoogleAppMeasurement.framework in Frameworks */,
-				5281F5EE2576BF4E00126B00 /* PromisesObjC.framework in Frameworks */,
-				5281F5E42576BF4E00126B00 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				5281F5E02576BF4E00126B00 /* FIRAnalyticsConnector.framework in Frameworks */,
-				5281F5EA2576BF4E00126B00 /* FirebaseAnalytics.framework in Frameworks */,
-				5281F5F02576BF4E00126B00 /* FirebaseCore.framework in Frameworks */,
 				520125642576C24100064808 /* Injectable in Frameworks */,
-				5281F5E82576BF4E00126B00 /* nanopb.framework in Frameworks */,
-				5281F5F62576BF4F00126B00 /* GoogleDataTransport.framework in Frameworks */,
-				5281F5EC2576BF4E00126B00 /* GoogleUtilities.framework in Frameworks */,
-				5281F5E22576BF4E00126B00 /* FirebaseInstallations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +284,6 @@
 			children = (
 				5247DDC2256AFB3000FD1EF9 /* SimpleWeatherApp.swift */,
 				52EF7E23256BA75B00A06613 /* AppDependency.swift */,
-				5244EC98257634A100B7ED4B /* AppDelegateForFirebase.swift */,
 				52097DC825705534005EE4EE /* Core */,
 				529F38B02573B12800AC2849 /* Util */,
 				52C5D4DC256BD5BD0088B72B /* Extension */,
@@ -369,16 +324,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		527EF34C257678B000FD45C1 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				527EF34D257678DC00FD45C1 /* AnalyticsService.swift */,
-				527EF3512576792600FD45C1 /* AppAnalyticsEvent.swift */,
-				5270B9CA2576858800ADDF74 /* AppAnalyticsScreenView.swift */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
 		529F38B02573B12800AC2849 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,18 +335,6 @@
 		529F38DC2573C28D00AC2849 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5281F5D42576BF4E00126B00 /* FIRAnalyticsConnector.framework */,
-				5281F5DD2576BF4E00126B00 /* Firebase.framework */,
-				5281F5D92576BF4E00126B00 /* FirebaseAnalytics.framework */,
-				5281F5DC2576BF4E00126B00 /* FirebaseCore.framework */,
-				5281F5D62576BF4E00126B00 /* FirebaseCoreDiagnostics.framework */,
-				5281F5D72576BF4E00126B00 /* FirebaseCrashlytics.framework */,
-				5281F5D52576BF4E00126B00 /* FirebaseInstallations.framework */,
-				5281F5DE2576BF4E00126B00 /* GoogleAppMeasurement.framework */,
-				5281F5DF2576BF4E00126B00 /* GoogleDataTransport.framework */,
-				5281F5DA2576BF4E00126B00 /* GoogleUtilities.framework */,
-				5281F5D82576BF4E00126B00 /* nanopb.framework */,
-				5281F5DB2576BF4E00126B00 /* PromisesObjC.framework */,
 				529F38DD2573C28D00AC2849 /* WidgetKit.framework */,
 				529F38DF2573C28D00AC2849 /* SwiftUI.framework */,
 			);
@@ -542,7 +475,6 @@
 		52EF7DEE256B9E7600A06613 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				5244EC8B2576324E00B7ED4B /* GoogleService-Info.plist */,
 				5247DDC6256AFB3100FD1EF9 /* Assets.xcassets */,
 				5247DDCB256AFB3200FD1EF9 /* Info.plist */,
 				52BDEF312576A9BF00C28F7B /* InfoPlist.strings */,
@@ -593,7 +525,6 @@
 		52EF7E17256BA6F100A06613 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				527EF34C257678B000FD45C1 /* Analytics */,
 				52D6B8002573ED0200C48B2B /* Rating */,
 				52A21B9425729DDC00A55552 /* UserDefaults */,
 				52A21B8F25729A6200A55552 /* Location */,
@@ -670,7 +601,6 @@
 				5247DDBD256AFB3000FD1EF9 /* Resources */,
 				52EF7DF7256B9F6A00A06613 /* SwiftLint */,
 				529F38EA2573C28F00AC2849 /* Embed App Extensions */,
-				5244ECA02576394000B7ED4B /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -712,7 +642,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					52243A2525780F4B00D67243 = {
 						CreatedOnToolsVersion = 12.2;
@@ -765,7 +695,6 @@
 				5247DDCA256AFB3200FD1EF9 /* Preview Assets.xcassets in Resources */,
 				52BDEF232576A4F500C28F7B /* Localizable.strings in Resources */,
 				5247DDC7256AFB3100FD1EF9 /* Assets.xcassets in Resources */,
-				5244EC8C2576324E00B7ED4B /* GoogleService-Info.plist in Resources */,
 				52BDEF2F2576A9BF00C28F7B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,26 +711,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5244ECA02576394000B7ED4B /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}",
-			);
-			name = Crashlytics;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/Scripts/run\"\n";
-		};
 		52EF7DF7256B9F6A00A06613 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -840,10 +749,8 @@
 				52CB46B32571769000B82085 /* DarkSkyRequest.swift in Sources */,
 				52A21B9C2572AD2400A55552 /* TabBarView.swift in Sources */,
 				52C5D4D5256BD5510088B72B /* HourlyWeatherComponent.swift in Sources */,
-				5244EC99257634A100B7ED4B /* AppDelegateForFirebase.swift in Sources */,
 				52EF7E24256BA75B00A06613 /* AppDependency.swift in Sources */,
 				52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */,
-				5270B9CB2576858800ADDF74 /* AppAnalyticsScreenView.swift in Sources */,
 				524E8EDC2572EA9A002A1D6C /* LocationStore.swift in Sources */,
 				52EF7E3F256BBDF400A06613 /* WeatherIconComponent.swift in Sources */,
 				529F38B82573BA4300AC2849 /* SettingsStore.swift in Sources */,
@@ -863,8 +770,6 @@
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
 				523C020C2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift in Sources */,
 				52CB469A257174EF00B82085 /* Request.swift in Sources */,
-				527EF34E257678DC00FD45C1 /* AnalyticsService.swift in Sources */,
-				527EF3522576792600FD45C1 /* AppAnalyticsEvent.swift in Sources */,
 				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52D6B8022573ED1200C48B2B /* RatingService.swift in Sources */,
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,
@@ -999,6 +904,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1060,6 +966,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1124,10 +1031,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SimpleWeather/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1155,10 +1059,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleWeather/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = D27NXEG753;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SimpleWeather/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

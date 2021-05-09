@@ -18,9 +18,6 @@ struct SimpleWeatherApp: App {
     @StateObject private var settingsStore = SettingsStore()
     @StateObject private var ratingStore = RatingStore()
     
-    //swiftlint:disable:next weak_delegate
-    @UIApplicationDelegateAdaptor(AppDelegateForFirebase.self) private var appDelegate
-    
     private let appDependency = AppDependency()
     
     // MARK: - Body

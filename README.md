@@ -25,12 +25,7 @@ A simple weather app created with SwiftUI 2.0 for iOS 14 &amp; iPadOS
 public let darkSkyApiKey = "Your Api Key from dark sky"
 ```
 
-* Add the `GoogleService-Info.plist` exported from your firebase project account
-
 ## 📦 Dependencies
-
-* [Injectable](https://github.com/mmaheo/Injectable): Lightweight dependency injection framework
-* [Firebase](https://github.com/firebase/firebase-ios-sdk): Firebase iOS SDK
 
 ## 👨‍💻 Developer
 
