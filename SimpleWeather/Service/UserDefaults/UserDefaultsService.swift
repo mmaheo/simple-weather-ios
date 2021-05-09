@@ -78,10 +78,6 @@ final class UserDefaultsService: Injectable {
     
     func fetchNetworkCalls() -> Int { userDefaults.integer(forKey: networkCallsKey) }
     
-    func fetchSessions() -> Int {
-        print("ok: \(userDefaults.integer(forKey: sessionsKey))")
-        
-        return userDefaults.integer(forKey: sessionsKey)
-    }
+    func fetchSessions() -> Int { userDefaults.integer(forKey: sessionsKey) }
     
 }
