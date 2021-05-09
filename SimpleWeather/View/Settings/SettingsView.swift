@@ -12,7 +12,8 @@ struct SettingsView: View {
     // MARK: - Properties
     
     @EnvironmentObject private var settingsStore: SettingsStore
-    
+    @State private var isShowingPaywall = false
+
     // MARK: - Body
     
     var body: some View {
@@ -29,9 +30,14 @@ struct SettingsView: View {
             
             Section(header: Text("subcription"),
                     footer: Text("Quota \(settingsStore.quota)/\(Constant.quota)")) {
-                Text("ok")
+                Button(action: {
+                    isShowingPaywall = true
+                }, label: {
+                    Text("become_premium_member")
+                })
             }
         }
+        .sheet(isPresented: $isShowingPaywall) { PaywallView(isShowingPaywall: $isShowingPaywall) }
         .onAppear { settingsStore.dispatch(action: .viewDidAppear) }
         .navigationTitle("settings_view_title")
     }
@@ -96,6 +102,7 @@ struct SettingsView_Previews: PreviewProvider {
                              .accessibilityExtraExtraExtraLarge)
         }
         .environmentObject(settingsStorePreview)
+        .environmentObject(paywallStorePreview)
     }
 }
 

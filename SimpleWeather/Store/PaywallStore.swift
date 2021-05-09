@@ -49,10 +49,10 @@ final class PaywallStore: ObservableObject {
         purchaseService
             .purchase(package: package)
             .receive(on: DispatchQueue.main)
-            .sink { granted in
-                DispatchQueue.main.async {
-                    HUD.flash(granted ? .success : .error, delay: 1)
-                }
+            .sink { [weak self] granted in
+                guard let self = self else { return }
+                
+                self.handlePurchase(granted: granted)
             }
             .store(in: &cancellables)
     }
@@ -65,10 +65,10 @@ final class PaywallStore: ObservableObject {
         purchaseService
             .restore()
             .receive(on: DispatchQueue.main)
-            .sink { granted in
-                DispatchQueue.main.async {
-                    HUD.flash(granted ? .success : .error, delay: 1)
-                }
+            .sink { [weak self] granted in
+                guard let self = self else { return }
+                
+                self.handlePurchase(granted: granted)
             }
             .store(in: &cancellables)
     }
@@ -79,6 +79,14 @@ final class PaywallStore: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: \.availablePackage, on: self)
             .store(in: &cancellables)
+    }
+    
+    private func handlePurchase(granted: Bool) {
+        DispatchQueue.main.async {
+            HUD.hide()
+            
+            HUD.flash(granted ? .success : .error, delay: 1)
+        }
     }
 }
 

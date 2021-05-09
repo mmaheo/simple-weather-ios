@@ -65,3 +65,4 @@
 "unknown" = "inconnue";
 "paywall_condition" = "Un achat de %@ / %@ sera appliqué à votre compte iTunes à la fin de l'essai sur confirmation. Les abonnements seront automatiquement renouvelés à moins d'être annulés dans les 24 heures précédant la fin de la période en cours. Vous pouvez annuler à tout moment avec les paramètres de votre compte iTunes. Toute portion inutilisée d'un essai gratuit sera perdue si vous achetez un abonnement. Pour plus d'informations, consultez les conditions d'utilisation et la politique de confidentialité.";
 "subscription" = "Abonnement";
+"become_premium_member" = "🤩 Devenir membre premium";

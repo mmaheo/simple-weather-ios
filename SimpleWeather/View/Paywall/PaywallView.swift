@@ -14,7 +14,7 @@ struct PaywallView: View {
     
     @Binding var isShowingPaywall: Bool
     @EnvironmentObject private var paywallStore: PaywallStore
-    
+
     // MARK: - Body
     
     var body: some View {
