@@ -21,6 +21,7 @@ final class ForecastStore: ObservableObject {
     @Published private(set) var hourly: [Forecast]
     @Published private(set) var daily: [Forecast]
     @Published private(set) var isLoading: Bool
+    @Published private(set) var cachedLocality: String = ""
     @Published var error: AppError?
     
     @Inject private var forecastService: ForecastService
@@ -54,7 +55,18 @@ final class ForecastStore: ObservableObject {
     // MARK: - Action Methods
     
     private func forecastViewDidAppearAction() {
-        // TODO: fetch if last call is <= 10 min
+        let now = Date().timeIntervalSince1970
+        
+        if now - userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
+           let currently = userDefaultsService.fetchCurrentlyForecast(),
+           let hourly = userDefaultsService.fetchHourlyForecast(),
+           let daily = userDefaultsService.fetchDailyForecast() {
+            return usedCachedForecast(currently: currently, hourly: hourly, daily: daily)
+        }
+        
+        userDefaultsService.save(lastNetworkCall: now)
+        userDefaultsService.incrementNetworkCalls()
+        
         fetchLocation()
     }
     
@@ -81,6 +93,10 @@ final class ForecastStore: ObservableObject {
                 self.currently = response.currently
                 self.hourly = response.hourly.data
                 self.daily = response.daily.data
+                
+                self.userDefaultsService.save(currentlyForecast: response.currently)
+                self.userDefaultsService.save(hourlyForecast: response.hourly.data)
+                self.userDefaultsService.save(dailyForecast: response.daily.data)
             }
             .store(in: &cancellables)
     }
@@ -90,6 +106,13 @@ final class ForecastStore: ObservableObject {
     private func fetchLocation() {
         isLoading = true
         locationService.fetchLocation()
+    }
+    
+    private func usedCachedForecast(currently: Forecast, hourly: [Forecast], daily: [Forecast]) {
+        self.currently = currently
+        self.hourly = hourly
+        self.daily = daily
+        cachedLocality = userDefaultsService.fetchLocality() ?? ""
     }
 }
 

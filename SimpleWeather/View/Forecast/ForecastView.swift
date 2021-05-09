@@ -53,7 +53,7 @@ struct ForecastView: View {
                 contentView
             }
         }
-        .navigationTitle(locationStore.locality)
+        .navigationTitle(locationStore.locality.isEmpty ? forecastStore.cachedLocality : locationStore.locality)
         .alert(item: $forecastStore.error) { error in
             Alert(title: Text(error.title),
                   message: Text(error.message),
@@ -74,10 +74,24 @@ extension ForecastView {
     
     private var contentView: some View {
         VStack(spacing: 16) {
+            fetchedTime
             currentlyWeatherView
             hourlyWeatherView
             dailyWeatherView
             poweredByDarkSkyView
+        }
+    }
+    
+    private var fetchedTime: some View {
+        forecastStore.currently.map { forecast in
+            HStack {
+                Text(Date(timeIntervalSince1970: forecast.time).format(format: "HH:mm"))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
         }
     }
     
@@ -86,7 +100,7 @@ extension ForecastView {
             CurrentlyWeatherComponent(iconSystemName: forecast.wrappedIconSystemName,
                                       temperature: forecast.wrappedTemperature,
                                       apparentTemperature: forecast.wrappedApparentTemperature)
-                .padding(.horizontal, 16)
+                .padding(.horizontal)
         }
     }
     

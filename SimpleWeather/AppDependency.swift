@@ -21,7 +21,7 @@ final class AppDependency {
     
     init() {
         self.userDefaultsService = UserDefaultsService()
-        self.forecastService = ForecastService(userDefaultService: userDefaultsService)
+        self.forecastService = ForecastService()
         self.locationService = LocationService(userDefaultService: userDefaultsService)
         self.ratingService = RatingService(userDefaultService: userDefaultsService)
         self.purchaseService = PurchaseService()

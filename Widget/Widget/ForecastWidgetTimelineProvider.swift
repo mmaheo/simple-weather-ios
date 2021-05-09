@@ -14,8 +14,8 @@ final class ForecastWidgetTimelineProvider: TimelineProvider {
     
     // MARK: - Properties
     
-    private(set) lazy var userDefaultsService = UserDefaultsService()
-    private(set) lazy var forecastService = ForecastService(userDefaultService: userDefaultsService)
+    private let userDefaultsService = UserDefaultsService()
+    private let forecastService = ForecastService()
     
     private var cancellables = Set<AnyCancellable>()
 

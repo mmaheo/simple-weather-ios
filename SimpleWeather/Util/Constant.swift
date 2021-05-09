@@ -5,7 +5,10 @@
 //  Created by Maxime Maheo on 09/05/2021.
 //
 
+import Foundation
+
 struct Constant {
     static let entitlementID = "pro"
     static let quota = 4
+    static let refreshRate: TimeInterval = 60 * 10 // 10 min
 }
