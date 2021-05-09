@@ -5,4 +5,4 @@
 //  Created by Maxime Maheo on 27/11/2020.
 //
 
-public let darkSkyApiKey = "e04ef96e462f494db63a1479dfee528b"
+let darkSkyApiKey = "e04ef96e462f494db63a1479dfee528b"

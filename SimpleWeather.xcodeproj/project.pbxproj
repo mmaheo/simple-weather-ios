@@ -24,6 +24,8 @@
 		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
 		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
 		5264D7E625799C11001B0935 /* MinMaxTemperatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */; };
+		528D96D62648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D96D52648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift */; };
+		528D96DB264842A600A92DA7 /* Package+Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D96DA264842A600A92DA7 /* Package+Terms.swift */; };
 		529F38B22573B14200AC2849 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B12573B14200AC2849 /* AppError.swift */; };
 		529F38B82573BA4300AC2849 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B72573BA4300AC2849 /* SettingsStore.swift */; };
 		529F38BB2573BABC00AC2849 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38BA2573BABC00AC2849 /* Unit.swift */; };
@@ -149,6 +151,8 @@
 		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
 		5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTemperatureComponent.swift; sourceTree = "<group>"; };
+		528D96D52648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProductSubscriptionPeriod+PeriodTitle.swift"; sourceTree = "<group>"; };
+		528D96DA264842A600A92DA7 /* Package+Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package+Terms.swift"; sourceTree = "<group>"; };
 		529F38B12573B14200AC2849 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		529F38B72573BA4300AC2849 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		529F38BA2573BABC00AC2849 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -337,6 +341,15 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		528D96D72648426C00A92DA7 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				528D96D52648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift */,
+				528D96DA264842A600A92DA7 /* Package+Terms.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 		529F38B02573B12800AC2849 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +487,7 @@
 				52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */,
 				52CB46AD2571762B00B82085 /* Publisher+RetryAfter.swift */,
 				523C01FF2573F4B800632A5A /* UIApplication+CurrentScene.swift */,
+				528D96D72648426C00A92DA7 /* Purchases */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -809,6 +823,8 @@
 				52C5D4E6256BD61E0088B72B /* Locale+Language.swift in Sources */,
 				5247DDC5256AFB3000FD1EF9 /* ForecastView.swift in Sources */,
 				523C020C2573FF3F00632A5A /* SettingsTermsAndConditionsView.swift in Sources */,
+				528D96D62648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift in Sources */,
+				528D96DB264842A600A92DA7 /* Package+Terms.swift in Sources */,
 				52CB469A257174EF00B82085 /* Request.swift in Sources */,
 				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52D6B8022573ED1200C48B2B /* RatingService.swift in Sources */,

@@ -7,30 +7,33 @@
 
 import Foundation
 import Injectable
-
-enum PaywallStoreAction {
-    case viewDidAppear
-}
+import Purchases
+import Combine
 
 final class PaywallStore: ObservableObject {
         
     // MARK: - Properties
     
+    @Published private(set) var availablePackage: Purchases.Package?
+    
     @Inject private var purchaseService: PurchaseService
+    
+    private var cancellables = Set<AnyCancellable>()
+
+    // MARK: - Lifecycle
+    
+    init() {
+        fetchAvailablePackages()
+    }
     
     // MARK: - Methods
     
-    func dispatch(action: PaywallStoreAction) {
-        switch action {
-        case .viewDidAppear:
-            viewDidAppearAction()
-        }
-    }
-    
-    // MARK: - Action Methods
-    
-    private func viewDidAppearAction() {
-        purchaseService.fetchOfferings()
+    private func fetchAvailablePackages() {
+        purchaseService
+            .fetchOfferings()
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.availablePackage, on: self)
+            .store(in: &cancellables)
     }
 }
 

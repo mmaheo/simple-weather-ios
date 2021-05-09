@@ -7,17 +7,22 @@
 
 import Injectable
 import Purchases
+import Combine
 
 final class PurchaseService: Injectable {
     
     // MARK: - Methods
     
-    func fetchOfferings() {
-        Purchases.shared.offerings { (offerings, error) in
-            if let packages = offerings?.current?.availablePackages {
-                print(packages)
+    func fetchOfferings() -> AnyPublisher<Purchases.Package?, Never> {
+        Deferred {
+            Future { promise in
+                Purchases.shared.offerings { offerings, _ in
+                    guard let availablePackages = offerings?.current?.availablePackages else { return }
+                    
+                    promise(.success(availablePackages.first))
+                }
             }
         }
+        .eraseToAnyPublisher()
     }
-    
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Purchases
 
 struct PaywallView: View {
     
@@ -17,23 +18,35 @@ struct PaywallView: View {
     // MARK: - Body
     
     var body: some View {
-        VStack {
-            headerView
-            titleView
-            limitationView
-            Spacer()
-            featuresView
-            Spacer()
-            offerButtonsView
-        }
-        .padding()
-        .onAppear {
-            paywallStore.dispatch(action: .viewDidAppear)
+        ScrollView {
+            VStack {
+                headerView
+                titleView
+                limitationView
+                Spacer()
+                featuresView
+                Spacer()
+                
+                paywallStore.availablePackage.map { package in
+                    VStack {
+                        makeOfferButtonsView(package: package)
+                        makeFooterView(package: package)
+                    }
+                }
+            }
+            .padding()
         }
     }
 }
 
 extension PaywallView {
+    
+    private func makeFooterView(package: Purchases.Package) -> some View {
+        Text(String(format: NSLocalizedString("paywall_condition", comment: ""), package.localizedPriceString, package.product.subscriptionPeriod?.durationTitle ?? ""))
+            .font(.caption)
+            .foregroundColor(.gray)
+            .padding(.top)
+    }
     
     private var limitationView: some View {
         Text("quota_exceeded")
@@ -43,24 +56,40 @@ extension PaywallView {
             .foregroundColor(.red)
     }
     
-    private var offerButtonsView: some View {
-        VStack {
-            Button(action: {
-                
-            }, label: {
-                Text("start_one_month_free_trial")
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding()
-            })
-            .background(Color.blue)
-            .cornerRadius(8)
+    private func makeOfferButtonsView(package: Purchases.Package) -> some View {
+        Button(action: {
             
-            Text("price_after")
-                .italic()
-                .font(.caption)
-                .foregroundColor(.gray)
-        }
+        }, label: {
+            HStack {
+                VStack {
+                    HStack {
+                        Text(package.product.localizedTitle)
+                            .font(.title3)
+                            .bold()
+                        
+                        Spacer()
+                    }
+                    HStack {
+                        Text(package.terms(for: package))
+                            .font(.subheadline)
+                            .foregroundColor(Color.white.opacity(0.7))
+                        Spacer()
+                    }
+                }
+                .padding([.top, .bottom], 8.0)
+                
+                Spacer()
+                
+                Text(package.localizedPriceString)
+                    .font(.title3)
+                    .bold()
+            }
+            .padding(.vertical, 8)
+            .padding(.horizontal)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+        })
     }
     
     private var titleView: some View {
@@ -96,7 +125,7 @@ extension PaywallView {
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.blue)
                 .frame(width: 20)
-                
+            
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
