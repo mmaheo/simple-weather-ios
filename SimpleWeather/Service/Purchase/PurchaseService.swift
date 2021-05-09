@@ -25,4 +25,38 @@ final class PurchaseService: Injectable {
         }
         .eraseToAnyPublisher()
     }
+    
+    func purchase(package: Purchases.Package) -> AnyPublisher<Bool, Never> {
+        Deferred {
+            Future { promise in
+                Purchases.shared.purchasePackage(package) { _, purchaserInfo, error, userCancelled in
+                    if purchaserInfo?.entitlements[Constant.entitlementID]?.isActive == true,
+                       !userCancelled,
+                       error == nil {
+                        promise(.success(true))
+                    } else {
+                        promise(.success(false))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+        
+    }
+    
+    func restore() -> AnyPublisher<Bool, Never> {
+        Deferred {
+            Future { promise in
+                Purchases.shared.restoreTransactions { purchaserInfo, error in
+                    if purchaserInfo?.entitlements[Constant.entitlementID]?.isActive == true,
+                       error == nil {
+                        promise(.success(true))
+                    } else {
+                        promise(.success(false))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

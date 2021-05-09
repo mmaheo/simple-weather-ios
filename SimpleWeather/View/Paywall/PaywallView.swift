@@ -49,7 +49,7 @@ extension PaywallView {
     }
     
     private var limitationView: some View {
-        Text("quota_exceeded")
+        Text(String(format: NSLocalizedString("quota_exceeded", comment: ""), Constant.quota))
             .bold()
             .multilineTextAlignment(.center)
             .padding()
@@ -58,7 +58,7 @@ extension PaywallView {
     
     private func makeOfferButtonsView(package: Purchases.Package) -> some View {
         Button(action: {
-            
+            paywallStore.dispatch(action: .purchaseButtonTapped(package: package))
         }, label: {
             HStack {
                 VStack {
@@ -151,7 +151,7 @@ extension PaywallView {
             Spacer()
             
             Button(action: {
-                
+                paywallStore.dispatch(action: .restoreButtonTapped)
             }, label: {
                 Text("restore")
             })

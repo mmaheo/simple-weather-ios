@@ -51,7 +51,7 @@
 "widget_not_available" = "Widget is not available.";
 "feeling_temperature" = "Feeling %d°";
 "paywall_title" = "Premium member";
-"quota_exceeded" = "You have exceeded your quota of 3 uses per day.";
+"quota_exceeded" = "You have exceeded your quota of %d uses per day.";
 "restore" = "Restore";
 "unlock_widgets" = "Unlock Current forecast and Hourly forecasts widgets.";
 "unlimited_access" = "Unlimited access";

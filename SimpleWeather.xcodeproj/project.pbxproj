@@ -24,6 +24,8 @@
 		524E8EE72572F8D7002A1D6C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE62572F8D7002A1D6C /* SettingsView.swift */; };
 		524E8EEA2572FC4E002A1D6C /* SettingsUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */; };
 		5264D7E625799C11001B0935 /* MinMaxTemperatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */; };
+		527722972648532F00F01986 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 527722962648532F00F01986 /* PKHUD */; };
+		527722992648573E00F01986 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527722982648573E00F01986 /* Constant.swift */; };
 		528D96D62648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D96D52648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift */; };
 		528D96DB264842A600A92DA7 /* Package+Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D96DA264842A600A92DA7 /* Package+Terms.swift */; };
 		529F38B22573B14200AC2849 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F38B12573B14200AC2849 /* AppError.swift */; };
@@ -151,6 +153,7 @@
 		524E8EE62572F8D7002A1D6C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		524E8EE92572FC4E002A1D6C /* SettingsUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUnitView.swift; sourceTree = "<group>"; };
 		5264D7DE25799B37001B0935 /* MinMaxTemperatureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTemperatureComponent.swift; sourceTree = "<group>"; };
+		527722982648573E00F01986 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		528D96D52648425700A92DA7 /* SKProductSubscriptionPeriod+PeriodTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProductSubscriptionPeriod+PeriodTitle.swift"; sourceTree = "<group>"; };
 		528D96DA264842A600A92DA7 /* Package+Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package+Terms.swift"; sourceTree = "<group>"; };
 		529F38B12573B14200AC2849 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 				52BC0DA8264813D9002D532D /* Bugsnag in Frameworks */,
 				520125642576C24100064808 /* Injectable in Frameworks */,
 				52BC0DAB26481DA6002D532D /* Purchases in Frameworks */,
+				527722972648532F00F01986 /* PKHUD in Frameworks */,
 				52BC0DAD26481DB8002D532D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				529F38B12573B14200AC2849 /* AppError.swift */,
+				527722982648573E00F01986 /* Constant.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 				520125632576C24100064808 /* Injectable */,
 				52BC0DA7264813D9002D532D /* Bugsnag */,
 				52BC0DAA26481DA6002D532D /* Purchases */,
+				527722962648532F00F01986 /* PKHUD */,
 			);
 			productName = SimpleWeather;
 			productReference = 5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */;
@@ -719,6 +725,7 @@
 				520125622576C24100064808 /* XCRemoteSwiftPackageReference "Injectable" */,
 				52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */,
 				52BC0DA926481DA6002D532D /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				527722952648532F00F01986 /* XCRemoteSwiftPackageReference "PKHUD" */,
 			);
 			productRefGroup = 5247DDC0256AFB3000FD1EF9 /* Products */;
 			projectDirPath = "";
@@ -829,6 +836,7 @@
 				52CB4695257174D000B82085 /* APIEndpoint.swift in Sources */,
 				52D6B8022573ED1200C48B2B /* RatingService.swift in Sources */,
 				52C5D4DE256BD5F20088B72B /* Date+Format.swift in Sources */,
+				527722992648573E00F01986 /* Constant.swift in Sources */,
 				52A21B9F2572AD6D00A55552 /* MainView.swift in Sources */,
 				523C02002573F4B800632A5A /* UIApplication+CurrentScene.swift in Sources */,
 				52C5D50E256BE5620088B72B /* DailyWeatherComponent.swift in Sources */,
@@ -1229,6 +1237,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		527722952648532F00F01986 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 		52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bugsnag/bugsnag-cocoa";
@@ -1257,6 +1273,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 520125622576C24100064808 /* XCRemoteSwiftPackageReference "Injectable" */;
 			productName = Injectable;
+		};
+		527722962648532F00F01986 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 527722952648532F00F01986 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
 		};
 		52BC0DA7264813D9002D532D /* Bugsnag */ = {
 			isa = XCSwiftPackageProductDependency;

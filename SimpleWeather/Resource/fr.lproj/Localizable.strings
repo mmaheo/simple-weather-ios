@@ -51,7 +51,7 @@
 "widget_not_available" = "Le widget n'est pas disponible.";
 "feeling_temperature" = "Ressenti %d°";
 "paywall_title" = "Accès premium";
-"quota_exceeded" = "Vous avez dépassé votre quota de 3 utilisations par jour.";
+"quota_exceeded" = "Vous avez dépassé votre quota de %d utilisations par jour.";
 "restore" = "Restaurer";
 "unlock_widgets" = "Déverrouillez les widgets Prévisions actuelles et Prévisions horaires.";
 "unlimited_access" = "Accès illimité";
