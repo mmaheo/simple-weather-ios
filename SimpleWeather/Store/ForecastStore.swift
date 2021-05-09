@@ -28,6 +28,7 @@ final class ForecastStore: ObservableObject {
     @Inject private var forecastService: ForecastService
     @Inject private var locationService: LocationService
     @Inject private var userDefaultsService: UserDefaultsService
+    @Inject private var purchaseService: PurchaseService
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -58,9 +59,17 @@ final class ForecastStore: ObservableObject {
     private func forecastViewDidAppearAction() {
         let now = Date().timeIntervalSince1970
         
-        if userDefaultsService.fetchNetworkCalls() >= Constant.quota {
-            isShowingPaywall = true
-        }
+        purchaseService
+            .isPremiumMember()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isPremiumMember in
+                guard let self = self else { return }
+                
+                if !isPremiumMember && self.userDefaultsService.fetchNetworkCalls() >= Constant.quota {
+                    self.isShowingPaywall = true
+                }
+            }
+            .store(in: &cancellables)
         
         if now - userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
            let currently = userDefaultsService.fetchCurrentlyForecast(),

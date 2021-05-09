@@ -12,7 +12,23 @@ import Combine
 final class PurchaseService: Injectable {
     
     // MARK: - Methods
-    
+
+    func isPremiumMember() -> AnyPublisher<Bool, Never> {
+        Deferred {
+            Future { promise in
+                Purchases.shared.purchaserInfo { purchaserInfo, error in
+                    if purchaserInfo?.entitlements[Constant.entitlementID]?.isActive == true,
+                       error == nil {
+                        promise(.success(true))
+                    } else {
+                        promise(.success(false))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
     func fetchAvailablePackage() -> AnyPublisher<Purchases.Package?, Never> {
         Deferred {
             Future { promise in

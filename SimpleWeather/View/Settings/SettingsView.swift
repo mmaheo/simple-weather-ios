@@ -29,7 +29,7 @@ struct SettingsView: View {
             }
             
             Section(header: Text("subcription"),
-                    footer: Text("Quota \(settingsStore.quota)/\(Constant.quota)")) {
+                    footer: subscriptionSectionFooterView) {
                 Button(action: {
                     isShowingPaywall = true
                 }, label: {
@@ -80,6 +80,17 @@ extension SettingsView {
             }
             
             Spacer()
+        }
+    }
+    
+    private var subscriptionSectionFooterView: some View {
+        HStack {
+            if settingsStore.isPremium {
+                Text("Premium")
+                Spacer()
+            }
+            
+            Text("Quota \(settingsStore.quota)/\(Constant.quota)")
         }
     }
     

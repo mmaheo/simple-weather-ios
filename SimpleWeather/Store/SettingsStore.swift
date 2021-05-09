@@ -7,6 +7,7 @@
 
 import Foundation
 import Injectable
+import Combine
 
 enum SettingsViewType {
     case main, unit, privacyPolicy, termsAndConditions
@@ -24,9 +25,13 @@ final class SettingsStore: ObservableObject {
     
     @Published private(set) var unit: Unit
     @Published private(set) var quota: Int
+    @Published private(set) var isPremium: Bool = false
     
     @Inject private var userDefaultsService: UserDefaultsService
+    @Inject private var purchaseService: PurchaseService
     
+    private var cancellables = Set<AnyCancellable>()
+
     // MARK: - Lifecycle
     
     init(unit: Unit = .si,
@@ -47,7 +52,15 @@ final class SettingsStore: ObservableObject {
     
     // MARK: - Action Methods
     
-    private func viewDidAppearAction() { quota = userDefaultsService.fetchNetworkCalls() }
+    private func viewDidAppearAction() {
+        quota = userDefaultsService.fetchNetworkCalls()
+        
+        purchaseService
+            .isPremiumMember()
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isPremium, on: self)
+            .store(in: &cancellables)
+    }
     
     private func fetchUnitAction() {
         guard let unit = userDefaultsService.fetchUnit() else { return save(unit: .si) }
