@@ -62,6 +62,7 @@
 		52A21B9F2572AD6D00A55552 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21B9E2572AD6D00A55552 /* MainView.swift */; };
 		52A21BA22572AD7600A55552 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A21BA12572AD7600A55552 /* SideBarView.swift */; };
 		52B6259C256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6259B256E4D1E00CDBBDA /* String+FirstLetterCapitalized.swift */; };
+		52BC0DA8264813D9002D532D /* Bugsnag in Frameworks */ = {isa = PBXBuildFile; productRef = 52BC0DA7264813D9002D532D /* Bugsnag */; };
 		52BDEF232576A4F500C28F7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF252576A4F500C28F7B /* Localizable.strings */; };
 		52BDEF2F2576A9BF00C28F7B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF312576A9BF00C28F7B /* InfoPlist.strings */; };
 		52BDEF352576AA4E00C28F7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52BDEF252576A4F500C28F7B /* Localizable.strings */; };
@@ -208,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BC0DA8264813D9002D532D /* Bugsnag in Frameworks */,
 				520125642576C24100064808 /* Injectable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +612,7 @@
 			name = SimpleWeather;
 			packageProductDependencies = (
 				520125632576C24100064808 /* Injectable */,
+				52BC0DA7264813D9002D532D /* Bugsnag */,
 			);
 			productName = SimpleWeather;
 			productReference = 5247DDBF256AFB3000FD1EF9 /* SimpleWeather.app */;
@@ -668,6 +671,7 @@
 			mainGroup = 5247DDB6256AFB3000FD1EF9;
 			packageReferences = (
 				520125622576C24100064808 /* XCRemoteSwiftPackageReference "Injectable" */,
+				52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */,
 			);
 			productRefGroup = 5247DDC0256AFB3000FD1EF9 /* Products */;
 			projectDirPath = "";
@@ -1173,6 +1177,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bugsnag/bugsnag-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1185,6 +1197,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 520125622576C24100064808 /* XCRemoteSwiftPackageReference "Injectable" */;
 			productName = Injectable;
+		};
+		52BC0DA7264813D9002D532D /* Bugsnag */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52BC0DA6264813D9002D532D /* XCRemoteSwiftPackageReference "bugsnag-cocoa" */;
+			productName = Bugsnag;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

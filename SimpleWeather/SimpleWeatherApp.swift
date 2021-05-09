@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import Bugsnag
 
 @main
 struct SimpleWeatherApp: App {
@@ -19,6 +20,12 @@ struct SimpleWeatherApp: App {
     @StateObject private var ratingStore = RatingStore()
     
     private let appDependency = AppDependency()
+    
+    // MARK: - Lifecycle
+    
+    init() {
+        Bugsnag.start()
+    }
     
     // MARK: - Body
     

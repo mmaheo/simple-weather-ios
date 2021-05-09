@@ -8,6 +8,7 @@
 import Injectable
 import Foundation
 import StoreKit
+import Bugsnag
 
 final class RatingService: Injectable {
     

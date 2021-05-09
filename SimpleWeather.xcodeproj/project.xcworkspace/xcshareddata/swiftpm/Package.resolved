@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Bugsnag",
+        "repositoryURL": "https://github.com/bugsnag/bugsnag-cocoa",
+        "state": {
+          "branch": null,
+          "revision": "981cc251cc8006b1291533258293e3431d620ae1",
+          "version": "6.9.1"
+        }
+      },
+      {
         "package": "Injectable",
         "repositoryURL": "https://github.com/mmaheo/Injectable.git",
         "state": {
