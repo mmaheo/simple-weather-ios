@@ -53,7 +53,7 @@ final class SettingsStore: ObservableObject {
     // MARK: - Action Methods
     
     private func viewDidAppearAction() {
-        quota = userDefaultsService.fetchNetworkCalls()
+        quota = userDefaultsService.fetchUserQuota().value
         
         purchaseService
             .isPremiumMember()

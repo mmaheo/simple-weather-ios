@@ -8,6 +8,11 @@
 import Injectable
 import Foundation
 
+struct UserQuota: Codable {
+    var dateString: String
+    var value: Int
+}
+
 final class UserDefaultsService: Injectable {
     
     // MARK: - Properties
@@ -19,7 +24,7 @@ final class UserDefaultsService: Injectable {
     private let unitKey = "unit_key"
     private let localityKey = "locality_key"
     private let lastRatingDateKey = "last_rating_date_key"
-    private let networkCallsKey = "network_calls_key"
+    private let userQuotaKey = "user_quota_key"
     private let sessionsKey = "sessions_key"
     private let lastNetworkCallKey = "last_network_call_key"
     private let currentlyForecastKey = "currently_forecast_key"
@@ -48,7 +53,21 @@ final class UserDefaultsService: Injectable {
     
     func save(lastDateRating: Date) { userDefaults.setValue(lastDateRating.timeIntervalSince1970, forKey: lastRatingDateKey) }
     
-    func incrementNetworkCalls() { userDefaults.setValue(fetchNetworkCalls() + 1, forKey: networkCallsKey) }
+    func incrementUserQuota() {
+        var userQuota = fetchUserQuota()
+        let today = Date().format(format: "dd/MM/yyyy")
+        
+        if userQuota.dateString != today {
+            userQuota.dateString = today
+            userQuota.value = 1
+        } else {
+            userQuota.value += 1
+        }
+        
+        guard let encodedObject = try? JSONEncoder().encode(userQuota) else { return }
+
+        userDefaults.set(encodedObject, forKey: userQuotaKey)
+    }
     
     func incrementSessions() { userDefaults.setValue(fetchSessions() + 1, forKey: sessionsKey) }
     
@@ -100,7 +119,13 @@ final class UserDefaultsService: Injectable {
         return timeIntervalSince1970 == 0 ? nil : Date(timeIntervalSince1970: timeIntervalSince1970)
     }
     
-    func fetchNetworkCalls() -> Int { userDefaults.integer(forKey: networkCallsKey) }
+    func fetchUserQuota() -> UserQuota {
+        guard let data = userDefaults.data(forKey: userQuotaKey),
+              let currentlyForecast = try? JSONDecoder().decode(UserQuota.self, from: data)
+        else { return UserQuota(dateString: Date().format(format: "dd/MM/yyyy"), value: 0) }
+        
+        return currentlyForecast
+    }
     
     func fetchSessions() -> Int { userDefaults.integer(forKey: sessionsKey) }
     

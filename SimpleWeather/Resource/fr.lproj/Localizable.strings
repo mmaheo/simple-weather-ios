@@ -53,7 +53,6 @@
 "paywall_title" = "Accès premium";
 "quota_exceeded" = "Vous avez dépassé votre quota de %d utilisations par jour.";
 "restore" = "Restaurer";
-"unlock_widgets" = "Déverrouillez les widgets Prévisions actuelles et Prévisions horaires.";
 "unlimited_access" = "Accès illimité";
 "fetch_weather_when_you_want" = "Récupérez la météo quand vous le souhaitez.";
 "price_for_period" = "%@ pendant %@";
@@ -66,3 +65,5 @@
 "paywall_condition" = "Un achat de %@ / %@ sera appliqué à votre compte iTunes à la fin de l'essai sur confirmation. Les abonnements seront automatiquement renouvelés à moins d'être annulés dans les 24 heures précédant la fin de la période en cours. Vous pouvez annuler à tout moment avec les paramètres de votre compte iTunes. Toute portion inutilisée d'un essai gratuit sera perdue si vous achetez un abonnement. Pour plus d'informations, consultez les conditions d'utilisation et la politique de confidentialité.";
 "subscription" = "Abonnement";
 "become_premium_member" = "🤩 Devenir membre premium";
+"support_app" = "Supporter l'application";
+"support_description" = "Payer 1 café chaque mois pour contribuer au paiement du fournisseur de la météo.";

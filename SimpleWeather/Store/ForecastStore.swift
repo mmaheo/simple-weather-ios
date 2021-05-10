@@ -65,7 +65,7 @@ final class ForecastStore: ObservableObject {
             .sink { [weak self] isPremiumMember in
                 guard let self = self else { return }
                 
-                if !isPremiumMember && self.userDefaultsService.fetchNetworkCalls() >= Constant.quota {
+                if !isPremiumMember && self.userDefaultsService.fetchUserQuota().value >= Constant.quota {
                     self.isShowingPaywall = true
                 }
             }
@@ -79,7 +79,7 @@ final class ForecastStore: ObservableObject {
         }
         
         userDefaultsService.save(lastNetworkCall: now)
-        userDefaultsService.incrementNetworkCalls()
+        userDefaultsService.incrementUserQuota()
         
         fetchLocation()
     }

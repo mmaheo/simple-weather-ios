@@ -26,7 +26,6 @@ struct PaywallView: View {
                 Spacer()
                 featuresView
                 Spacer()
-                
                 paywallStore.availablePackage.map { package in
                     VStack {
                         makeOfferButtonsView(package: package)
@@ -93,24 +92,23 @@ extension PaywallView {
     }
     
     private var titleView: some View {
-        VStack {
+        VStack(spacing: 16) {
             Text("paywall_title")
                 .font(.title)
                 .bold()
-                .padding(.bottom)
             
             Image(systemName: "sun.max.fill")
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 150)
+                .frame(height: 100)
         }
     }
     
     private var featuresView: some View {
         VStack(alignment: .leading) {
-            makeFeatureView(title: "Widgets",
-                            description: "unlock_widgets")
+            makeFeatureView(title: "support_app",
+                            description: "support_description")
             
             makeFeatureView(title: "unlimited_access",
                             description: "fetch_weather_when_you_want")

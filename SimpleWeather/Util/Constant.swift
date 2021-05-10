@@ -9,6 +9,6 @@ import Foundation
 
 struct Constant {
     static let entitlementID = "pro"
-    static let quota = 4
+    static let quota = 2
     static let refreshRate: TimeInterval = 60 * 10 // 10 min
 }
