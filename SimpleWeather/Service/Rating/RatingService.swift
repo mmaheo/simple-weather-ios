@@ -45,13 +45,12 @@ final class RatingService: Injectable {
     }
     
     private func requestReview() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             if let scene = UIApplication.shared.currentScene {
                 SKStoreReviewController.requestReview(in: scene)
+                self?.userDefaultService?.save(lastDateRating: Date())
             }
         }
-        
-        userDefaultService?.save(lastDateRating: Date())
     }
     
     private func daysSince(lastRatingDate: Date) -> Int {

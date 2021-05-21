@@ -57,31 +57,30 @@ final class ForecastStore: ObservableObject {
     // MARK: - Action Methods
     
     private func forecastViewDidAppearAction() {
-        let now = Date().timeIntervalSince1970
-        
         purchaseService
             .isPremiumMember()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] isPremiumMember in
                 guard let self = self else { return }
-                
+  
                 if !isPremiumMember && self.userDefaultsService.fetchUserQuota().value >= Constant.quota {
                     self.isShowingPaywall = true
                 }
+                
+                let now = Date().timeIntervalSince1970
+                if now - self.userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
+                   let currently = self.userDefaultsService.fetchCurrentlyForecast(),
+                   let hourly = self.userDefaultsService.fetchHourlyForecast(),
+                   let daily = self.userDefaultsService.fetchDailyForecast() {
+                    return self.usedCachedForecast(currently: currently, hourly: hourly, daily: daily)
+                }
+
+                self.userDefaultsService.save(lastNetworkCall: now)
+                self.userDefaultsService.incrementUserQuota()
+
+                self.fetchLocation()
             }
             .store(in: &cancellables)
-        
-        if now - userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
-           let currently = userDefaultsService.fetchCurrentlyForecast(),
-           let hourly = userDefaultsService.fetchHourlyForecast(),
-           let daily = userDefaultsService.fetchDailyForecast() {
-            return usedCachedForecast(currently: currently, hourly: hourly, daily: daily)
-        }
-        
-        userDefaultsService.save(lastNetworkCall: now)
-        userDefaultsService.incrementUserQuota()
-        
-        fetchLocation()
     }
     
     // MARK: - Binding Methods
