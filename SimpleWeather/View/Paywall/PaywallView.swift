@@ -62,7 +62,7 @@ extension PaywallView {
             HStack {
                 VStack {
                     HStack {
-                        Text(package.product.localizedTitle)
+                        Text(NSLocalizedString("unlimited_access", comment: ""))
                             .font(.title3)
                             .bold()
                         
@@ -71,6 +71,12 @@ extension PaywallView {
                     HStack {
                         Text(package.terms(for: package))
                             .font(.subheadline)
+                            .foregroundColor(Color.white.opacity(0.7))
+                        Spacer()
+                    }
+                    HStack {
+                        Text("\(NSLocalizedString("then", comment: "")) \(package.localizedPriceString) / \(package.product.subscriptionPeriod?.durationTitle ?? "")")
+                            .font(.footnote)
                             .foregroundColor(Color.white.opacity(0.7))
                         Spacer()
                     }
