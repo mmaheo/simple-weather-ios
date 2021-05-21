@@ -28,14 +28,14 @@ struct SettingsView: View {
                 termsAndConditionView
             }
             
-            Section(header: Text("subcription"),
-                    footer: subscriptionSectionFooterView) {
-                Button(action: {
-                    isShowingPaywall = true
-                }, label: {
-                    Text("become_premium_member")
-                })
-            }
+//            Section(header: Text("subcription"),
+//                    footer: subscriptionSectionFooterView) {
+//                Button(action: {
+//                    isShowingPaywall = true
+//                }, label: {
+//                    Text("become_premium_member")
+//                })
+//            }
         }
         .sheet(isPresented: $isShowingPaywall) { PaywallView(isShowingPaywall: $isShowingPaywall).environmentObject(PaywallStore()) }
         .onAppear { settingsStore.dispatch(action: .viewDidAppear) }

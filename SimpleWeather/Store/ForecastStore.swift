@@ -57,15 +57,15 @@ final class ForecastStore: ObservableObject {
     // MARK: - Action Methods
     
     private func forecastViewDidAppearAction() {
-        purchaseService
-            .isPremiumMember()
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] isPremiumMember in
-                guard let self = self else { return }
+//        purchaseService
+//            .isPremiumMember()
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] isPremiumMember in
+//                guard let self = self else { return }
   
-                if !isPremiumMember && self.userDefaultsService.fetchUserQuota().value >= Constant.quota {
-                    self.isShowingPaywall = true
-                }
+//                if !isPremiumMember && self.userDefaultsService.fetchUserQuota().value >= Constant.quota {
+//                    self.isShowingPaywall = true
+//                }
                 
                 let now = Date().timeIntervalSince1970
                 if now - self.userDefaultsService.fetchLastNetworkCall() <= Constant.refreshRate,
@@ -79,8 +79,8 @@ final class ForecastStore: ObservableObject {
                 self.userDefaultsService.incrementUserQuota()
 
                 self.fetchLocation()
-            }
-            .store(in: &cancellables)
+//            }
+//            .store(in: &cancellables)
     }
     
     // MARK: - Binding Methods
